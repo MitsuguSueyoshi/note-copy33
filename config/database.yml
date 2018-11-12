@@ -51,5 +51,5 @@ production:
   <<: *default
   database: note-copy_production
   username: root
-  password: <%= ENV['NOTE-COPY_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
