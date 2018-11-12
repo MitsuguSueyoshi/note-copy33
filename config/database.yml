@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: note-copy_production
-  username: note-copy
+  username: root
   password: <%= ENV['NOTE-COPY_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
