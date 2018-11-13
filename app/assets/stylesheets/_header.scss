@@ -5,6 +5,7 @@
     height: 80px;
     margin: 0 230px 0 230px;
       &__left{
+        width: 140px;
         float: left;
       }
       .note_logo{
@@ -12,7 +13,21 @@
       }
       &__right{
         float: right;
+          }
+          .log-in{
+            float: left;
+            text-decoration: none;
+            p{
+
+            }
+          }
+          .sign-up{
+            float: left;
+          }
+          .search-form{
+            float: right;
+          }
       }
 
   }
-}
+

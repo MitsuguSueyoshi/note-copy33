@@ -4,11 +4,13 @@
       .header__container__upper__left
         = link_to root_path do
           = image_tag("note_logo.jpg" ,class: "note_logo")
-      .header__container__upper__light
-        = link_to "" do
-          %p ログイン
-        = link_to "" do
-          %p 新規登録
+      .header__container__upper__right
+        .log-in
+          = link_to "" do
+            %p ログイン
+        .sign-up
+          = link_to "" do
+            %p 新規登録
         %form.search-form
           %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__field"}
             %button{type: "submit", class: "search-form__field__button"}
