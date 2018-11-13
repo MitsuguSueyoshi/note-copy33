@@ -34,9 +34,9 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :magazines, through: :articles
-- has_many :likes
-- has_many :comments
-- has_many :images
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :images, dependent: :destroy
 
 
 ## users table
@@ -45,15 +45,15 @@ Things you may want to cover:
 |nickname|string|null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
-|icon|string||
+|main_image|string||
 |header_image|string||
 |self_introduction|text||
 
 ### Association
-- has_many :notes
-- has_many :magazines
-- has_many :likes
-- has_many :comments
+- has_many :notes, dependent: :destroy
+- has_many :magazines, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
 - has_many :relationships
 - has_many :followings, through: :relationships, source: :follow
 - has_many :reverses_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
@@ -109,7 +109,7 @@ Things you may want to cover:
 ## comments table
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|null: false|
+|body|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |note_id|integer|null: false, foreign_key: true|
 
