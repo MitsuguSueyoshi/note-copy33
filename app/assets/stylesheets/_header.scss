@@ -4,9 +4,15 @@
   .header__container__upper{
     height: 80px;
     margin: 0 230px 0 230px;
-    .note_logo{
-      width: 130px;
-    }
+      &__left{
+        float: left;
+      }
+      .note_logo{
+        width: 130px;
+      }
+      &__right{
+        float: right;
+      }
 
   }
 }

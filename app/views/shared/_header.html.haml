@@ -1,15 +1,15 @@
 .header
   .header__container
     .header__container__upper
-      .header__container__upper--left
+      .header__container__upper__left
         = link_to root_path do
           = image_tag("note_logo.jpg" ,class: "note_logo")
-        .header__container__upper--light
-          = link_to "" do
-            %p ログイン
-          = link_to "" do
-            %p 新規登録
-          %form.search-form
-            %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__field"}
-              %button{type: "submit", class: "search-form__field__button"}
-                %i{class: "fa fa-search fa-2x search-icon"}
+      .header__container__upper__light
+        = link_to "" do
+          %p ログイン
+        = link_to "" do
+          %p 新規登録
+        %form.search-form
+          %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__field"}
+            %button{type: "submit", class: "search-form__field__button"}
+              %i{class: "fa fa-search fa-2x search-icon"}
