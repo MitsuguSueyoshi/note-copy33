@@ -18,13 +18,31 @@
           }
           .log-in{
             float: left;
-            text-decoration: none;
-            p{
-
+            padding: 6px 14px;
+            a{
+              text-decoration: none;
+              p{
+              font-size: 12px;
+              font-weight: bold;
+              color: gray;
+              }
             }
           }
           .sign-up{
             float: left;
+            padding: 6px 14px;
+            margin-right: 10px;
+            border: solid 1px $greencolor;
+            border-radius: 5px;
+            background-color: $greencolor;
+            a{
+              text-decoration: none;
+              p{
+                font-size: 12px;
+                font-weight: bold;
+                color: white;
+              }
+            }
           }
           .search-form{
             float: right;
