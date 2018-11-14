@@ -3,7 +3,8 @@
   height: 170px;
   .header__container__upper{
     height: 80px;
-    margin: 0 230px 0 230px;
+    max-width: 940px;
+    margin: 0 auto;
       &__left{
         width: 140px;
         float: left;
@@ -13,6 +14,7 @@
       }
       &__right{
         float: right;
+        margin-top: 30px;
           }
           .log-in{
             float: left;
