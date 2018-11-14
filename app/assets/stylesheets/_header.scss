@@ -46,6 +46,16 @@
           }
           .search-form{
             float: right;
+              input{
+                border: solid 1px #ccc;
+                border-radius: 5px;
+                height:35px;
+                button{
+                  background: none;
+                  border: 0;
+                }
+              }
+
           }
       }
 
