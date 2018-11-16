@@ -1,71 +1,105 @@
 .header{
   width: 100%;
-  height: 170px;
-  .header__container__upper{
-    height: 80px;
+  height: 200px;
+  border-bottom: solid 1.5px #F5F5F5;
+  .header__container{
     max-width: 940px;
     margin: 0 auto;
-      &__left{
-        width: 140px;
-        float: left;
-      }
-      .note_logo{
-        width: 130px;
-      }
-      &__right{
-        float: right;
-        margin-top: 30px;
-          }
-          .log-in{
-            float: left;
-            padding: 6px 14px;
-            a{
-              text-decoration: none;
-              p{
-              font-size: 12px;
-              font-weight: bold;
-              color: gray;
-              }
+
+    .header__container__upper{
+      height: 80px;
+      max-width: 940px;
+      margin: 0 auto;
+        &__left{
+          width: 140px;
+          float: left;
+        }
+        .note_logo{
+          width: 130px;
+        }
+        &__right{
+          float: right;
+          margin-top: 30px;
             }
-          }
-          .sign-up{
-            float: left;
-            padding: 6px 14px;
-            margin-right: 10px;
-            border: solid 1px $greencolor;
-            border-radius: 5px;
-            background-color: $greencolor;
-            a{
-              text-decoration: none;
-              p{
+            .log-in{
+              float: left;
+              padding: 6px 14px;
+              a{
+                text-decoration: none;
+                p{
                 font-size: 12px;
                 font-weight: bold;
-                color: white;
-              }
-            }
-          }
-          .search-form{
-            float: right;
-              input{
-                border: solid 1px #ccc;
-                border-radius: 5px;
-                height:35px;
-                button{
-                  background: none;
-                  border: 0;
+                color: gray;
                 }
               }
-
+            }
+            .sign-up{
+              float: left;
+              padding: 6px 14px;
+              margin-right: 10px;
+              border: solid 1px $greencolor;
+              border-radius: 5px;
+              background-color: $greencolor;
+              a{
+                text-decoration: none;
+                p{
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: white;
+                }
+              }
+            }
+            .search-form{
+              float: right;
+                input{
+                  border: solid 1px #ccc;
+                  border-radius: 5px;
+                  height:35px;
+                  button{
+                    background: none;
+                    border: 0;
+                  }
+                }
+            }
           }
-  .header__container__nav{
-    height: 100px;
-    max-width: 940px;
-    margin: 0 auto;
-    &__menu{
-
-    }
-  }
+    .header__container__nav{
+      height: 90px;
+      margin-top: 15px;
+      // max-width: 940px;
+      // margin: 0 auto;
+      &__menulist{
+        border-bottom: solid 1px #F5F5F5;
+        height: 45px;
+        li.menu{
+          height: 40px;
+          display: inline-block;
+          line-height:40px;
+          margin: 0 20px;
+          a{
+          text-decoration: none;
+          color: gray;
+          font-weight: bold;
+          }
+        }
       }
+      &__category{
+        height: 45px;
+        li.category{
+          height: 45px;
+          line-height: 45px;
+          display: inline-block;
+          margin: 0 15px;
 
+          a{
+            text-decoration: none;
+            color: gray;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+   }
   }
+
 
