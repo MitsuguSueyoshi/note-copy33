@@ -14,12 +14,12 @@
           width: 140px;
           float: left;
           .note_logo{
-            width: 130px;
+            width: 120px;
           }
         }
         &__right{
           float: right;
-          margin-top: 30px;
+          margin-top: 25px;
             .log-in{
               float: left;
               padding: 6px 14px;
@@ -91,7 +91,7 @@
     }
     .header__container__nav{
       height: 90px;
-      margin-top: 15px;
+      margin-top: 10px;
       max-width: 940px;
 
       &__menulist{
@@ -106,6 +106,7 @@
           text-decoration: none;
           color: gray;
           font-weight: bold;
+          font-size: 15px;
           }
         }
       }
