@@ -53,6 +53,16 @@
         color: black;
       }
     }
+    li.tag-name{
+      height: 48px;
+      line-height: 48px;
+      display: inline-block;
+      margin: 0 12px;
+      a{
+        color: gray;
+        font-size: 14px;
+      }
+    }
   }
 }
 
