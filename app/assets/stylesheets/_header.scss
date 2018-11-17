@@ -1,13 +1,13 @@
 .header{
   width: 100%;
   height: 190px;
-  border-bottom: solid 1.5px #F5F5F5;
+  border-bottom: solid 1px #DDDDDD;
   .header__container{
     max-width: 940px;
     margin: 0 auto;
 
     .header__container__upper{
-      height: 80px;
+      height: 75px;
       max-width: 940px;
       margin: 0 auto;
         &__left{
@@ -113,6 +113,7 @@
           float: right;
           a{
             font-size: 25px;
+            color: #CCCCCC;
           }
         }
       }
