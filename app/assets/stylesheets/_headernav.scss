@@ -4,9 +4,11 @@
   max-width: 940px;
   margin: 0 auto;
 
+
   &__menulist{
     border-bottom: solid 1px #F5F5F5;
     height: 45px;
+    overflow: auto;
     li.menu{
       height: 45px;
       display: inline-block;
@@ -38,6 +40,7 @@
   }
   &__category{
     height: 48px;
+    overflow: auto;
     li.category{
       height: 48px;
       line-height: 48px;
