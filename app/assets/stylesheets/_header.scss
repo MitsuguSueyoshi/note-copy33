@@ -1,7 +1,7 @@
 .header{
   width: 100%;
-  height: 180px;
-  border-bottom: solid 1px #DDDDDD;
+  // height: 180px;
+
   .header__container{
     max-width: 940px;
     margin: 0 auto;
@@ -63,8 +63,6 @@
 
 
               &__box{
-
-                // max-width: 200px;
                 ::-webkit-input-placeholder {
                   color: #ccc;
                   font-size: 13px;
@@ -99,63 +97,6 @@
             }
         }
     }
-    .header__container__nav{
-      height: 90px;
-      margin-top: 10px;
-      max-width: 940px;
-
-      &__menulist{
-        border-bottom: solid 1px #F5F5F5;
-        height: 45px;
-        li.menu{
-          height: 45px;
-          display: inline-block;
-          line-height:45px;
-
-          a{
-            padding: 15px;
-            text-decoration: none;
-            color: gray;
-            font-weight: bold;
-            font-size: 15px;
-          }
-          a:hover{
-            color: black;
-            border-bottom: solid 1.5px black;
-          }
-        }
-        li#help{
-          float: right;
-          a{
-            padding: 10px 0;
-            font-size: 25px;
-            color: #CCCCCC;
-          }
-          a:hover{
-            color: black;
-          }
-        }
-      }
-      &__category{
-        height: 48px;
-        li.category{
-          height: 48px;
-          line-height: 48px;
-          display: inline-block;
-          margin: 0 12px;
-
-          a{
-            text-decoration: none;
-            color: gray;
-            font-size: 14px;
-          }
-          a:hover{
-            color: black;
-          }
-        }
-      }
-    }
-
    }
   }
 
