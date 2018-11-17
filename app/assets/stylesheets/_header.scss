@@ -58,7 +58,10 @@
               &__box{
 
                 // max-width: 200px;
-
+                ::-webkit-input-placeholder {
+                  color: #ccc;
+                  font-size: 13px;
+                }
                 input{
                   height:35px;
                   width:220px;
@@ -82,7 +85,7 @@
                   appearance:none;
 
                     .search-icon{
-                      color: gray;
+                      color: #CCCCCC;
                     }
                 }
               }
