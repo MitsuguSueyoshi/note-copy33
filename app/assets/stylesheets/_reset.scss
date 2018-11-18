@@ -124,4 +124,13 @@ legend {
     color:#000;
 }
 /* YUI CSS Detection Stamp */
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
 #yui3-css-stamp.cssreset { display: none; }
