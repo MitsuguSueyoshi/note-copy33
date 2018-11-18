@@ -5,15 +5,25 @@
         = link_to root_path do
           = image_tag("note_logo.jpg" ,class: "note_logo")
       .header__container__upper__right
-        .log-in
-          = link_to new_user_session_path do
-            %p ログイン
-        .sign-up
-          = link_to new_user_registration_path do
-            %p 新規登録
-        %i{class: "fa fa-search fa-2x search-icon1"}
-        .search-form
-          %form.search-form__box
-            %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
-            %button{type: "submit", class: "search-form__box__button"}
-              %i{class: "fa fa-search fa-2x search-icon"}
+        -if user_signed_in?
+          .search-form
+            %form.search-form__box
+              %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
+              %button{type: "submit", class: "search-form__box__button"}
+                %i{class: "fa fa-search fa-2x search-icon"}
+          .log-out
+            = link_to destroy_user_session_path ,method: :delete do
+              %p ログアウト
+        -else
+          .log-in
+            = link_to new_user_session_path do
+              %p ログイン
+          .sign-up
+            = link_to new_user_registration_path do
+              %p 新規登録
+          %i{class: "fa fa-search fa-2x search-icon1"}
+          .search-form
+            %form.search-form__box
+              %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
+              %button{type: "submit", class: "search-form__box__button"}
+                %i{class: "fa fa-search fa-2x search-icon"}
