@@ -1,0 +1,26 @@
+%h2 noteに登録する
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .field
+    = f.label :ニックネーム（登録後に変更可能）
+    %br/
+    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+  .field
+    = f.label :メールアドレス
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :パスワード
+    /
+      <haml_silent> if @minimum_password_length </haml_silent><haml_block>
+      <em>(<haml_loud> @minimum_password_length </haml_loud> characters minimum)</em>
+      </haml_block>
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :パスワード確認
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "登録する（無料）"
+= render "devise/shared/links"
