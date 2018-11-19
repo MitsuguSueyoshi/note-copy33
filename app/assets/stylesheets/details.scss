@@ -187,8 +187,6 @@
     padding-bottom: 60px;
     margin-top: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid;
-    border-color: #D3D3D3;
     &__image img{
       float: left;
       width: 70px;
@@ -206,82 +204,96 @@
       }
     }
   }
-  &__comments{
-    clear: both;
-    &__count{
-      font-size: 14px;
-      font-weight: bold;
-    }
-    &__comment{
-      margin-top: 20px;
-      margin-bottom: 50px;
-      position: relative;
-      &__profile{
-        margin-bottom: 10px;
-        &__image img{
-          float: left;
-          margin-right: 12px;
-          width: 35px;
-          height: 35px;
-        }
-        &__name{
-        }
-        &__date{
-          font-size: 11px;
-        }
-      }
-      &__option{
-        position: absolute;
-        top: 5px;
-        right: 70px;
-        color: gray;
-        font-size: 22px;
-      }
-      &__likes{
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        color: gray;
-        font-size: 22px;
-      }
-      &__body{
-        position: absolute;
-        left: 47px;
-      }
-    }
-    &__form{
-      border-top: 1px solid;
-      border-color: #D3D3D3;
-      padding: 10px;
-      &__icon img{
-        margin-top: 10px;
+}
+.comments{
+  clear: both;
+  border-top: 1px solid;
+  border-color: #D3D3D3;
+  padding: 15px;
+  margin: 0 auto;
+  &__count{
+    font-size: 14px;
+    font-weight: bold;
+    width: 600px;
+    margin: 0 auto;
+  }
+  &__comment{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    &__profile{
+      margin-bottom: 10px;
+      &__image img{
         float: left;
+        margin-right: 12px;
         width: 35px;
         height: 35px;
       }
-      &__content{
-        margin-top: 10px;
-        &__text{
-          float: left;
-          margin-left: 30px;
-          height: 39px;
-          width: 500px;
-        }
-        &__submit{
-          float: right;
-          margin-top: 20px;
-          margin-right: 14px;
-          width: 90px;
-          height: 30px;
-          background-color: #2cb696;
-          border-color: #2cb696;
-          color: #fff;
-          font-weight: bold;
-        }
+      &__name{
+      }
+      &__date{
+        font-size: 11px;
+      }
+    }
+    &__option{
+      position: absolute;
+      top: 5px;
+      right: 70px;
+      color: gray;
+      font-size: 22px;
+    }
+    &__likes{
+      position: absolute;
+      top: 5px;
+      right: 20px;
+      color: gray;
+      font-size: 22px;
+    }
+    &__body{
+      position: absolute;
+      left: 47px;
+    }
+  }
+  &__form{
+    width: 600px;
+    margin: 0 auto;
+    border-top: 1px solid;
+    border-color: #D3D3D3;
+    padding: 10px;
+    &__icon img{
+      margin-top: 10px;
+      float: left;
+      width: 35px;
+      height: 35px;
+    }
+    &__content{
+      margin-top: 10px;
+      &__text{
+        float: left;
+        margin-left: 30px;
+        height: 39px;
+        width: 500px;
+      }
+      &__submit{
+        float: right;
+        margin-top: 20px;
+        margin-right: 14px;
+        width: 90px;
+        height: 30px;
+        background-color: #2cb696;
+        border-color: #2cb696;
+        color: #fff;
+        font-weight: bold;
       }
     }
   }
 }
 .footer{
-  height: 200px;
+  height: 160px;
+  position: relative;
+  border-top: 1px solid;
+  border-color: #D3D3D3;
+  margin-top: 90px;
 }
