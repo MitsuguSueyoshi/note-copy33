@@ -8,7 +8,7 @@
       %img{alt: "自分の", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
     .note__user__name
       = link_to class: "link" do
-        末吉貢
+        自分の名前
     .note__user__date
       2018/11/11 11:11 フォローする
   .note__text
@@ -49,7 +49,7 @@
             78
         .note__recommends__component__name
           = link_to do
-            末吉貢
+            自分の名前
         .note__recommends__component__image
           %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
       %li.note__recommends__component
@@ -61,7 +61,7 @@
             4
         .note__recommends__component__name
           = link_to do
-            末吉貢
+            自分の名前
         .note__recommends__component__image
           %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07XLAwFc9J4l80nJOXncNQwyBcaNCsJvNSGIY7eiHuzR0nrz-hg"}
       %li.note__recommends__component
@@ -91,36 +91,64 @@
     .note__profile__content
       .note__profile__content__name
         = link_to do
-          末吉貢
+          自分の名前
       .note__profile__content__self-introduction
         よろしくお願いします。
       .note__profile__content__follow
-  .note__comments
-    .note__comments__count
-      コメント1件
-    .note__comments__comment
-      .note__comments__comment__profile
-        .note__comments__comment__profile__image
-          %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-waddledee.png"}
-        .note__comments__comment__profile__name
-          = link_to do
-            サスケ
-        .note__comments__comment__profile__date
-          2018/11/11 11:11
-      .note__comments__comment__option
-        %i.fa.fa-ellipsis-h
-      .note__comments__comment__likes
-        %i.fa.fa-heart-o
-      .note__comments__comment__body
-        面白いです！
-    .note__comments__form
-      .note__comments__form__icon
-        %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
-      %form.note__comments__form__content
-        %textarea.note__comments__form__content__text
-        %input{type: "submit", class: "note__comments__form__content__submit"}
+.comments
+  .comments__count
+    コメント1件
+  .comments__comment
+    .comments__comment__profile
+      .comments__comment__profile__image
+        %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-waddledee.png"}
+      .comments__comment__profile__name
+        = link_to do
+          他のユーザー名
+      .comments__comment__profile__date
+        2018/11/11 11:11
+    .comments__comment__option
+      %i.fa.fa-ellipsis-h
+    .comments__comment__likes
+      %i.fa.fa-heart-o
+    .comments__comment__body
+      面白いです！
+  .comments__form
+    .comments__form__icon
+      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+    %form.comments__form__content
+      %textarea.comments__form__content__text
+      %input{type: "submit", class: "comments__form__content__submit"}
 .footer
-
+  %ul.footer__list
+    %li.footer__list__item
+      noteプレミアム
+    %li.footer__list__item
+      クリエイターの方へ
+    %li.footer__list__item
+      よくある質問
+    %li.footer__list__item
+      使い方
+    %li.footer__list__item
+      ノート
+    %li.footer__list__item
+      マガジン
+    %li.footer__list__item
+      ユーザー
+    %li.footer__list__item
+      ハッシュタグ
+    %li.footer__list__item
+      プライバシー
+    %li.footer__list__item
+      ご利用規約
+    %li.footer__list__item
+      特商法表記
+    %li.footer__list__item
+      クリエイターへのお問い合わせ
+    %li.footer__list__item
+      noteカイゼン目安箱
+    %li.footer__list__item
+      クリエイターの推薦
 / .recommends-notes
 /   .recommends-notes__title
 /     こちらもおすすめ
