@@ -2,15 +2,14 @@
   border-top: solid 1px #F5F5F5;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
 
-  .container__inner {
-
+  &__inner {
     width: 940px;
     padding: 24px 0;
     margin: 0 auto;
 
     .main__header {
       margin-bottom: 16px;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid $border-color;
 
       &__title {
         font-size: 20px;
@@ -23,7 +22,7 @@
 
     .container__body {
 
-      .container__body__cards{
+      &__cards {
         width: 610px;
         margin-top: 16px;
         float: left;
@@ -31,7 +30,7 @@
         .body__card {
           padding-bottom: 32px;
           margin-bottom: 32px;
-          border-bottom: 1px solid rgba(0,0,0,0.05);
+          border-bottom: 1px solid $border-color;
 
           .note {
 
@@ -44,7 +43,7 @@
               width: 104px;
               height: 104px;
               margin: 0 0 0 16px;
-              border: 1px solid rgba(0,0,0,0.05);
+              border: 1px solid $border-color;
               border-radius: 4px;
               float: right;
               position: relative;
@@ -114,7 +113,7 @@
                   top: 50%;
                   transform: translate(0, -50%);
 
-                  .avatar__icon__image img {
+                  &__image img {
                     width: 36px;
                     height: 36px;
                     border-radius: 36px;
@@ -128,14 +127,13 @@
                   overflow: hidden;
                 }
 
-                .avatar__date{
+                .avatar__date {
                   font-size: 12px;
                   display: block;
                 }
               }
 
               .note__foot__like {
-
                  display: inline-block;
 
                 .icon__box {
@@ -171,7 +169,7 @@
           .magazine__box {
             margin-bottom: 16px;
 
-            .magazine__box__upper {
+            &__upper {
               width: 100%;
               padding-bottom: 60px;
               border: 1px solid #e8eceb;
@@ -192,7 +190,7 @@
                   transform: translate(-50%, 0);
 
                   p {
-                    color: #fff;
+                    color: $whitecolor;
                     font-size: 16px;
                     font-weight: bold;
                     -webkit-font-smoothing: antialiased;
@@ -231,7 +229,7 @@
                 width: calc(100% - 30px);
                 margin: 0 15px;
                 padding: 15px 0;
-                border-top: 1px solid rgba(0,0,0,0.05);
+                border-top: 1px solid $border-color;
                 position: absolute;
                 bottom: 0;
 
@@ -239,8 +237,10 @@
                   display: inline-block;
                   float: left;
                   box-sizing: border-box !important;
+
                   ul {
                     display: flex;
+
                     li {
                       margin-right: -8px;
 
@@ -272,10 +272,11 @@
                         width: 30px;
                         height: 30px;
                         border-radius: 30px;
-                        border: 2px solid #fff;
+                        border: 2px solid $whitecolor;
                         box-sizing: border-box !important;
                       }
                     }
+
                     .magazine__avatars__count {
                       font-size: 12px;
                       color: $graycolor;
@@ -295,13 +296,13 @@
                   text-align: right;
                   float: right;
 
-                  .magazine__button__follow  {
+                  &__follow  {
                     display: inline-block;
                     color: #249f80;
                     font-size: 11px;
                     padding: 0.7em;
                     line-height: 1;
-                    border: 1px solid  #2cb696;
+                    border: 1px solid  $greencolor;
                     border-radius: 4px;
                   }
                 }
