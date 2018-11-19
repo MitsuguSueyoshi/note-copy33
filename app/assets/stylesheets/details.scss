@@ -1,0 +1,287 @@
+.note{
+  margin: 0 auto;
+  width: 600px;
+  &__image img{
+    width: 100%;
+    max-width: 820px;
+    margin: 0;
+  }
+  &__title{
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    margin-top: 72px;
+    margin-bottom: 18px;
+    min-height: 1em;
+  }
+  &__user{
+    &__icon img{
+      float: left;
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      margin-right: 10px;
+    }
+    &__name{
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 7px;
+      color: #222222
+    }
+    &__date{
+      color: #898D8C;
+      font-size: 12px;
+    }
+  }
+  &__text{
+    font-size:18px;
+    line-height: 36px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+  &__support{
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #f7f9f9;
+    height: 250px;
+    width: 600px;
+    &__title{
+      margin-bottom: 16px;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__icon img{
+      float: left;
+      width: 40px;
+      height: 40px;
+    }
+    &__content{
+      float: left;
+      margin: 16px 16px 8px;
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      background-color: #fff;
+      width: 448px;
+      &__text{
+        font-size: 14px;
+        margin-bottom: 16px;
+        line-height: 1.7;
+      }
+      &__button{
+        background-color: #2cb696;
+        border-color: #2cb696;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 50px;
+        margin-bottom: 20px;
+        padding: 0.8em 1.6em;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+  &__likes{
+    float: left;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 60px;
+    color: gray;
+  }
+  &__add{
+    float: left;
+    font-size: 20px;
+    margin-right: 60px;
+    color: gray;
+  }
+  &__report{
+    float: left;
+    font-size: 20px;
+    color: gray;
+  }
+  &__facebook{
+    float: right;
+    font-size: 23px;
+    margin-right: 10px;
+    margin-left: 30px;
+    color: #4267b2;
+  }
+  &__tweet{
+    float: right;
+    font-size: 23px;
+    margin-right: 10px;
+    margin-left: 30px;
+    color: #1b95e0;
+  }
+  &__bookmark{
+    float: right;
+    font-size: 23px;
+    margin-right: 10px;
+    margin-left: 30px;
+    color: #00a4de;
+  }
+  &__recommends{
+    clear: both;
+    margin-top: 100px;
+    &__title{
+      border-bottom: 1px solid;
+      border-color: #D3D3D3;
+      font-size: 13px;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    &__component{
+      height: 70px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid;
+      border-color: #D3D3D3;
+      position: relative;
+      &__title{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__likes{
+        float: left;
+        color: red;
+      }
+      &__name{
+        float: left;
+        margin-left: 20px;
+      }
+      &__image img{
+        position: absolute;
+        right: 20px;
+        top: 2px;
+        height: 55px;
+        width: 55px;
+        border: #D3D3D3;
+      }
+    }
+  }
+  &__index{
+    clear: both;
+    padding-bottom: 40px;
+    border-bottom: 1px solid;
+    border-color: #D3D3D3;
+    &__before{
+      float: left;
+      width: 300px;
+      max-width: 300px;
+      font-size: 16px;
+      border-right: 1px solid;
+      border-color: #D3D3D3;
+    }
+    &__after{
+      float: right;
+      font-size: 16px;
+    }
+  }
+  &__profile{
+    clear: both;
+    width: 100%;
+    padding-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    border-color: #D3D3D3;
+    &__image img{
+      float: left;
+      width: 70px;
+      height: 70px;
+    }
+    &__content{
+      margin-left: 100px;
+      &__name{
+      }
+      &__self-introduction{
+        font-size: 11px;
+        max-width: 200px;
+      }
+      &__follow{
+      }
+    }
+  }
+  &__comments{
+    clear: both;
+    &__count{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &__comment{
+      margin-top: 20px;
+      margin-bottom: 50px;
+      position: relative;
+      &__profile{
+        margin-bottom: 10px;
+        &__image img{
+          float: left;
+          margin-right: 12px;
+          width: 35px;
+          height: 35px;
+        }
+        &__name{
+        }
+        &__date{
+          font-size: 11px;
+        }
+      }
+      &__option{
+        position: absolute;
+        top: 5px;
+        right: 70px;
+        color: gray;
+        font-size: 22px;
+      }
+      &__likes{
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        color: gray;
+        font-size: 22px;
+      }
+      &__body{
+        position: absolute;
+        left: 47px;
+      }
+    }
+    &__form{
+      border-top: 1px solid;
+      border-color: #D3D3D3;
+      padding: 10px;
+      &__icon img{
+        margin-top: 10px;
+        float: left;
+        width: 35px;
+        height: 35px;
+      }
+      &__content{
+        margin-top: 10px;
+        &__text{
+          float: left;
+          margin-left: 30px;
+          height: 39px;
+          width: 500px;
+        }
+        &__submit{
+          float: right;
+          margin-top: 20px;
+          margin-right: 14px;
+          width: 90px;
+          height: 30px;
+          background-color: #2cb696;
+          border-color: #2cb696;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+.footer{
+  height: 200px;
+}

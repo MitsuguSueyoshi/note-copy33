@@ -5,95 +5,138 @@
     富士山に行った話
   .note__user
     .note__user__icon
-      %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
-    = link_to class: "note__user__name" do
-      末吉貢
+      %img{alt: "自分の", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+    .note__user__name
+      = link_to class: "link" do
+        末吉貢
     .note__user__date
-      2018/11/11 11:11
+      2018/11/11 11:11 フォローする
   .note__text
-    富士山が綺麗です
+    富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。
   .note__support
     .note__support__title
       この記事が気に入ったら、サポートをしてみませんか？ 気軽にクリエイターを支援できます。
     .note__support__icon
-      %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
     .note__support__content
       .note__support__content__text
         サポートしてください！
-      .note__support__content__button.btn-large
-        %i.fa.fa-gift サポートする
+      .note__support__content__button
+        %i.fa.fa-gift サポートをする
   .note__likes
-    %i.fa.fa-heart
+    %i.fa.fa-heart-o
+      2
   .note__add
     %i.fa.fa-plus
   .note__report
     %i.fa.fa-ellipsis-h
-  .note__facebook
-    %i.fa.fa-facebook-square
-  .note__tweet
-    %i.fa.fa-twitter-square
   .note__bookmark
     %i.fa.fa-bold
+  .note__tweet
+    %i.fa.fa-twitter-square
+  .note__facebook
+    %i.fa.fa-facebook-square
   .note__recommends
-    .note__recommends__title
+    %h2.note__recommends__title
       このクリエイターのおすすめノート
     %ul
       %li.note__recommends__component
         .note__recommends__component__title
-          ノートタイトル⓵
+          = link_to do
+            ノートタイトル1
         .note__recommends__component__likes
-          %i.fa.fa-heart
+          %i.fa.fa-heart-o
+            78
         .note__recommends__component__name
-          末吉貢
+          = link_to do
+            末吉貢
         .note__recommends__component__image
+          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
+      %li.note__recommends__component
+        .note__recommends__component__title
+          = link_to do
+            ノートタイトル2
+        .note__recommends__component__likes
+          %i.fa.fa-heart-o
+            4
+        .note__recommends__component__name
+          = link_to do
+            末吉貢
+        .note__recommends__component__image
+          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07XLAwFc9J4l80nJOXncNQwyBcaNCsJvNSGIY7eiHuzR0nrz-hg"}
+      %li.note__recommends__component
+        .note__recommends__component__title
+          = link_to do
+            ノートタイトル3
+        .note__recommends__component__likes
+          %i.fa.fa-heart-o
+            1
+        .note__recommends__component__name
+          = link_to do
+            末吉貢
+        .note__recommends__component__image
+          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
   .note__index
     .note__index__before
+      <
+      = link_to do
+        前のノート
     .note__index__after
+      = link_to do
+        次のノート
+      >
   .note__profile
     .note__profile__image
+      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
     .note__profile__content
       .note__profile__content__name
-        末吉貢
+        = link_to do
+          末吉貢
       .note__profile__content__self-introduction
-        よろしくお願いします
+        よろしくお願いします。
       .note__profile__content__follow
   .note__comments
     .note__comments__count
-      コメント3件
+      コメント1件
     .note__comments__comment
       .note__comments__comment__profile
         .note__comments__comment__profile__image
           %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-waddledee.png"}
         .note__comments__comment__profile__name
-          コメントした人の名前
+          = link_to do
+            サスケ
         .note__comments__comment__profile__date
           2018/11/11 11:11
       .note__comments__comment__option
         %i.fa.fa-ellipsis-h
-      .note__comments__comment__like
-        %i.fa.fa-heart
+      .note__comments__comment__likes
+        %i.fa.fa-heart-o
       .note__comments__comment__body
         面白いです！
     .note__comments__form
       .note__comments__form__icon
-        %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
-      .note__comments__form__text
-.recommends-notes
-  .recommends-notes__title
-    こちらもおすすめ
-  .recommends-notes__content
-    = link_to class: "recommends-notes__content__title" do
-      タイトル1
-    .recommends-notes__content__image
-      %img{alt: "イメージ", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Caribbean_sea_-_Morrocoy_National_Park_-_Playa_escondida.jpg/300px-Caribbean_sea_-_Morrocoy_National_Park_-_Playa_escondida.jpg"}
-    .recommends-notes__content__likes
-      %i.fa.fa-heart
-    .recommends-notes__content__comments
-      %i.fa.fa-comment-o
-    .recommends-notes__content__profile
-      .recommends-notes__content__profile__icon
-        %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-metaknight.png"}
-      .recommends-notes__content__profile__name
-        末吉サスケ
-      .recommends-notes__content__profile__report
-        %i.fa.fa-ellipsis-h
+        %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      %form.note__comments__form__content
+        %textarea.note__comments__form__content__text
+        %input{type: "submit", class: "note__comments__form__content__submit"}
+.footer
+
+/ .recommends-notes
+/   .recommends-notes__title
+/     こちらもおすすめ
+/   .recommends-notes__content
+/     = link_to class: "recommends-notes__content__title" do
+/       タイトル1
+/     .recommends-notes__content__image
+/       %img{alt: "イメージ", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Caribbean_sea_-_Morrocoy_National_Park_-_Playa_escondida.jpg/300px-Caribbean_sea_-_Morrocoy_National_Park_-_Playa_escondida.jpg"}
+/     .recommends-notes__content__likes
+/       %i.fa.fa-heart-o
+/     .recommends-notes__content__comments
+/       %i.fa.fa-comment-o
+/     .recommends-notes__content__profile
+/       .recommends-notes__content__profile__icon
+/         %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-metaknight.png"}
+/       .recommends-notes__content__profile__name
+/         末吉サスケ
+/       .recommends-notes__content__profile__report
+/         %i.fa.fa-ellipsis-h
