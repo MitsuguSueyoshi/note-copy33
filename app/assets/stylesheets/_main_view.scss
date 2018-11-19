@@ -48,7 +48,6 @@
               border-radius: 4px;
               float: right;
               position: relative;
-
             }
 
             &__title {
@@ -221,7 +220,6 @@
               .magazine__follower {
                 margin: 15px;
 
-
                 p {
                   color: $graycolor;
                   font-size: 12px;
@@ -245,7 +243,6 @@
                     display: flex;
                     li {
                       margin-right: -8px;
-
 
                       &:nth-of-type(1){
                         z-index: 6;
