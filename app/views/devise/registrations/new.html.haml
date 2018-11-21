@@ -1,30 +1,39 @@
 .header-logo
-  = link_to root_path do
-    =image_tag("note_log_font.jpg", class: "logo-font")
+  .header-logo__link
+    = link_to root_path do
+      =image_tag("note_log_font.jpg", class: "logo-font")
+.registration-container
+  %h5.registration-container__title noteに登録する
+  .registration-container__form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .field
+        = f.label :ニックネーム（登録後に変更可能）
+        %br/
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例：ノート君（任意）"
+      .field
+        = f.label :メールアドレス
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例：mail@note.mu"
+      .field
+        = f.label :パスワード
+        %br/
+        = f.password_field :password, autocomplete: "new-password", placeholder: "例：6文字以上の半角英数"
+      .field
+        = f.label :パスワード確認
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions#registration-btn
+        = f.submit "登録する（無料）", id: "submit-btn"
+  .registration-container__sns
+    %h3.registration-container___sns__title ソーシャルアカウントで登録
+    .twitter
+      = link_to "" do
+        %span.fa.fa-twitter
+        Twitter
+    .facebook
+      = link_to  "https://ja-jp.facebook.com/" do
+        %span.fa.fa-facebook-f
+        Facebook
 
-%h2 noteに登録する
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :ニックネーム（登録後に変更可能）
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :パスワード
-    /
-      <haml_silent> if @minimum_password_length </haml_silent><haml_block>
-      <em>(<haml_loud> @minimum_password_length </haml_loud> characters minimum)</em>
-      </haml_block>
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :パスワード確認
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "登録する（無料）"
-= render "devise/shared/links"
+  .shared-links
+    = render "devise/shared/links"
