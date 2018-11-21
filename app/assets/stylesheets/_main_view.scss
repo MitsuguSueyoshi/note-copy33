@@ -1,0 +1,323 @@
+.container {
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+
+  &__inner {
+    width: 940px;
+    padding: 24px 0;
+    margin: 0 auto;
+
+    .main__header {
+      margin-bottom: 16px;
+      border-bottom: 1px solid $border-color;
+
+      &__title {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        height: 30px;
+        padding: 24px 0;
+      }
+    }
+
+    .container__body {
+
+      &__cards {
+        width: 610px;
+        margin-top: 16px;
+        float: left;
+
+        .body__card {
+          padding-bottom: 32px;
+          margin-bottom: 32px;
+          border-bottom: 1px solid $border-color;
+
+          .note {
+
+            &__image img {
+              width: 100%;
+              margin-bottom: 24px;
+            }
+
+            &__image__eyecatch img {
+              width: 104px;
+              height: 104px;
+              margin: 0 0 0 16px;
+              border: 1px solid $border-color;
+              border-radius: 4px;
+              float: right;
+              position: relative;
+            }
+
+            &__title {
+              font-size: 26px;
+              font-weight: bold;
+              width: 100%;
+              margin-bottom: 16px;
+            }
+
+            &__text {
+              font-size: 14px;
+              width: 100%;
+              margin-bottom: 16px;
+            }
+
+            &__items {
+
+              .note__icon--like {
+                color: $like-color;
+              }
+
+               .note__icon--comment {
+                color: $graycolor;
+              }
+
+              .note__icon {
+                padding-left: 20px;
+                margin-right: 16px;
+                position: relative;
+                display: inline-block;
+
+                .icon__box {
+                  position: absolute;
+                  top: 3px;
+                  left: 0;
+
+                  .far i {
+                    font-size: 16px;
+                    vertical-align: top;
+                    width: 16px;
+                    height: 16px;
+                  }
+                }
+
+                .icon__count {
+                  font-size: 14px;
+                  line-height: 1.5;
+                }
+              }
+            }
+
+            &__foot {
+              padding: 24px 0 0;
+              position: relative;
+
+              &__avatar {
+                color: $graycolor;
+                padding-left: 48px;
+                position: relative;
+
+                .avatar__icon {
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translate(0, -50%);
+
+                  &__image img {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 36px;
+                  }
+                }
+
+                .avatar__name {
+                  font-size: 12px;
+                  line-height: 2;
+                  width: 180px;
+                  overflow: hidden;
+                }
+
+                .avatar__date {
+                  font-size: 12px;
+                  display: block;
+                }
+              }
+
+              .note__foot__like {
+                 display: inline-block;
+
+                .icon__box {
+                  color: #A8ABB1;
+                  padding: 4px;
+                  position: absolute;
+                  right: 0;
+                  top: 50%;
+                  transform: translate(0, -50%);
+
+                  .fa-heart--foot {
+                    font-size: 24px;
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    position: relative;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .container__body__sidebar {
+        width: 280px;
+        margin-top: 20px;
+        float: right;
+
+        .magazines__list {
+          padding-bottom: 40px;
+
+          .magazine__box {
+            margin-bottom: 16px;
+
+            &__upper {
+              width: 100%;
+              padding-bottom: 60px;
+              border: 1px solid #e8eceb;
+              border-radius: 3px;
+              position: relative;
+
+              .magazine__cover {
+                overflow: hidden;
+                border-radius: 3px 3px 0px 0px;
+                position: relative;
+
+                .magazine__title {
+                  bottom: 16px;
+                  position: absolute;
+                  left: 50%;
+                  width: calc(100% - 30px);
+                  -webkit-transform: translate(-50%, 0);
+                  transform: translate(-50%, 0);
+
+                  p {
+                    color: $whitecolor;
+                    font-size: 16px;
+                    font-weight: bold;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    letter-spacing: 0.3px;
+                    line-height: 1.4;
+                    text-shadow: 1px 1px 0px rgba(34,34,34,0.3);
+                  }
+                }
+
+                img {
+                  width: 100%;
+                }
+              }
+
+              .magazine__description {
+                margin: 15px;
+
+                p {
+                  font-size: 12px;
+                  line-height: 1.7;
+                }
+              }
+
+              .magazine__follower {
+                margin: 15px;
+
+                p {
+                  color: $graycolor;
+                  font-size: 12px;
+                }
+              }
+            }
+
+              .magazine__box__footer {
+                width: calc(100% - 30px);
+                margin: 0 15px;
+                padding: 15px 0;
+                border-top: 1px solid $border-color;
+                position: absolute;
+                bottom: 0;
+
+                .magazine__avatars {
+                  display: inline-block;
+                  float: left;
+                  box-sizing: border-box !important;
+
+                  ul {
+                    display: flex;
+
+                    li {
+                      margin-right: -8px;
+
+                      &:nth-of-type(1){
+                        z-index: 6;
+                      }
+
+                      &:nth-of-type(2){
+                        z-index: 5;
+                      }
+
+                      &:nth-of-type(3){
+                        z-index: 4;
+                      }
+
+                      &:nth-of-type(4){
+                        z-index: 3;
+                      }
+
+                      &:nth-of-type(5){
+                        z-index: 2;
+                      }
+
+                      &:nth-of-type(6){
+                        z-index: 1;
+                      }
+
+                      img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 30px;
+                        border: 2px solid $whitecolor;
+                        box-sizing: border-box !important;
+                      }
+                    }
+
+                    .magazine__avatars__count {
+                      font-size: 12px;
+                      color: $graycolor;
+                      background-color: #f7f9f9;
+                      height: 30px;
+                      padding: 0 8px;
+                      border-radius: 30px;
+                      text-align: center;
+                      line-height: 30px;
+                      box-sizing: border-box !important;
+                    }
+                  }
+                }
+
+                .magazine__button {
+                  height: 28px;
+                  text-align: right;
+                  float: right;
+
+                  &__follow  {
+                    display: inline-block;
+                    color: #249f80;
+                    font-size: 11px;
+                    padding: 0.7em;
+                    line-height: 1;
+                    border: 1px solid  $greencolor;
+                    border-radius: 4px;
+                  }
+                }
+              }
+          }
+          .magazines__buttton {
+            font-size: 12px;
+            width: 154px;
+            padding: 10px 16px;
+            border: 1px solid #e6e6e6;
+            text-align: center;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
