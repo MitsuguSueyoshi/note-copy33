@@ -36,6 +36,7 @@
               border: solid 1px $greencolor;
               border-radius: 5px;
               background-color: $greencolor;
+              vertical-align: center;
               // a{
               //   text-decoration: none;
                 p{
@@ -88,6 +89,52 @@
                       color: #CCCCCC;
                     }
                 }
+              }
+            }
+
+            .notification {
+              margin-left: 16px;
+              display: inline-block;
+
+              .fa-bell {
+                font-size: 22px;
+                color: #CCCCCC;
+                width: 24px;
+                height: 24px;
+              }
+            }
+
+            .my-icon {
+              width: 32px;
+              height: 32px;
+              margin-left: 16px;
+              display: inline-block;
+
+               &__image {
+                width: 100%;
+                border-radius: 32px;
+               }
+            }
+
+            .post-button {
+              color: $whitecolor;
+              background-color: $greencolor;
+              height: 32px;
+              margin-left: 16px;
+              padding: 0 16px;
+              line-height: 32px;
+              border-radius: 4px;
+              display: inline-block;
+
+              .fa--edit {
+                font-size: 16px;
+                width: 16px;
+                height: 16px;
+                margin-right: 4px;
+              }
+
+              span {
+                font-size: 12px;
               }
             }
         }
