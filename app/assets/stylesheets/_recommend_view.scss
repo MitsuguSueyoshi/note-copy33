@@ -3,12 +3,12 @@
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
   clear: both;
 
-  &__inner {
+  &--recommend {
     width: 940px;
     padding: 24px 0;
     margin: 0 auto;
 
-    .main__header {
+    .recommend__header {
       margin-bottom: 16px;
       border-bottom: 1px solid $border-color;
 
@@ -21,7 +21,7 @@
       }
     }
 
-    .container__body {
+    .recommend__body {
 
       &__cards {
         width: 610px;
