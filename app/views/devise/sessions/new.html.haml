@@ -1,0 +1,26 @@
+.header-logo
+  .header-logo__link
+    = link_to root_path do
+      =image_tag("note_log_font.jpg", class: "logo-font")
+.login-container
+  %h5 ログイン
+  .facebook
+    = link_to  "https://ja-jp.facebook.com/" do
+      %span.fab.fa-facebook-f
+      Facebookでログイン
+  .twitter
+    = link_to "" do
+      %span.fab.fa-twitter
+      Twitterでログイン
+
+  .login-container__form
+    %h3 メールアドレスでログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+      .field
+        = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+      .actions
+        = f.submit "ログイン"
+    .shared-links
+      = render "devise/shared/links"
