@@ -40,5 +40,52 @@
 }
 
 .new__form {
+  margin: 0 auto;
+  width: 75%;
+  outline: 0;
 
+  ::-webkit-input-placeholder {
+    color: #BDBDBD;
+  }
+
+  input {
+    border: none;
+  }
+
+  ::-webkit-input-placeholder {
+      color: #BDBDBD;
+  }
+
+  .note-title__box {
+    font-size: 30px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 60px;
+    display: block;
+
+
+  }
+
+  .note-text__box {
+    font-size: 16px;
+    height: 30px;
+    margin-top: 30px;
+    display: block;
+  }
+
+  .note-category__box {
+    margin-top: 30px;
+    display: block;
+  }
+
+  .submit {
+    margin-top: 30px;
+    color: $whitecolor;
+    background-color: $greencolor;
+    height: 32px;
+    padding: 0 16px;
+    line-height: 32px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 }
