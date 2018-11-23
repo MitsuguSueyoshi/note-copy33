@@ -18,7 +18,6 @@
   }
 
   ul {
-    float: right;
     position: absolute;
     top: 50%;
     right: 2%;
@@ -34,6 +33,13 @@
         border: solid 1px $border-color;
         border-radius: 4px;
       }
+
+      .submit {
+        font-size: 12px;
+        padding: 7px 16px;
+        border: solid 1px $border-color;
+        border-radius: 4px;
+      }
     }
   }
 
@@ -41,7 +47,7 @@
 
 .new__form {
   margin: 0 auto;
-  width: 75%;
+  width: 60%;
   outline: 0;
 
   ::-webkit-input-placeholder {
@@ -50,6 +56,7 @@
 
   input {
     border: none;
+    outline: 0;
   }
 
   ::-webkit-input-placeholder {
