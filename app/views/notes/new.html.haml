@@ -8,4 +8,9 @@
       %li
         = link_to "note投稿" ""
   %div.new__form
+    = form_for @note do |f|
+      = f.text_field :title, class: 'note-title__box', placeholder: 'ノートタイトル'
+      = f.text_field :text, class: 'note-text__box', placeholder: 'ノート本文'
+      = f.submit 'Send', class: 'submit'
+
 

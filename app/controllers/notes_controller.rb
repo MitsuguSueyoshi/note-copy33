@@ -9,6 +9,6 @@ class NotesController < ApplicationController
   end
 
   def new
-
+    @note = Note.new
   end
 end
