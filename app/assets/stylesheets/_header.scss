@@ -22,7 +22,20 @@
           list-style: none;
           float: left;
 
-          .log-in{
+          .log-in  {
+            float: left;
+            padding: 6px 14px;
+            // a{
+            //   text-decoration: none;
+            p{
+              font-size: 12px;
+              font-weight: bold;
+              color: gray;
+            }
+            // }
+          }
+
+          .log-out  {
             float: left;
             padding: 6px 14px;
             // a{
