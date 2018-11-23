@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def index
-
+    @notes = Note.all.includes(:user)
   end
 
   def show
