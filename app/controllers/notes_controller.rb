@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new]
   def index
     @notes = Note.all.includes(:user).order("created_at DESC")
   end
@@ -9,12 +9,8 @@ class NotesController < ApplicationController
   end
 
   def new
-    if user_signed_in?
       @note = Note.new
       @note.images.new
-    else
-      redirect_to new_current_user_session_path
-    end
   end
 
   def create
