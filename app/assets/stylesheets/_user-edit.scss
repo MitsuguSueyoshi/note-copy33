@@ -56,10 +56,64 @@
           }
         }
       }
+      &__sns{
+        width: 350px;
+        border-bottom: solid 1px #CCCCCC;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        h4{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        ul{
+          margin:8px 0px;
+          li{
+            font-size: 12px;
+            line-height: 25px;
+          }
+        }
+      }
+      &__mail-configuration{
+        width: 350px;
+        border-bottom: solid 1px #CCCCCC;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        h4{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        ul{
+          margin:8px 0px;
+          li{
+            font-size: 12px;
+            line-height: 25px;
+          }
+        }
+      }
+      &__user-configuration{
+        width: 350px;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        h4{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        ul{
+          margin:8px 0px;
+          li{
+            font-size: 12px;
+            line-height: 25px;
+          }
+        }
+      }
     }
     .container-hide{
       margin-top: 15px;
       border: solid 1px #CCCCCC;
+      position: relative;
       display: none;
       form.edit_user{
         width: 550px;
@@ -99,17 +153,16 @@
             float: right;
             border-radius: 5px;
           }
-          button{
-            width: 100px;
-            height: 30px;
-            border-radius: 5px;
-            float: left;
-          }
         }
-
-
       }
-
+      button{
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        position: absolute;
+        left:95px;
+        bottom: 15px;
+      }
     }
   }
 }
