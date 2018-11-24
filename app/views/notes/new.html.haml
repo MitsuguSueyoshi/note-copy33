@@ -9,8 +9,8 @@
         %li
           = f.submit 'note投稿', class: 'submit'
     %div.new__form
-      = f.text_field :title, class: 'note-title__box', placeholder: 'ノートタイトル', autocomplete: "off"
-      = f.text_field :text, class: 'note-text__box', placeholder: 'ノート本文', autocomplete: "off"
+      = f.text_area :title, id: 'note-title__box', placeholder: 'ノートタイトル', autocomplete: "off"
+      = f.text_area :text, class: 'note-text__box', placeholder: 'ノート本文', autocomplete: "off"
       = f.select :category, Note.categories.keys, {prompt: '選択してください'}, class: 'note-category__box'
 
 
