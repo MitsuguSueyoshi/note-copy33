@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @notes = Note.all.includes(:user).order("created_at DESC")
