@@ -1,0 +1,64 @@
+=render "shared/header"
+
+.account
+  .account-setting__container
+    .account-setting__container__nav
+      %h1 アカウント設定
+      .account-setting__container__nav__menu
+        = link_to "アカウント" ""
+        = link_to "リアクション" ""
+        = link_to "購入履歴"
+        = link_to "カード情報" ""
+        = link_to "お支払先" ""
+
+
+    .edit-container
+      .edit-container__userinfo
+        .edit-container__userinfo__select
+          .edit-container__userinfo__select__headline
+            %p.info-kind ニックネーム
+            %span.link-green
+              = button_tag "変更",class: "edit-nickname"
+          %p.current-nickname
+            =  current_user.nickname
+        .edit-container__userinfo__select
+          .edit-container__userinfo__select__headline
+            %p.info-kind メールアドレス
+            %span.link-green
+              = button_tag "変更",class: "edit-email"
+          %p.current-email
+            = current_user.email
+        .edit-container__userinfo__select
+          .edit-container__userinfo__select__headline
+            %p.info-kind パスワード
+            %span.link-green
+              = button_tag "変更",class: "edit-password"
+          %p *******
+
+    .container-hide
+      = form_for(current_user) do |f|
+        .field.nickname-field
+          = f.label :ニックネーム
+          %br/
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+
+        .field.email-field
+          = f.label :新しいメールアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+
+        .field.password-field
+          = f.label :現在のパスワード
+          %br/
+          = f.password_field :current_password, autocomplete: "current-password"
+          %br/
+          = f.label :新しいパスワード
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+          %br/
+          = f.label :新しいパスワードの確認
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+        .actions
+          = button_tag "キャンセル", class: "cancel-button"
+          = f.submit "保存"
