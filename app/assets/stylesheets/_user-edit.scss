@@ -47,20 +47,25 @@
             float:left;
           }
           span.link-green{
+            button{
+            background-color: transparent;
+            border: none;
             font-size: 13px;
             color: $greencolor;
+            }
           }
         }
       }
     }
     .container-hide{
       margin-top: 15px;
+      border: solid 1px #CCCCCC;
+      display: none;
       form.edit_user{
         width: 550px;
         .field{
           box-sizing: border-box;
           width: 550px;
-          border: solid 1px #CCCCCC;
           padding: 30px 100px;
           label{
             font-size: 13px;
@@ -76,32 +81,33 @@
             margin: 5px 0px;
             padding-left: 10px;
           }
-          .actions{
-            width: 360px;
-            height: 30px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            input{
-              width: 100px;
-              height: 30px;
-              padding-left: 0;
-              background-color: $greencolor;
-              border-style: none;
-              color: white;
-              float: right;
-            }
-            button{
-              width: 100px;
-              height: 30px;
-              border-radius: 5px;
-              float: left;
-              margin: 5px 0px;
-
-            }
-
-          }
-
         }
+        .actions{
+          width: 360px;
+          height: 30px;
+          margin: 0 auto;
+          padding-bottom: 15px;
+
+          input{
+            font-size: 14px;
+            width: 100px;
+            height: 30px;
+            padding-left: 0;
+            background-color: $greencolor;
+            border-style: none;
+            color: white;
+            float: right;
+            border-radius: 5px;
+          }
+          button{
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            float: left;
+          }
+        }
+
+
       }
 
     }
