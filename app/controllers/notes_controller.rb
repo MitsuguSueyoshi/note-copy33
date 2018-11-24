@@ -9,14 +9,22 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.new
-    @note.images.build
+    if user_signed_in?
+      @note = Note.new
+      @note.images.new
+    else
+      redirect_to new_current_user_session_path
+    end
   end
 
   def create
-    @note = current_user.notes.build(notes_params)
-    @note.save
-    redirect_to action: 'index'
+    @note = current_user.notes.new(notes_params)
+    if @note.save
+      redirect_to root_path
+    else
+      flash[:alert] = 'タイトル、本文、カテゴリは必ず入力して下さい'
+      redirect_to new_note_path
+    end
   end
 
   private
