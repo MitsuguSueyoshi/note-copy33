@@ -10,14 +10,15 @@
               %a{href: "", class: "name" }野比のび太
               %a{href: "", class: "date"} 2018/11/22 16:22
         %div.card__main
-          %div.card__main--image
-            - if note.images.present?
-              -note.images.each do |image|
-                = image_tag image.image
-          %h3.card__main--title
-            = note.title
-          %p.card__main--text
-            = note.text
+          =link_to note_path(note) do
+            %div.card__main--image
+              - if note.images.present?
+                -note.images.each do |image|
+                  = image_tag image.image
+            %h3.card__main--title
+              = note.title
+            %p.card__main--text
+              = note.text
         %div.card__foot
           %ul.icon
             %li.icon__box
