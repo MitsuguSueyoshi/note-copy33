@@ -10,15 +10,17 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
+    @note.images.build
   end
 
   def create
-    Note.create(notes_params)
+    @note = current_user.notes.build(notes_params)
+    @note.save
     redirect_to action: 'index'
   end
 
   private
   def notes_params
-    params.require(:note).permit(:title, :text, :category).merge(user_id: current_user.id)
+    params.require(:note).permit(:title, :text, :category, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 end
