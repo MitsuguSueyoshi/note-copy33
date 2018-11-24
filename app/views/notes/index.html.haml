@@ -1,3 +1,6 @@
 = render 'shared/header'
 = render 'shared/header-nav'
-= render 'recommend'
+-if user_signed_in?
+  = render 'home'
+-else
+  = render 'recommend'
