@@ -115,6 +115,10 @@
       border: solid 1px #CCCCCC;
       position: relative;
       display: none;
+      p{
+        font-size: 14px;
+        text-align: center;
+      }
       form.edit_user{
         width: 550px;
         .field{
