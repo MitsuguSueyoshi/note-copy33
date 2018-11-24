@@ -1,28 +1,59 @@
 .account{
   margin-top: 20px;
   padding-top: 20px;
-  border-top: solid 1px #CCCCCC;
-  .account-setting{
-    width: 500px;
-    height: 150px;
-    border: solid 1px #CCCCCC;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  .account-setting__container{
+    width: 550px;
     margin: 0 auto;
-    h1{
-      font-size: 25px;
-      text-align: center;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-    &__nav{
-      width: 410px;
-      margin: 0 auto;
-
-      a{
-        font-size: 14px;
-        font-weight: bold;
-        color: gray;
-        margin: 0 5px;
+    .account-setting__container__nav{
+      width: 550px;
+      height: 150px;
+      border: solid 1px #CCCCCC;
+      margin-bottom: 15px;
+      h1{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
       }
+      &__menu{
+        width: 410px;
+        margin: 0 auto;
+        a{
+          font-size: 14px;
+          font-weight: bold;
+          color: gray;
+          margin: 0 5px;
+        }
+      }
+    }
+    .edit-container{
+      width: 550px;
+      height: 800px;
+      border: solid 1px #CCCCCC;
+      &__userinfo{
+        width: 350px;
+        border-bottom: solid 1px #CCCCCC;
+        margin: 0 auto;
+        &__select{
+          margin: 25px 0px;
+          p{
+            font-size: 13px;
+          }
+          p.info-kind{
+            font-weight: bold;
+            width:110px;
+            float:left;
+          }
+          span.link-green{
+            font-size: 13px;
+            color: $greencolor;
+          }
+        }
+      }
+
+
     }
   }
 }
