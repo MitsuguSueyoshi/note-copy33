@@ -35,6 +35,32 @@
               = button_tag "変更",class: "edit-password"
           %p *******
 
+      .edit-container__sns
+        %h4 ソーシャル連携
+        %ul
+          %li Facebook
+          %li Twitter
+
+      .edit-container__mail-configuration
+        %h4 メール通知設定
+        %ul
+          %li コメント欄の更新時
+          %li フォロー中のマガジンの更新お知らせ
+          %li フォローされた時
+          %li スキをされた時
+          %li あなたのノートがマガジンに追加された時
+          %li noteからのお知らせ
+
+      .edit-container__user-configuration
+        %h4 ユーザー設定
+        %ul
+          %li note運営がプロモーションを手伝うことを許諾する
+          %li note未登録ユーザーの購入を許可する
+          %li 自分が投稿したノートを明朝体で表示する
+          %li サポート機能を使った支払いを受け付ける
+          %li 自分のノートの下部に他のクリエイターのノートを表示する
+
+
     .container-hide
       = form_for(current_user) do |f|
         .field.nickname-field
@@ -60,5 +86,5 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
         .actions
-          = button_tag "キャンセル", class: "cancel-button"
           = f.submit "保存"
+      = button_tag "キャンセル", class: "cancel-button"
