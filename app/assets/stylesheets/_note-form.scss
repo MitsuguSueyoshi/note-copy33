@@ -18,7 +18,6 @@
   }
 
   ul {
-    float: right;
     position: absolute;
     top: 50%;
     right: 2%;
@@ -34,11 +33,76 @@
         border: solid 1px $border-color;
         border-radius: 4px;
       }
+
+      .submit {
+        font-size: 12px;
+        padding: 7px 16px;
+        border: solid 1px $border-color;
+        border-radius: 4px;
+      }
     }
   }
 
 }
 
 .new__form {
+  margin: 0 auto;
+  width: 60%;
+  outline: 0;
 
+  ::-webkit-input-placeholder {
+    color: #BDBDBD;
+  }
+
+  textarea {
+    border: none;
+    outline: 0;
+  }
+
+  .upload-image {
+
+    .hidden {
+      display: none;
+    }
+
+    .fa-image {
+      color: #BDBDBD;
+      font-size: 50px;
+      width: 50px;
+      height: 50px;
+      margin-top: 60px;
+    }
+  }
+
+  #note-title__box {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    height: 40px;
+    margin-top: 60px;
+    display: block;
+  }
+
+  .note-text__box {
+    font-size: 16px;
+    height: 30px;
+    margin-top: 30px;
+    display: block;
+  }
+
+  .note-category__box {
+    margin-top: 30px;
+    display: block;
+  }
+
+  .submit {
+    margin-top: 30px;
+    color: $whitecolor;
+    background-color: $greencolor;
+    height: 32px;
+    padding: 0 16px;
+    line-height: 32px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 }
