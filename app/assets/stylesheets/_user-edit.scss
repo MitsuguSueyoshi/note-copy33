@@ -1,3 +1,28 @@
 .account{
+  margin-top: 20px;
+  padding-top: 20px;
   border-top: solid 1px #CCCCCC;
+  .account-setting{
+    width: 500px;
+    height: 150px;
+    border: solid 1px #CCCCCC;
+    margin: 0 auto;
+    h1{
+      font-size: 25px;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    &__nav{
+      width: 410px;
+      margin: 0 auto;
+
+      a{
+        font-size: 14px;
+        font-weight: bold;
+        color: gray;
+        margin: 0 5px;
+      }
+    }
+  }
 }
