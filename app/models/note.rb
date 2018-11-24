@@ -4,5 +4,7 @@ class Note < ApplicationRecord
   validates :text, presence: true
   validates :category, presence: true
 
+  mount_uploader :image, ImageUploader
+
   enum category: { マンガ: 0, コラム: 1, 小説: 2, サウンド: 3, ビジネス: 4, ライフスタイル: 5, テクノロジー: 6, エンタメ: 7 }
 end
