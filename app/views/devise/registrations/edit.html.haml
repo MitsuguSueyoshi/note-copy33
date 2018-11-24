@@ -35,36 +35,41 @@
               = link_to "変更",class: "edit-password"
           %p *******
 
-
+    .container-hide
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = devise_error_messages!
-        .field
+
+        .field.nickname
           = f.label :ニックネーム
           %br/
           = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+          .actions
+            = button_tag "キャンセル"
+            = f.submit "保存"
 
         .field
-          = f.label :メールアドレス
+          = f.label :新しいメールアドレス
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email"
+          .actions
+            = button_tag "キャンセル"
+            = f.submit "保存"
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %div
             Currently waiting confirmation for: #{resource.unconfirmed_email}
+
         .field
-          = f.label :パスワード
-          %i (leave blank if you don't want to change it)
-          %br/
-          = f.password_field :password, autocomplete: "new-password"
-        .field
-          = f.label :password_confirmation
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
-        .field
-          = f.label :current_password
-          %i (we need your current password to confirm your changes)
+          = f.label :現在のパスワード
           %br/
           = f.password_field :current_password, autocomplete: "current-password"
-        .actions
-          = f.submit "Update"
-
-      = link_to "Back", :back
+          %br/
+          = f.label :新しいパスワード
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+          %br/
+          = f.label :新しいパスワードの確認
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+          .actions
+            = button_tag "キャンセル"
+            = f.submit "保存"

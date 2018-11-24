@@ -52,7 +52,57 @@
           }
         }
       }
+    }
+    .container-hide{
+      margin-top: 15px;
+      form.edit_user{
+        width: 550px;
+        .field{
+          box-sizing: border-box;
+          width: 550px;
+          border: solid 1px #CCCCCC;
+          padding: 30px 100px;
+          label{
+            font-size: 13px;
+            font-weight: bold;
+          }
+          input{
+            width: 350px;
+            height: 25px;
+            border: solid 1px #CCCCCC;
+            outline: 0;
+            border-radius: 5px;
+            font-size: 12px;
+            margin: 5px 0px;
+            padding-left: 10px;
+          }
+          .actions{
+            width: 360px;
+            height: 30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            input{
+              width: 100px;
+              height: 30px;
+              padding-left: 0;
+              background-color: $greencolor;
+              border-style: none;
+              color: white;
+              float: right;
+            }
+            button{
+              width: 100px;
+              height: 30px;
+              border-radius: 5px;
+              float: left;
+              margin: 5px 0px;
 
+            }
+
+          }
+
+        }
+      }
 
     }
   }
