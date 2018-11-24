@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def index
-    @notes = Note.all.includes(:user)
+    @notes = Note.all.includes(:user).order("created_at DESC")
   end
 
   def show
