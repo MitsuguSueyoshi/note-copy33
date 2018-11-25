@@ -31,4 +31,9 @@
             %li.icon__box
               = link_to "" do
                 %i.fas.fa-plus
-          %dic.comment__link
+            - if note.user.id == current_user.id
+              %li.icon__box
+                = link_to "/notes/#{note.id}", method: :delete do
+                  %p 削除
+                / %i.fas.fa-ellipsis-h 後で使用
+          %div.comment__link
