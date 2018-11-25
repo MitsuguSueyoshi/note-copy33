@@ -1,9 +1,161 @@
-.mypage{
+.user-container{
   width: 100%;
   margin-top: 10px;
   border-top: solid 1px #F5F5F5;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  overflow: auto;
+  .user-container-header{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .user-container-main{
+    height: 250px;
+    margin-bottom: 15px;
+    clear: both;
+
+    &__box{
+      height: 250px;
+      max-width: 940px;
+      margin: 0 auto;
+      clear: both;
+      &__icon{
+        width:90px;
+        height: 90px;
+        float: left;
+        .my-icon{
+          width:90px;
+          height: 90px;
+          img{
+            margin-top: 10px;
+            width:90px;
+            height: 90px;
+            border-radius: 50px;
+          }
+        }
+      }
+
+      &__right{
+        float: left;
+        width: 800px;
+        margin-left: 15px;
+        &__userinfo{
+          float: left;
+          &__nickname{
+            width: 400px;
+            height: 50px;
+            margin: 15px 0px;
+            p{
+              font-size: 25px;
+              font-weight: bold;
+              line-height: 50px;
+            }
+          }
+          &__selfintroduction{
+            p{
+              font-size: 15px;
+            }
+          }
+          &__follow{
+            width: 200px;
+            height: 60px;
+            margin-top: 15px;
+             .following{
+              float: left;
+              margin-right: 10px;
+              strong{
+                font-size: 15px;
+                color: gray;
+              }
+             }
+             .follower{
+              float: left;
+              strong{
+                font-size: 15px;
+                color: gray;
+              }
+             }
+           }
+        }
+        &__linkbtn{
+          width: 300px;
+          height: 170px;
+          float: right;
+          margin: 15px;
+          .link-icon{
+            height: 20px;
+            width: 20px;
+            margin-left: 140px;
+            color: gray;
+          }
+          .select-button{
+            position: relative;
+            margin: 20px 15px;
+            padding: 7px 10px;
+            min-width: 120px;
+            max-width: 100%;
+            color: #555;
+            font-size: 12px;
+            background: #FFF;
+            border: solid 3px #CCCCCC;
+            box-sizing: border-box;
+            border-radius: 5px;
+            li{
+              margin: 20px;
+              border-bottom: solid 1px #CCCCCC;
+            }
+          }
+          .select-button:before{
+            content: "";
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            margin-left: -15px;
+            border: 12px solid transparent;
+            border-bottom: 12px solid #FFF;
+            z-index: 2;
+          }
+          .select-button:after{
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            margin-left: -17px;
+            border: 14px solid transparent;
+            border-bottom: 14px solid #CCCCCC;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+  .user-container-nav{
+    max-width: 970px;
+    height:50px;
+    margin: 0 auto;
+    border-bottom: solid 1px #F5F5F5;
+
+      &__list{
+        max-width: 970px;
+        height:50px;
+        li{
+          display: inline-block;
+          padding: 13px 20px;
+          float: left;
+        }
+        li:hover{
+          border-bottom: solid 2px black;
+
+        }
+      }
+  }
+
 }
+
+
+
+
+
 .follow{
   margin: 40px;
   border: 1px solid #e6e6e6;
