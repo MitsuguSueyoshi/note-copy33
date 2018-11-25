@@ -1,22 +1,4 @@
-= render '/layouts/flash'
-%div.new__container
-  = form_for @note do |f|
-    %div.new__header
-      = link_to root_path, class: "logo" do
-        %img{src: "https://d2l930y2yx77uc.cloudfront.net/assets/logo_retina-9c22c0bbe0a86ce2f343288c049fd7335efbccc3876de4133b14dce0a7990d0d.png"}
-      %ul
-        %li
-          = link_to "キャンセル" ""
-        %li
-          = f.submit 'note投稿', class: 'submit'
-    %div.new__form
-      = f.fields_for :images do |i|
-        = i.label :image, class: 'upload-image' do
-          %i.fas.fa-image
-          = i.file_field :image, class: "hidden"
-      = f.text_area :title, id: 'note-title__box', placeholder: 'ノートタイトル', autocomplete: "off"
-      = f.text_area :text, class: 'note-text__box', placeholder: 'ノート本文', autocomplete: "off"
-      = f.select :category, Note.categories.keys, {prompt: '選択してください'}, class: 'note-category__box'
+= render partial: 'form', locals: { note: @note}
 
 
 
