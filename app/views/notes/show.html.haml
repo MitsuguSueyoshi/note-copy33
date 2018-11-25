@@ -1,3 +1,5 @@
+= render "shared/header"
+.border-box
 .note
   .note__image
     %img{alt: "イメージ", src: "https://www.jalan.net/news/img/2017/09/170915_fuji-670x443.jpg"}
@@ -22,20 +24,20 @@
       .note__support__content__text
         サポートしてください！
       .note__support__content__button
-        %i.fa.fa-gift サポートをする
+        %i.fas.fa-gift サポートをする
   .note__likes
-    %i.fa.fa-heart-o
+    %i.far.fa-heart
       2
   .note__add
-    %i.fa.fa-plus
+    %i.fas.fa-plus
   .note__report
-    %i.fa.fa-ellipsis-h
+    %i.fas.fa-ellipsis-h
   .note__bookmark
-    %i.fa.fa-bold
+    %i.fas.fa-bold
   .note__tweet
-    %i.fa.fa-twitter-square
+    %i.fab.fa-twitter-square
   .note__facebook
-    %i.fa.fa-facebook-square
+    %i.fab.fa-facebook-square
   .note__recommends
     %h2.note__recommends__title
       このクリエイターのおすすめノート
@@ -45,7 +47,7 @@
           = link_to do
             ノートタイトル1
         .note__recommends__component__likes
-          %i.fa.fa-heart-o
+          %i.far.fa-heart
             78
         .note__recommends__component__name
           = link_to do
@@ -57,7 +59,7 @@
           = link_to do
             ノートタイトル2
         .note__recommends__component__likes
-          %i.fa.fa-heart-o
+          %i.far.fa-heart
             4
         .note__recommends__component__name
           = link_to do
@@ -69,7 +71,7 @@
           = link_to do
             ノートタイトル3
         .note__recommends__component__likes
-          %i.fa.fa-heart-o
+          %i.far.fa-heart
             1
         .note__recommends__component__name
           = link_to do
@@ -94,7 +96,9 @@
           自分の名前
       .note__profile__content__self-introduction
         よろしくお願いします。
-      .note__profile__content__follow
+      -if user_signed_in?
+        .note__profile__content__follow
+          フォロー
 .comments
   .comments__count
     コメント1件
@@ -110,7 +114,7 @@
     .comments__comment__option
       %i.fa.fa-ellipsis-h
     .comments__comment__likes
-      %i.fa.fa-heart-o
+      %i.far.fa-heart
     .comments__comment__body
       面白いです！
   .comments__form
