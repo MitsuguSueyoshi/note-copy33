@@ -3,6 +3,7 @@ class Note < ApplicationRecord
   has_many :images
   has_many :likes
   has_many :comments
+  has_many :magazines, through: :articles
   accepts_nested_attributes_for :images
 
   validates :title, presence: true
