@@ -1,0 +1,35 @@
+.mypage{
+  width: 100%;
+  margin-top: 10px;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+}
+.follow{
+  margin: 40px;
+  border: 1px solid #e6e6e6;
+  vertical-align: top;
+  text-align: center;
+  padding: 0 16px;
+  height: 40px;
+  font-weight: bold;
+  width: 100px;
+  font-size: 12px;
+}
+.follow-now{
+  margin: 40px;
+  background-color: #2cb696;
+  border: 1px solid #2cb696;
+  vertical-align: top;
+  text-align: center;
+  padding: 0 16px;
+  height: 40px;
+  font-weight: bold;
+  width: 100px;
+  font-size: 12px;
+  color: white;
+}
+
+
+.fa-user{
+  color: #2cb696;
+}
