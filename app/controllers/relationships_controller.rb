@@ -2,15 +2,23 @@ class RelationshipsController < ApplicationController
   before_action :set_user
 
   def create
-    current_user.follow(user)
-    flash[:success] = 'ユーザーをフォローしました'
-    redirect_to user
+    following = current_user.follow(user)
+    if following.save
+      flash[:success] = 'ユーザーをフォローしました'
+      redirect_to user
+    else
+      flash.now[:alert] = 'ユーザーのフォローに失敗しました'
+    end
   end
 
   def destroy
-    current_user.unfollow(user)
-    flash[:success] = 'ユーザーのフォローを解除しました'
-    redirect_to user
+    following = current_user.unfollow(user)
+    if following.destroy
+      flash[:success] = 'ユーザーのフォローを解除しました'
+      redirect_to user
+    else
+      flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
+    end
   end
 
   private
