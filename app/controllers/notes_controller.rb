@@ -25,11 +25,18 @@ class NotesController < ApplicationController
   end
 
   def edit
-
+    @note = Note.find(params[:id])
+    @note.images.new
   end
 
   def update
-
+    @note = Note.find(params[:id])
+    if @note.update(notes_params)
+      redirect_to root_path
+    else
+      flash[:alert] = 'タイトル、本文、カテゴリは必ず入力して下さい'
+      redirect_to edit_note_path
+    end
   end
 
   def destroy
