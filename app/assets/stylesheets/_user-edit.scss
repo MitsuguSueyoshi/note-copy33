@@ -1,0 +1,172 @@
+.account{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  .account-setting__container{
+    width: 550px;
+    margin: 0 auto;
+    .account-setting__container__nav{
+      width: 550px;
+      height: 150px;
+      border: solid 1px #CCCCCC;
+      margin-bottom: 15px;
+      h1{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      &__menu{
+        width: 410px;
+        margin: 0 auto;
+        a{
+          font-size: 14px;
+          font-weight: bold;
+          color: gray;
+          margin: 0 5px;
+        }
+      }
+    }
+    .edit-container{
+      width: 550px;
+      height: 800px;
+      border: solid 1px #CCCCCC;
+      &__userinfo{
+        width: 350px;
+        border-bottom: solid 1px #CCCCCC;
+        margin: 0 auto;
+        &__select{
+          margin: 25px 0px;
+          p{
+            font-size: 13px;
+          }
+          p.info-kind{
+            font-weight: bold;
+            width:110px;
+            float:left;
+          }
+          span.link-green{
+            button{
+            background-color: transparent;
+            border: none;
+            font-size: 13px;
+            color: $greencolor;
+            }
+          }
+        }
+      }
+      &__sns{
+        width: 350px;
+        border-bottom: solid 1px #CCCCCC;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        h4{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        ul{
+          margin:8px 0px;
+          li{
+            font-size: 12px;
+            line-height: 25px;
+          }
+        }
+      }
+      &__mail-configuration{
+        width: 350px;
+        border-bottom: solid 1px #CCCCCC;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        h4{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        ul{
+          margin:8px 0px;
+          li{
+            font-size: 12px;
+            line-height: 25px;
+          }
+        }
+      }
+      &__user-configuration{
+        width: 350px;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        h4{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        ul{
+          margin:8px 0px;
+          li{
+            font-size: 12px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+    .container-hide{
+      margin-top: 15px;
+      border: solid 1px #CCCCCC;
+      position: relative;
+      display: none;
+      p{
+        font-size: 14px;
+        text-align: center;
+      }
+      form.edit_user{
+        width: 550px;
+        .field{
+          box-sizing: border-box;
+          width: 550px;
+          padding: 30px 100px;
+          label{
+            font-size: 13px;
+            font-weight: bold;
+          }
+          input{
+            width: 350px;
+            height: 25px;
+            border: solid 1px #CCCCCC;
+            outline: 0;
+            border-radius: 5px;
+            font-size: 12px;
+            margin: 5px 0px;
+            padding-left: 10px;
+          }
+        }
+        .actions{
+          width: 360px;
+          height: 30px;
+          margin: 0 auto;
+          padding-bottom: 15px;
+
+          input{
+            font-size: 14px;
+            width: 100px;
+            height: 30px;
+            padding-left: 0;
+            background-color: $greencolor;
+            border-style: none;
+            color: white;
+            float: right;
+            border-radius: 5px;
+          }
+        }
+      }
+      button{
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        position: absolute;
+        left:95px;
+        bottom: 15px;
+      }
+    }
+  }
+}
