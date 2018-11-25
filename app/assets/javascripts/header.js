@@ -36,4 +36,11 @@ $(function(){
     $(".category").show();
     }
   );
+
+  $(function() {
+    $('.my-icon').click(function() {
+        $('.my-menu').toggle();
+        return false
+    });
+  });
 });
