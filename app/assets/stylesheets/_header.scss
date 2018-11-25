@@ -15,6 +15,7 @@
       &__right{
         float: right;
         margin-top: 25px;
+        position: relative;
 
         li {
           list-style: none;
@@ -127,6 +128,48 @@
               width: 100%;
               border-radius: 32px;
              }
+          }
+
+          .my-menu {
+            // z-index: 12;
+            // display: none;
+            width: 220px;
+            position: absolute;
+            top: 43px;
+            left: 44%;
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+            padding: 8px 0;
+            text-align: left;
+            border-radius: 4px;
+            background: $whitecolor;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
+
+            &::before {
+              left: 50%;
+              margin-left: -7px;
+              content: "";
+              display: block;
+              position: absolute;
+              right: 8px;
+              top: -13px;
+              width: 14px;
+              height: 14px;
+              background: $whitecolor;
+              box-shadow: 1px 1px 1px -1px rgba(0,0,0,0.8);
+              transform: rotate(225deg) translate(-5px, -5px);
+            }
+
+            ul {
+              li {
+                display: block;
+                padding: 6px 25px;
+
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
           }
 
           .post-button {

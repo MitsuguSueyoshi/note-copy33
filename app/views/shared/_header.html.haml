@@ -15,15 +15,17 @@
           %li
             %i{class: "fa fa-search fa-2x search-icon1"}
           %li
-            .log-out
-              = link_to destroy_user_session_path ,method: :delete do
-                %p ログアウト
-          %li
             = link_to "", class: "notification" do
               %i.far.fa-bell
           %li
             = link_to "", class: "my-icon" do
               %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+            .my-menu
+              %ul
+                %li
+                  = link_to "アカウント設定", ""
+                %li
+                  = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li
             = link_to new_note_path , class: "post-button" do
               %i.fas.fa-edit
