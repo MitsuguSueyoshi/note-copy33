@@ -31,4 +31,7 @@
             %li.icon__box
               = link_to "" do
                 %i.fas.fa-plus
-          %dic.comment__link
+            %li.icon__box
+              = link_to "/notes/#{note.id}", method: :delete do
+                %i.fas.fa-ellipsis-h
+          %div.comment__link
