@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @notes = Note.all.includes(:user).order("created_at DESC")
@@ -21,6 +21,29 @@ class NotesController < ApplicationController
     else
       flash[:alert] = 'タイトル、本文、カテゴリは必ず入力して下さい'
       redirect_to new_note_path
+    end
+  end
+
+  def edit
+    @note = Note.find(params[:id])
+    @note.images.new
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    if @note.update(notes_params)
+      redirect_to root_path
+    else
+      flash[:alert] = 'タイトル、本文、カテゴリは必ず入力して下さい'
+      redirect_to edit_note_path
+    end
+  end
+
+  def destroy
+    @note = Note.find(params[:id])
+    if @note.user.id == current_user.id
+       @note.destroy
+       redirect_to root_path
     end
   end
 
