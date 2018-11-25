@@ -23,7 +23,7 @@
             .my-menu
               %ul
                 %li
-                  = link_to "" do
+                  = link_to user_path(current_user) do
                     %span.user__name
                       = current_user.nickname
                     %span.link__text マイページを表示
@@ -41,7 +41,7 @@
                   = link_to "購入したノート", ""
                 %li.menu__border
                 %li
-                  = link_to "アカウント設定", "/users/#{current_user.id}/edit", method: :get
+                  = link_to "アカウント設定", edit_user_path(current_user)
                 %li
                   = link_to "ダッシュボード", ""
                 %li
