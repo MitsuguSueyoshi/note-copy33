@@ -1,0 +1,26 @@
+= render "shared/header"
+.content
+  .content__all
+    .content__all__title
+      すべてのマガジン
+    %i.fas.fa-caret-down.content__all__arrow
+  %ul.content__magazines
+    %li.content__magazines__create
+      %i.fas.fa-plus.content__magazines__create__plus
+      .content__magazines__create__text
+        マガジンを作る
+    %li.content__magazines__magazine
+      .content__magazines__magazine__header
+        %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRFrEe0KZmgwoBMorDlDO17zfOjintGlHa8EMr5jEe61NY2n4p8g"}
+        .content__magazines__magazine__header__title
+          マガジンのタイトル
+      .content__magazines__magazine__center
+        .content__magazines__magazine__center__title
+          マガジンのタイトル
+      .content__magazines__magazine__footer
+        .content__magazines__magazine__footer__icon
+          %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+        .content__magazines__magazine__footer__name
+          自分の名前
+        .content__magazines__magazine__footer__setting
+          設定
