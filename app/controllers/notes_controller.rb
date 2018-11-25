@@ -24,6 +24,18 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
+  end
+
   private
   def notes_params
     params.require(:note).permit(:title, :text, :category, images_attributes: [:image]).merge(user_id: current_user.id)
