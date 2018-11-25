@@ -1,0 +1,91 @@
+=render "shared/header"
+
+.account
+  .account-setting__container
+    .account-setting__container__nav
+      %h1 アカウント設定
+      .account-setting__container__nav__menu
+        = link_to "アカウント" ""
+        = link_to "リアクション" ""
+        = link_to "購入履歴"
+        = link_to "カード情報" ""
+        = link_to "お支払先" ""
+
+
+    .edit-container
+      .edit-container__userinfo
+        .edit-container__userinfo__select
+          .edit-container__userinfo__select__headline
+            %p.info-kind ニックネーム
+            %span.link-green
+              = button_tag "変更",class: "edit-nickname"
+          %p.current-nickname
+            =  current_user.nickname
+        .edit-container__userinfo__select
+          .edit-container__userinfo__select__headline
+            %p.info-kind メールアドレス
+            %span.link-green
+              = button_tag "変更",class: "edit-email"
+          %p.current-email
+            = current_user.email
+        .edit-container__userinfo__select
+          .edit-container__userinfo__select__headline
+            %p.info-kind パスワード
+            %span.link-green
+              = button_tag "変更",class: "edit-password"
+          %p *******
+
+      .edit-container__sns
+        %h4 ソーシャル連携
+        %ul
+          %li Facebook
+          %li Twitter
+
+      .edit-container__mail-configuration
+        %h4 メール通知設定
+        %ul
+          %li コメント欄の更新時
+          %li フォロー中のマガジンの更新お知らせ
+          %li フォローされた時
+          %li スキをされた時
+          %li あなたのノートがマガジンに追加された時
+          %li noteからのお知らせ
+
+      .edit-container__user-configuration
+        %h4 ユーザー設定
+        %ul
+          %li note運営がプロモーションを手伝うことを許諾する
+          %li note未登録ユーザーの購入を許可する
+          %li 自分が投稿したノートを明朝体で表示する
+          %li サポート機能を使った支払いを受け付ける
+          %li 自分のノートの下部に他のクリエイターのノートを表示する
+
+
+    .container-hide
+      %p 全ての項目を入力してください。
+      = form_for(current_user) do |f|
+        .field.nickname-field
+          = f.label :ニックネーム
+          %br/
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+
+        .field.email-field
+          = f.label :新しいメールアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+
+        .field.password-field
+          = f.label :現在のパスワード
+          %br/
+          = f.password_field :current_password, autocomplete: "current-password"
+          %br/
+          = f.label :新しいパスワード
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+          %br/
+          = f.label :新しいパスワードの確認
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+        .actions
+          = f.submit "保存"
+      = button_tag "キャンセル", class: "cancel-button"
