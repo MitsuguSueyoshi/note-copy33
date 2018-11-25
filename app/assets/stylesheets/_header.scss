@@ -162,12 +162,33 @@
 
             ul {
               li {
-                display: block;
-                padding: 6px 25px;
+
+                span {
+                  display: block;
+                }
+
+                .user__name {
+                  font-weight: bold;
+                }
+
+                .link__text {
+                  margin-top: 3px;
+                  font-size: 11px;
+                  color: $graycolor;
+                }
 
                 a {
+                  color: #222222;
                   font-size: 12px;
+                  padding: 6px 25px;
+                  display: block;
                 }
+              }
+
+              .menu__border {
+                width: 100%;
+                margin: 10px 0;
+                border-bottom: 1px solid $border-color;
               }
             }
           }
