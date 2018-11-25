@@ -30,7 +30,7 @@
           %span.fas.fa-ellipsis-h.link-icon
           %ul.select-button
             - if user_signed_in? && @user.id == current_user.id
-              %li プロフィールを編集する
+              %li.my-profile プロフィールを編集する
               %li Amazonウィジェットを追加
             -else
               %li ブロックする
@@ -43,4 +43,32 @@
       %li.menu
         = link_to "マガジン" ""
   / = render "notes/home"
+
+
+
+/ 編集画面
+.user-container
+  - if @user.header_image.present?
+    .user-container-header
+      =image_tag @user.header_image
+  -else
+    .user-container-header__empty
+  .user-container-main
+    .user-container-main__box
+      .user-container-main__box__icon
+        - if @user.main_image.present?
+          = image_tag @user.main_image, class: "my-icon"
+        - else
+          = link_to "", class: "my-icon" do
+            %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+      .user-container-main__box__right
+        .user-container-main__box__right__userinfo
+          .user-container-main__box__right__userinfo__nickname
+            %p.nickname
+              = @user.nickname
+          .user-container-main__box__right__userinfo__selfintroduction
+            %p.selfintroduction
+              自己紹介です
+              / = @user.self_introduction
+
 
