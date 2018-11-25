@@ -40,7 +40,11 @@ class NotesController < ApplicationController
   end
 
   def destroy
-
+    @note = Note.find(params[:id])
+    if @note.user.id == current_user.id
+       @note.destroy
+       redirect_to root_path
+    end
   end
 
   private
