@@ -1,0 +1,107 @@
+= render "shared/header"
+.magazine-admin-content.clearfix
+  .magazine-admin-content__all
+    .magazine-admin-content__all__title
+      すべてのマガジン
+    %i.fas.fa-caret-down.magazine-admin-content__all__arrow
+  %ul.magazine-admin-content__magazines
+    = link_to do
+      %li.magazine-admin-content__magazines__create
+        %i.fas.fa-plus.magazine-admin-content__magazines__create__plus
+        .magazine-admin-content__magazines__create__text
+          マガジンを作る
+    %li.magazine-admin-content__magazines__magazine
+      = link_to do
+        .magazine-admin-content__magazines__magazine__header
+          %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__header__title
+            マガジンのタイトル
+        .magazine-admin-content__magazines__magazine__center
+          .magazine-admin-content__magazines__magazine__center__title
+            マガジンのタイトル
+      .magazine-admin-content__magazines__magazine__footer
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__icon
+            %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__footer__name
+            自分の名前
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__setting
+            設定
+  /マガジン二個目からは下のulを繰り返し出す
+  %ul.magazine-admin-content__magazines
+    %li.magazine-admin-content__magazines__magazine.two
+      = link_to do
+        .magazine-admin-content__magazines__magazine__header
+          %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__header__title
+            マガジンのタイトル
+        .magazine-admin-content__magazines__magazine__center
+          .magazine-admin-content__magazines__magazine__center__title
+            マガジンのタイトル
+      .magazine-admin-content__magazines__magazine__footer
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__icon
+            %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__footer__name
+            自分の名前
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__setting
+            設定
+    %li.magazine-admin-content__magazines__magazine
+      = link_to do
+        .magazine-admin-content__magazines__magazine__header
+          %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__header__title
+            マガジンのタイトル
+        .magazine-admin-content__magazines__magazine__center
+          .magazine-admin-content__magazines__magazine__center__title
+            マガジンのタイトル
+      .magazine-admin-content__magazines__magazine__footer
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__icon
+            %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__footer__name
+            自分の名前
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__setting
+            設定
+  /3個目です
+  %ul.magazine-admin-content__magazines
+    %li.magazine-admin-content__magazines__magazine.two
+      = link_to do
+        .magazine-admin-content__magazines__magazine__header
+          %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__header__title
+            マガジンのタイトル
+        .magazine-admin-content__magazines__magazine__center
+          .magazine-admin-content__magazines__magazine__center__title
+            マガジンのタイトル
+      .magazine-admin-content__magazines__magazine__footer
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__icon
+            %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__footer__name
+            自分の名前
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__setting
+            設定
+    %li.magazine-admin-content__magazines__magazine
+      = link_to do
+        .magazine-admin-content__magazines__magazine__header
+          %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__header__title
+            マガジンのタイトル
+        .magazine-admin-content__magazines__magazine__center
+          .magazine-admin-content__magazines__magazine__center__title
+            マガジンのタイトル
+      .magazine-admin-content__magazines__magazine__footer
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__icon
+            %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+          .magazine-admin-content__magazines__magazine__footer__name
+            自分の名前
+        = link_to do
+          .magazine-admin-content__magazines__magazine__footer__setting
+            設定
+
