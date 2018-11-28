@@ -44,5 +44,5 @@
         = link_to "マガジン" ""
   / = render "notes/home"
 
-  = render "user-profile"
+  = render partial: "user-profile", locals: { user: @user}
 
