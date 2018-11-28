@@ -44,38 +44,5 @@
         = link_to "マガジン" ""
   / = render "notes/home"
 
-
-
-/ 編集画面
-.user-container
-  = form_for @user do |f|
-    - if @user.header_image.present?
-      .user-container-header
-        =image_tag @user.header_image
-    -else
-      .user-container-header__empty
-        = f.label :header_image, class: "form_mask_image" do
-          %i.fas.fa-camera
-          %span#selectimage ヘッダー画像を変更
-          = f.file_field :header_image, class: "header_image_file"
-
-    .user-container-main
-      .user-container-main__box
-        .user-container-main__box__icon
-          - if @user.main_image.present?
-            = image_tag @user.main_image, class: "my-icon"
-          - else
-            %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
-              = f.label :main_image, class: "form_mask_main_image" do
-                %i.fas.fa-camera
-                = f.file_field :main_image, class: "main_image_file"
-
-        .user-container-main__box__right
-          .user-container-main__box__right__userinfo
-            .user-container-main__box__right__userinfo__nickname
-              = f.text_field :nickname, class: "nickname_field"
-            .user-container-main__box__right__userinfo__selfintroduction
-              = f.text_area :self_introduction, class: "self_introduction_form"
-            .submit-button
-              =f.submit "保存"
+  = render "user-profile"
 
