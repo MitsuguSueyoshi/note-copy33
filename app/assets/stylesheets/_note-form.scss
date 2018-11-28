@@ -57,6 +57,7 @@
   textarea {
     border: none;
     outline: 0;
+    width: 100%;
   }
 
   .upload-image {
@@ -74,7 +75,7 @@
     }
   }
 
-  #note-title__box {
+  .note-title__box {
     font-size: 32px;
     font-weight: bold;
     letter-spacing: 0.04em;
