@@ -6,12 +6,17 @@
   overflow: auto;
   .user-container-header{
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    max-height: 500px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
   }
   .user-container-header__empty{
     width: 100%;
-    height: 400px;
+    max-height: 500px;
     background-color: gray;
   }
   .user-container-header__empty:hover{
@@ -21,7 +26,6 @@
     height: 250px;
     margin-bottom: 15px;
     clear: both;
-
     &__box{
       height: 250px;
       max-width: 940px;
@@ -34,6 +38,8 @@
         .my-icon{
           width:90px;
           height: 90px;
+          border-radius: 50px;
+          margin-top: 10px;
           img{
             margin-top: 10px;
             width:90px;
@@ -146,7 +152,7 @@
   .user-container-nav{
     max-width: 970px;
     height:50px;
-    margin: 0 auto;
+    margin: 10px auto;
     border-bottom: solid 1px #F5F5F5;
 
       &__list{
@@ -154,48 +160,46 @@
         height:50px;
         li{
           display: inline-block;
-          padding: 13px 20px;
+          padding: 2px 20px;
           float: left;
         }
         li:hover{
           border-bottom: solid 2px black;
-
         }
       }
   }
-
 }
 
 
 
 
+// フォローボタン実装の際に使用
+// .follow{
+//   margin: 40px;
+//   border: 1px solid #e6e6e6;
+//   vertical-align: top;
+//   text-align: center;
+//   padding: 0 16px;
+//   height: 40px;
+//   font-weight: bold;
+//   width: 100px;
+//   font-size: 12px;
+// }
+// .follow-now{
+//   margin: 40px;
+//   background-color: #2cb696;
+//   border: 1px solid #2cb696;
+//   vertical-align: top;
+//   text-align: center;
+//   padding: 0 16px;
+//   height: 40px;
+//   font-weight: bold;
+//   width: 100px;
+//   font-size: 12px;
+//   color: white;
+// }
 
-.follow{
-  margin: 40px;
-  border: 1px solid #e6e6e6;
-  vertical-align: top;
-  text-align: center;
-  padding: 0 16px;
-  height: 40px;
-  font-weight: bold;
-  width: 100px;
-  font-size: 12px;
-}
-.follow-now{
-  margin: 40px;
-  background-color: #2cb696;
-  border: 1px solid #2cb696;
-  vertical-align: top;
-  text-align: center;
-  padding: 0 16px;
-  height: 40px;
-  font-weight: bold;
-  width: 100px;
-  font-size: 12px;
-  color: white;
-}
 
-
-.fa-user{
-  color: #2cb696;
-}
+// .fa-user{
+//   color: #2cb696;
+// }
