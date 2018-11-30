@@ -3,6 +3,10 @@
   = form_for @user do |f|
     - if @user.header_image.present?
       .user-profile-header
+        = f.label :header_image, class: "form_mask_header_image" do
+          %i.fas.fa-camera
+          %span#selectimage ヘッダー画像を変更
+          = f.file_field :header_image, class: "header_image_file"
         =image_tag @user.header_image
     -else
       .user-profile-header__empty
@@ -16,6 +20,9 @@
         .user-profile-main__box__icon
           - if @user.main_image.present?
             = image_tag @user.main_image, class: "my-icon"
+            = f.label :main_image, class: "form_mask_main_image" do
+              %i.fas.fa-camera
+              = f.file_field :main_image, class: "main_image_file"
           - else
             %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
               = f.label :main_image, class: "form_mask_main_image" do
