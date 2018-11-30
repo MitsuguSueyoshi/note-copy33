@@ -1,7 +1,57 @@
 = render "shared/header"
 .magazine-details-content
   .magazine-details-content__top
+    .magazine-details-content__top__image
+      .magazine-details-content__top__title
+        マガジンのタイトル
   .magazine-details-content__middle
+    .magazine-details-content__middle__left
+      .magazine-details-content__middle__left__count
+        1ノート
+      .magazine-details-content__middle__left__edit
+        ノートの並び替え・削除
+      .magazine-details-content__middle__left__note
+        .magazine-details-content__middle__left__note__user
+          .magazine-details-content__middle__left__note__user__icon
+            %img{alt: "自分の", src: "https://www.kirby.jp/images/character/chara-waddledee.png"}
+          .magazine-details-content__middle__left__note__user__name
+            ノートを作ったユーザの名前
+          .magazine-details-content__middle__left__note__user__date
+            2018/10/27 07:00
+        .magazine-details-content__middle__left__note__main
+          =link_to do
+            %div.card__main--image
+              %img{alt: "イメージ", src: "https://www.jalan.net/news/img/2017/09/170915_fuji-670x443.jpg"}
+            %h3.card__main--title
+              ノートのタイトル
+            %p.card__main--text
+              あいうえお、かきくけこ、さしすせそ
+    .magazine-details-content__middle__right
+      .magazine-details-content__middle__right__setting
+        設定
+      .magazine-details-content__middle__right__title
+        マガジンのタイトル
+      .magazine-details-content__middle__right__profile
+        .magazine-details-content__middle__right__profile__icon
+          %img{alt: "自分の", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+        .magazine-details-content__middle__right__profile__name
+          自分の名前
+      %ul.magazine-details-content__middle__right__hash
+        %li.magazine-details-content__middle__right__hash__item
+          仮置き
+        %li.magazine-details-content__middle__right__hash__item
+          仮置き
+        %li.magazine-details-content__middle__right__hash__item
+          仮置き
+      .magazine-details-content__middle__right__archive
+        2018年(3) [+]
+      %ul.magazine-details-content__middle__right__share
+        %li.magazine-details-content__middle__right__share__facebook
+          %i.fab.fa-facebook-square
+        %li.magazine-details-content__middle__right__share__twiietr
+          %i.fab.fa-twitter
+        %li.magazine-details-content__middle__right__share__source
+          %i.fas.fa-wifi
 .footer
   %ul.footer__list
     %li.footer__list__item
