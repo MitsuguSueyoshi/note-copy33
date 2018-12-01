@@ -4,15 +4,14 @@ $(document).on('turbolinks:load', function(){
       var reader = new FileReader();
 
       reader.onload = function(e){
-        $("#header_image_prev").attr('src', e.target.result);
+        $("#main_image_prev").attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
-      console.log(input.files[0]);
     }
   }
-  $("#user_header_image").change(function(){
-    $("#header_image_prev").removeClass("hidden").show();
-    $(".header_present_image").remove();
+  $("#user_main_image").change(function(){
+    $("#main_image_prev").removeClass("hidden").show();
+    $(".my-icon").remove();
     readURL(this);
   });
 });
