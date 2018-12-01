@@ -23,4 +23,7 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+
+  mount_uploader :header_image, ImageUploader
+  mount_uploader :main_image, ImageUploader
 end
