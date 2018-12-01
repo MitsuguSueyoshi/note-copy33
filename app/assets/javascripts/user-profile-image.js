@@ -7,7 +7,6 @@ $(document).on('turbolinks:load', function(){
         $("#header_image_prev").attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
-      console.log(input.files[0]);
     }
   }
   $("#user_header_image").change(function(){
