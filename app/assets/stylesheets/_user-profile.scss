@@ -8,11 +8,14 @@
    .user-profile-header{
     width: 100%;
     max-height: 500px;
-     position: relative;
+    position: relative;
     img {
       width: 100%;
       max-height: 500px;
       object-fit: cover;
+    }
+    #header_image_prev{
+      display: none;
     }
     .form_mask_header_image{
       color: white;

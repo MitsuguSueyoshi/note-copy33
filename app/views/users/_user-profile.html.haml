@@ -7,7 +7,8 @@
           %i.fas.fa-camera
           %span#selectimage ヘッダー画像を変更
           = f.file_field :header_image, class: "header_image_file"
-        =image_tag @user.header_image
+        =image_tag @user.header_image, class: "header_present_image"
+        %img{id: "header_image_prev",class: "hidden", src: "#"}
     -else
       .user-profile-header__empty
         = f.label :header_image, class: "form_mask_header_image" do
