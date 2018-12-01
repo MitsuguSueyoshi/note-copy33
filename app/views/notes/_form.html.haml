@@ -1,4 +1,25 @@
 = render '/layouts/flash'
+%div.modal__container
+  %div.modal
+    %div.modal__header
+      %p ノートが公開されました
+      %i.fas.fa-times
+    %div.modal__image
+      %img{src: "https://d2l930y2yx77uc.cloudfront.net/assets/achievements_postnote-d82c2102ef8d3c6470dfaae615e4892c0613d7aa5c6772d98fcc2c1c95dd4e4c.png"}
+    %div.modal__body
+      %p
+        公開したノートを
+        %br みんなに教えてあげましょう！
+      %div.modal__action
+        %a.share__button
+          %i.fab.fa-twitter.action__icon
+          %span ツイートする
+        %a.share__button
+          %i.fab.fa-facebook-f.action__icon
+          %span シェアする
+    %div.modal__footer
+      %button
+        %span 閉じる
 %div.new__container
   = form_for @note do |f|
     %div.new__header
