@@ -1,3 +1,116 @@
+.modal__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  text-align: center;
+
+  .modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%,-50%);
+      -webkit-transform : translate(-50%,-50%);
+      transform : translate(-50%,-50%);
+      background-color: $whitecolor;
+      border-radius: 4px;
+      width: 470px;
+      text-align: center;
+      display:inline-block;
+      vertical-align: center;
+
+    &__header {
+      position: relative;
+      padding: 15px 0;
+      border-bottom: 1px solid $border-color;
+
+      p {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .fa-times {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translate(-50%,-50%);
+        -webkit-transform : translate(-50%,-50%);
+        transform : translate(-50%,-50%);
+        right: 12px;
+        cursor: pointer;
+      }
+    }
+
+    &__image {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__body {
+      padding: 24px;
+
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .modal__action {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: solid 1px $border-color;
+
+        .share__button {
+          width: calc(50% - 8px);
+          min-height: 32px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          display: inline-block;
+          border: solid 1px $border-color;
+          border-radius: 4px;
+          box-sizing: border-box !important;
+
+          .action__icon {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+          }
+
+          span {
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      background: #f2f4f4;
+      border-top: 1px solid $border-color;
+      border-radius: 0 0 4px 4px;
+
+      button  {
+        min-height: 40px;
+        margin: 10px;
+        padding: 0 16px;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        background: #ffffff;
+        font-weight: bold;
+
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
 .new__header {
   width: 100%;
   height: 48px;
@@ -44,6 +157,8 @@
   }
 
 }
+
+
 
 .new__form {
   margin: 0 auto;
