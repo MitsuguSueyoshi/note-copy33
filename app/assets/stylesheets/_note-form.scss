@@ -7,6 +7,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   text-align: center;
+  display: none;
 
   .modal {
       position: absolute;
@@ -94,7 +95,7 @@
       border-top: 1px solid $border-color;
       border-radius: 0 0 4px 4px;
 
-      button  {
+      a {
         min-height: 40px;
         margin: 10px;
         padding: 0 16px;
@@ -102,9 +103,11 @@
         border-radius: 4px;
         background: #ffffff;
         font-weight: bold;
+        display: inline-block;
 
         span {
           font-size: 14px;
+          line-height: 40px;
         }
       }
     }
@@ -152,6 +155,7 @@
         padding: 7px 16px;
         border: solid 1px $border-color;
         border-radius: 4px;
+        outline: none;
       }
     }
   }
