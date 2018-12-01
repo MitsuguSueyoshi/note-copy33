@@ -35,4 +35,5 @@
               = f.text_area :self_introduction, class: "self_introduction_form"
             .submit-button
               =f.submit "保存"
+              =link_to "キャンセル" ,user_path(current_user), class: "cancel-button"
 
