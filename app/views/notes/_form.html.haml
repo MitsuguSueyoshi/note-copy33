@@ -14,6 +14,6 @@
         = i.label :image, class: 'upload-image' do
           %i.fas.fa-image
           = i.file_field :image, class: "hidden"
-      = f.text_area :title, id: 'note-title__box', placeholder: 'ノートタイトル', autocomplete: "off"
-      = f.text_area :text, class: 'note-text__box', placeholder: 'ノート本文', autocomplete: "off"
+      = f.text_area :title, class: 'note-title__box', placeholder: 'ノートタイトル', autocomplete: "off"
+      = f.text_area :text, class: 'note-text__box' , placeholder: 'ノート本文', autocomplete: "off"
       = f.select :category, Note.categories.keys, {prompt: '選択してください'}, class: 'note-category__box'

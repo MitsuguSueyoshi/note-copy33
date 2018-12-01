@@ -1,5 +1,5 @@
 .home__container {
-  height: 100%;
+  min-height: 100%;
   border-top: solid 1px #F5F5F5;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
   background-color: #f7f9f9;
@@ -51,7 +51,6 @@
           margin: 0px -20px 20px;
           img {
             width: 100%;
-
           }
         }
 
@@ -60,11 +59,13 @@
           letter-spacing: 0.04em;
           font-weight: bold;
           margin-bottom: 13px;
+          word-wrap:break-word;
         }
 
         &--text {
           font-size: 14px;
           line-height: 1.8;
+          word-wrap:break-word;
         }
       }
 
