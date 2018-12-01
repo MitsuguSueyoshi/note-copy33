@@ -43,9 +43,22 @@
   }
   .user-profile-header__empty{
     width: 100%;
-    height: 400px;
+    height: 500px;
     background-color: gray;
     position: relative;
+    .header_present_image{
+      width: 100%;
+      height: 500px;
+    }
+    #header_image_prev{
+      display: none;
+      width: 100%;
+      height: 500px;
+    }
+    img{
+      width: 100%;
+      height: 500px;
+    }
     .form_mask_header_image{
       color: white;
       display: block;

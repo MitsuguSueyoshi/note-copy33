@@ -15,6 +15,8 @@
           %i.fas.fa-camera
           %span#selectimage ヘッダー画像を変更
           = f.file_field :header_image, class: "header_image_file"
+        .header_present_image
+        %img{id: "header_image_prev",class: "hidden", src: "#"}
     .user-profile-main
       .user-profile-main__box
         .user-profile-main__box__icon
