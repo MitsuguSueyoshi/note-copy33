@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   $(".link-icon").on("click", function(){
     $(".select-button").show();
   })
