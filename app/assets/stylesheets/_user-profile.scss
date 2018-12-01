@@ -109,7 +109,11 @@
               width:90px;
               height: 90px;
               border-radius: 50px;
+              object-fit: cover;
             }
+        #main_image_prev{
+          display: none;
+        }
           .form_mask_main_image{
             i.fa-camera{
               color: white;

@@ -22,11 +22,13 @@
         .user-profile-main__box__icon
           - if @user.main_image.present?
             = image_tag @user.main_image, class: "my-icon"
+            %img{id: "main_image_prev", class: "hidden", src: "#"}
             = f.label :main_image, class: "form_mask_main_image" do
               %i.fas.fa-camera
               = f.file_field :main_image, class: "main_image_file"
           - else
-            %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+            %img{class: "my-icon" , src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+            %img{id: "main_image_prev", class: "hidden", src: "#"}
               = f.label :main_image, class: "form_mask_main_image" do
                 %i.fas.fa-camera
                 = f.file_field :main_image, class: "main_image_file"
