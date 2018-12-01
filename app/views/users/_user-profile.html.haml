@@ -8,7 +8,7 @@
           %span#selectimage ヘッダー画像を変更
           = f.file_field :header_image, class: "header_image_file"
         =image_tag @user.header_image, class: "header_present_image"
-        %img{id: "header_image_prev",class: "hidden", src: "#"}
+        =image_tag "", id: "header_image_prev",class: "hidden"
     -else
       .user-profile-header__empty
         = f.label :header_image, class: "form_mask_header_image" do
@@ -16,22 +16,22 @@
           %span#selectimage ヘッダー画像を変更
           = f.file_field :header_image, class: "header_image_file"
         .header_present_image
-        %img{id: "header_image_prev",class: "hidden", src: "#"}
+        =image_tag "", id: "header_image_prev",class: "hidden"
     .user-profile-main
       .user-profile-main__box
         .user-profile-main__box__icon
           - if @user.main_image.present?
             = image_tag @user.main_image, class: "my-icon"
-            %img{id: "main_image_prev", class: "hidden", src: "#"}
+            = image_tag "", id: "main_image_prev", class: "hidden"
             = f.label :main_image, class: "form_mask_main_image" do
               %i.fas.fa-camera
               = f.file_field :main_image, class: "main_image_file"
           - else
-            %img{class: "my-icon" , src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
-            %img{id: "main_image_prev", class: "hidden", src: "#"}
-              = f.label :main_image, class: "form_mask_main_image" do
-                %i.fas.fa-camera
-                = f.file_field :main_image, class: "main_image_file"
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon"
+            = image_tag "", id: "main_image_prev", class: "hidden"
+            = f.label :main_image, class: "form_mask_main_image" do
+              %i.fas.fa-camera
+              = f.file_field :main_image, class: "main_image_file"
         .user-profile-main__box__right
           .user-profile-main__box__right__userinfo
             .user-profile-main__box__right__userinfo__nickname
@@ -41,4 +41,3 @@
             .submit-button
               =f.submit "保存"
               =link_to "キャンセル" ,user_path(current_user), class: "cancel-button"
-
