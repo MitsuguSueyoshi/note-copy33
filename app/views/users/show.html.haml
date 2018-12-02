@@ -36,10 +36,9 @@
               %li 報告する
           = render "relationships/follow-button", user: @user
   .user-container-nav
-    %ul.user-container-nav__list
-      %li.menu
-        = link_to "ホーム" ""
-      %li.menu
-        = link_to "マガジン" ""
+    .user-container-nav__list
+      %label.tabhome_label{for:"tabhome"} ホーム
+      %label.tabmagazine_label{for:"tabmagazine"} マガジン
+
   / = render "notes/home"
 = render partial: "user-profile", locals: { user: @user}

@@ -160,12 +160,12 @@
       &__list{
         max-width: 970px;
         height:50px;
-        li{
+        label{
           display: inline-block;
           padding: 2px 20px;
           float: left;
         }
-        li:hover{
+        label:hover{
           border-bottom: solid 2px black;
         }
       }
