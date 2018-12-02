@@ -6,7 +6,8 @@ class NotesController < ApplicationController
   end
 
   def show
-
+    @note = Note.find(id: params[:id])
+    @user = @note.user
   end
 
   def new
