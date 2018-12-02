@@ -1,4 +1,5 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
+  $(function(){
   $(".link-green").on("click", function(){
     $(".edit-container").hide();
     $(".container-hide").show();
@@ -6,5 +7,6 @@ $(function(){
   $(".cancel-button").on("click",function(){
     $(".container-hide").hide();
     $(".edit-container").show();
+  });
   });
 });
