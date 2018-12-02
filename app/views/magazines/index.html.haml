@@ -5,7 +5,7 @@
       すべてのマガジン
     %i.fas.fa-caret-down.magazine-admin-content__all__arrow
   %ul.magazine-admin-content__magazines
-    = link_to do
+    = link_to new_user_magazine_path(current_user) do
       %li.magazine-admin-content__magazines__create
         %i.fas.fa-plus.magazine-admin-content__magazines__create__plus
         .magazine-admin-content__magazines__create__text
