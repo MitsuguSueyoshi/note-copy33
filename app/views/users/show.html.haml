@@ -48,10 +48,11 @@
                 %div.card__avatar
                   %ul
                     %li.icon
-                      = link_to image_tag('/assets/icon_image1.jpeg')
+                      = link_to user_path(@user) do
+                        =image_tag @user.main_image
                     %li.info
-                      %a{href: "", class: "name" }野比のび太
-                      %a{href: "", class: "date"} 2018/11/22 16:22
+                      = link_to @user.nickname , user_path(@user), class: "name"
+                      = link_to "2018/11/22 16:22", note_path(note), class: "date"
                 %div.card__main
                   =link_to note_path(note) do
                     %div.card__main--image
