@@ -37,8 +37,12 @@
           = render "relationships/follow-button", user: @user
   .user-container-nav
     .user-container-nav__list
-      %label.tabhome_label{for:"tabhome"} ホーム
-      %label.tabmagazine_label{for:"tabmagazine"} マガジン
-
+      %label.tab1_label{for:"tab1"} ホーム
+      %label.tab2_label{for:"tab2"} マガジン
+    .user-container-nav__products
+      #product_note.tab_product
+        %p note
+      #product_magazine.tab_product
+        %p magazine
   / = render "notes/home"
 = render partial: "user-profile", locals: { user: @user}
