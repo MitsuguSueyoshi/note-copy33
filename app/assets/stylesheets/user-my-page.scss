@@ -156,31 +156,37 @@
     max-width: 970px;
     height:50px;
     margin: 10px auto;
-    border-bottom: solid 1px #F5F5F5;
       &__list{
         max-width: 970px;
         height:50px;
         label{
           display: inline-block;
-          padding: 2px 20px;
+          padding: 0px 20px;
           float: left;
-          .active{
-            background: #fff;
-          }
+          font-size: 13px;
+          height: 50px;
+          line-height: 50px;
+
+        }
+        .active{
+          font-weight: bold;
+          border-bottom: solid 2px black;
         }
         label:hover{
           border-bottom: solid 2px black;
         }
       }
       &__products{
-        background-color: #CCCCCC;
           .tab_product{
             width: 100%;
-            height: 50px;
-            display: none;
-
-
           }
+
+          #product_magazine{
+            display: none;
+          }
+
+
+
       }
   }
 }

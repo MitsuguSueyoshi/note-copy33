@@ -37,12 +37,51 @@
           = render "relationships/follow-button", user: @user
   .user-container-nav
     .user-container-nav__list
-      %label.tab1_label{for:"tab1"} ホーム
+      %label.tab1_label.active{for:"tab1"} ホーム
       %label.tab2_label{for:"tab2"} マガジン
     .user-container-nav__products
       #product_note.tab_product
-        %p note
+        %div.home__container
+          %div.home__container__cards
+            - @user.notes.each do |note|
+              %div.card
+                %div.card__avatar
+                  %ul
+                    %li.icon
+                      = link_to image_tag('/assets/icon_image1.jpeg')
+                    %li.info
+                      %a{href: "", class: "name" }野比のび太
+                      %a{href: "", class: "date"} 2018/11/22 16:22
+                %div.card__main
+                  =link_to note_path(note) do
+                    %div.card__main--image
+                      - if note.images.present?
+                        -note.images.each do |image|
+                          = image_tag image.image
+                    %h3.card__main--title
+                      = note.title
+                    %p.card__main--text
+                      = note.text
+                %div.card__foot
+                  %ul.icon
+                    %li.icon__box
+                      = link_to "" do
+                        %i.far.fa-heart
+                        %div.like__count 21
+                    %li.icon__box
+                      = link_to "" do
+                        %i.fas.fa-arrow-right
+                    %li.icon__box
+                      = link_to "" do
+                        %i.fas.fa-plus
+                    - if note.user.id == current_user.id
+                      %li.icon__box
+                        = link_to "/notes/#{note.id}", method: :delete do
+                          %p 削除
+                        / %i.fas.fa-ellipsis-h 後で使用
+                  %div.comment__link
+
       #product_magazine.tab_product
         %p magazine
-  / = render "notes/home"
+        / = render "notes/home"
 = render partial: "user-profile", locals: { user: @user}
