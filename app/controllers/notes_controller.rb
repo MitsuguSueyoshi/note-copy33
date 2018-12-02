@@ -17,7 +17,10 @@ class NotesController < ApplicationController
   def create
     @note = current_user.notes.new(notes_params)
     if @note.save
-      redirect_to root_path
+       respond_to do |format|
+          format.html { redirect_to root_path }
+          format.json
+       end
     else
       flash[:alert] = 'タイトル、本文、カテゴリは必ず入力して下さい'
       redirect_to new_note_path
