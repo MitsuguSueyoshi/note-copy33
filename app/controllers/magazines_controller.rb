@@ -1,4 +1,5 @@
 class MagazinesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
   end
@@ -9,6 +10,16 @@ class MagazinesController < ApplicationController
   end
 
   def create
+    @magazine = current_user.magazines.new(magazines_params)
+    if @magazine.save
+      respond_to do |format|
+        format.html {redirect_to user_magazines_path(current_user)}
+        format.json
+      end
+    else
+      flash[:alert] = 'タイトルは必ず入力して下さい'
+      redirect_to new_user_magazine_path(current_user)
+    end
   end
 
   def show
@@ -23,4 +34,8 @@ class MagazinesController < ApplicationController
   def update
   end
 
+  private
+  def magazines_params
+    params.require(:magazine).permit(:title, :description, :header_image).merge(user_id: current_user.id)
+  end
 end
