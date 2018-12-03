@@ -4,6 +4,8 @@ class MagazinesController < ApplicationController
   end
 
   def new
+    @user = current_user
+    @magazine = Magazine.new
   end
 
   def create
