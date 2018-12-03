@@ -177,121 +177,122 @@
         }
       }
     }
-    .user-container-nav__products{
-          .tab_product{
-            width: 100%;
+  .products{
+    width: 100%;
+    min-height: 100%;
+    #product_magazine{
+      max-width: 1440px;
+      display: none;
+      background-color: #f7f9f9;
+      margin-top: 23px;
+      .magazine-content{
+        width: 950px;
+        margin: 0 245px;
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #f7f9f9;
+
+        &__create{
+          width: 450px;
+          height: 220px;
+          border: 1px solid #e6e6e6;
+          position: relative;
+          background-color: #FFF;
+          margin: 10px;
+          &__plus{
+            font-size: 30px;
+            color: #e6e6e6;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
           }
-          #product_magazine{
-            display: none;
-            background-color: #f7f9f9;
-            margin-top: 23px;
-            .magazine-content{
-              display: flex;
-              flex-wrap: wrap;
-              background-color: #f7f9f9;
-              width: 950px;
-              margin: 0 auto;
-              margin-top: 23px;
-              padding-top: 30px;
-              &__create{
-                width: 450px;
-                height: 220px;
-                border: 1px solid #e6e6e6;
-                position: relative;
-                background-color: #FFF;
-                margin: 10px;
-                &__plus{
-                  font-size: 30px;
-                  color: #e6e6e6;
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  -ms-transform: translate(-50%,-50%);
-                  -webkit-transform: translate(-50%,-50%);
-                  transform: translate(-50%,-50%);
-                }
-                p{
-                  font-size: 13px;
-                  color: #e6e6e6;
-                  display: inline-block;
-                  position: absolute;
-                  left: 40%;
-                  top: 60%;
-                }
-              }
-              &__posted{
-                width: 450px;
-                height: 220px;
-                border: 1px solid #e6e6e6;
-                position: relative;
-                background-color: #FFF;
-                margin: 10px;
-                &__header{
-                  width: 100%;
-                  height: 150px;
-                  position: relative;
-                  img{
-                  width: 100%;
-                  height: 150px;
-                  object-fit: cover;
-                 }
-                  p.title{
-                    font-size: 20px;
-                    color: #FFF;
-                    text-shadow: 1px 1px 1px #CCCCCC;
-                    position: absolute;
-                    bottom: 10px;
-                    left: 8px;
-                  }
-                }
-                &__footer{
-                  width: 100%;
-                  height: 70px;
-                  position: relative;
-
-                  .main-icon{
-                    width: 300px;
-                    height: 70px;
-                    float: left;
-                    position: relative;
-                    a{
-                      width: 40px;
-                      height: 40px;
-                      img{
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        display: inline-block;
-                        margin-top: 15px;
-                        margin-left: 15px;
-                      }
-                    }
-                      a.user_nickname_link {
-                        font-size: 12px;
-                        color: #CCCCCC;
-                        display: inline-block;
-                        position: absolute;
-                        bottom: 8px;
-                        left: 65px;
-                      }
-                  }
-                  .setting-button{
-                    float: right;
-                    color: $greencolor;
-                    border: solid 1px $greencolor;
-                    font-size: 14px;
-                    border-radius: 4px;
-                    padding: 5px 8px;
-                    position: absolute;
-                    right: 15px;
-                    top: 15px;
-
-                  }
-                }
-              }
+          p{
+            font-size: 13px;
+            color: #e6e6e6;
+            display: inline-block;
+            position: absolute;
+            left: 40%;
+            top: 60%;
+          }
+        }
+        &__posted{
+          width: 450px;
+          height: 220px;
+          border: 1px solid #e6e6e6;
+          position: relative;
+          background-color: #FFF;
+          margin: 10px;
+          &__header{
+            width: 100%;
+            height: 150px;
+            position: relative;
+            img{
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+           }
+            p.title{
+              font-size: 20px;
+              color: #FFF;
+              text-shadow: 1px 1px 1px #CCCCCC;
+              position: absolute;
+              bottom: 10px;
+              left: 8px;
             }
           }
+          &__footer{
+            width: 100%;
+            height: 70px;
+            position: relative;
+
+            .main-icon{
+              width: 300px;
+              height: 70px;
+              float: left;
+              position: relative;
+              a{
+                width: 40px;
+                height: 40px;
+                img{
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: inline-block;
+                  margin-top: 15px;
+                  margin-left: 15px;
+                }
+              }
+                a.user_nickname_link {
+                  font-size: 12px;
+                  color: #CCCCCC;
+                  display: inline-block;
+                  position: absolute;
+                  bottom: 8px;
+                  left: 65px;
+                }
+            }
+            .setting-button{
+              float: right;
+              color: $greencolor;
+              border: solid 1px $greencolor;
+              font-size: 14px;
+              border-radius: 4px;
+              padding: 5px 8px;
+              position: absolute;
+              right: 15px;
+              top: 15px;
+
+            }
+          }
+        }
       }
+    }
+  }
+
 
 }
 
