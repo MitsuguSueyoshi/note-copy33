@@ -8,10 +8,11 @@
     .user-container-main__box
       .user-container-main__box__icon
         - if @user.main_image.present?
-          = image_tag @user.main_image, class: "my-icon"
+          = link_to user_path(@user) do
+            =image_tag @user.main_image
         - else
           = link_to "", class: "my-icon" do
-            %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
       .user-container-main__box__right
         .user-container-main__box__right__userinfo
           .user-container-main__box__right__userinfo__nickname
@@ -35,54 +36,110 @@
               %li ブロックする
               %li 報告する
           = render "relationships/follow-button", user: @user
+
   .user-container-nav
     .user-container-nav__list
       %label.tab1_label.active{for:"tab1"} ホーム
       %label.tab2_label{for:"tab2"} マガジン
-    .user-container-nav__products
-      #product_note.tab_product
-        %div.home__container
-          %div.home__container__cards
-            - @user.notes.each do |note|
-              %div.card
-                %div.card__avatar
-                  %ul
-                    %li.icon
+  .user-container-nav__products
+    #product_note.tab_product
+      %div.home__container
+        %div.home__container__cards
+          - @user.notes.each do |note|
+            %div.card
+              %div.card__avatar
+                %ul
+                  %li.icon
+                    - if @user.main_image.present?
                       = link_to user_path(@user) do
                         =image_tag @user.main_image
-                    %li.info
-                      = link_to @user.nickname , user_path(@user), class: "name"
-                      = link_to "2018/11/22 16:22", note_path(note), class: "date"
-                %div.card__main
-                  =link_to note_path(note) do
-                    %div.card__main--image
-                      - if note.images.present?
-                        -note.images.each do |image|
-                          = image_tag image.image
-                    %h3.card__main--title
-                      = note.title
-                    %p.card__main--text
-                      = note.text
-                %div.card__foot
-                  %ul.icon
+                    - else
+                      = link_to user_path(@user) do
+                        = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+                  %li.info
+                    = link_to @user.nickname , user_path(@user), class: "name"
+                    = link_to "2018/11/22 16:22", note_path(note), class: "date"
+              %div.card__main
+                =link_to note_path(note) do
+                  %div.card__main--image
+                    - if note.images.present?
+                      -note.images.each do |image|
+                        = image_tag image.image
+                  %h3.card__main--title
+                    = note.title
+                  %p.card__main--text
+                    = note.text
+              %div.card__foot
+                %ul.icon
+                  %li.icon__box
+                    = link_to "" do
+                      %i.far.fa-heart
+                      %div.like__count 21
+                  %li.icon__box
+                    = link_to "" do
+                      %i.fas.fa-arrow-right
+                  %li.icon__box
+                    = link_to "" do
+                      %i.fas.fa-plus
+                  - if note.user.id == current_user.id
                     %li.icon__box
-                      = link_to "" do
-                        %i.far.fa-heart
-                        %div.like__count 21
-                    %li.icon__box
-                      = link_to "" do
-                        %i.fas.fa-arrow-right
-                    %li.icon__box
-                      = link_to "" do
-                        %i.fas.fa-plus
-                    - if note.user.id == current_user.id
-                      %li.icon__box
-                        = link_to "/notes/#{note.id}", method: :delete do
-                          %p 削除
-                        / %i.fas.fa-ellipsis-h 後で使用
-                  %div.comment__link
+                      = link_to "/notes/#{note.id}", method: :delete do
+                        %p 削除
+                      / %i.fas.fa-ellipsis-h 後で使用
+                %div.comment__link
 
-      #product_magazine.tab_product
-        %p magazine
-        / = render "notes/home"
+    #product_magazine.tab_product
+      .magazine-content
+        = link_to do
+          .magazine-content__create
+            %i.fas.fa-plus.magazine-content__create__plus
+            %p マガジンを作る
+          .magazine-content__posted
+            .magazine-content__posted__header
+              = image_tag "20140721-P7210083de_TP_V4.jpg"
+              %p.title マガジンタイトル
+            .magazine-content__posted__footer
+              .main-icon
+                - if @user.main_image.present?
+                  = link_to user_path(@user) do
+                    =image_tag @user.main_image
+                - else
+                  = link_to user_path(@user) do
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+                = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
+              .setting-button
+                =link_to "設定", ""
+          .magazine-content__posted
+            .magazine-content__posted__header
+              = image_tag "20140721-P7210083de_TP_V4.jpg"
+              %p.title マガジンタイトル
+            .magazine-content__posted__footer
+              .main-icon
+                - if @user.main_image.present?
+                  = link_to user_path(@user) do
+                    =image_tag @user.main_image
+                - else
+                  = link_to user_path(@user) do
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+                = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
+              .setting-button
+                =link_to "設定", ""
+          .magazine-content__posted
+            .magazine-content__posted__header
+              = image_tag "20140721-P7210083de_TP_V4.jpg"
+              %p.title マガジンタイトル
+            .magazine-content__posted__footer
+              .main-icon
+                - if @user.main_image.present?
+                  = link_to user_path(@user) do
+                    =image_tag @user.main_image
+                - else
+                  = link_to user_path(@user) do
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+                = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
+              .setting-button
+                =link_to "設定", ""
+
+
+
 = render partial: "user-profile", locals: { user: @user}
