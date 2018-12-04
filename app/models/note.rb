@@ -12,7 +12,4 @@ class Note < ApplicationRecord
 
   enum category: { マンガ: 0, コラム: 1, 小説: 2, サウンド: 3, ビジネス: 4, ライフスタイル: 5, テクノロジー: 6, エンタメ: 7 }
 
-  def user
-    return User.find_by(id: self.user_id)
-  end
 end
