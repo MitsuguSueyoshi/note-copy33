@@ -2,7 +2,7 @@
 = render "shared/header"
 .border-box
 .magazines-create
-  = form_for [@user,@magazine] do |f|
+  = form_for [current_user, @magazine] do |f|
     .magazines-create__header
       = f.label :header_image, class: "magazines-create__header__mask" do
         %i.fas.fa-camera
@@ -44,7 +44,7 @@
     .magazines-create__open-text
       公開
     .magazines-create__btn
-      = link_to "マガジン削除" ,user_magazine_path(@user, @magazine), method: :delete, class: "magazines-create__btn__cancel"
+      = link_to "マガジン削除" ,user_magazine_path(current_user, @magazine), method: :delete, class: "magazines-create__btn__cancel"
       = f.submit "更新", class: "magazines-create__btn__submit"
 .footer
   %ul.footer__list

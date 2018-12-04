@@ -2,7 +2,7 @@
 = render "shared/header"
 .border-box
 .magazines-create
-  = form_for [@user,@magazine] do |f|
+  = form_for [current_user, @magazine] do |f|
     .magazines-create__header
       = f.label :header_image, class: "magazines-create__header__mask" do
         %i.fas.fa-camera
