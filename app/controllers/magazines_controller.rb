@@ -30,9 +30,19 @@ class MagazinesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @magazine = Magazine.find(params[:id])
   end
 
   def update
+    @magazine = Magazine.find(params[:id])
+    if @magazine.update(magazines_params)
+      flash[:notice] = 'マガジンを更新しました！'
+      redirect_to user_magazines_path(current_user)
+    else
+      flash[:alert] = 'マガジンの更新に失敗しました'
+      redirect_to edit_user_magazine_path(current_user, magazine)
+    end
   end
 
   private
