@@ -15,7 +15,9 @@ body {
   background-color: #f7f9f9;
   &__all{
     margin: 0 auto;
-    width: 570px;
+    position: relative;
+    right: 6px;
+    width: 560px;
     height: 32px;
     padding-top: 18px;
     border: solid 1px #F5F5F5;
@@ -52,7 +54,7 @@ body {
       border-radius: 6px;
       background-color: white;
       margin-bottom: 30px;
-      margin-right: 12px;
+      margin-right: 10px;
       &__plus{
         position: absolute;
         left: 120px;
@@ -79,6 +81,7 @@ body {
       border-radius: 6px;
       background-color: white;
       margin-bottom: 30px;
+      margin-right: 12px;
       &__header{
         img{
           height: 100px;
@@ -149,6 +152,8 @@ body {
   display: block;
 }
 
-.two{
-  margin-left: 24px;
+.magazine-header-image{
+  height: 100px;
+  border-radius: 6px 6px 0 0;
+  width: 270px;
 }
