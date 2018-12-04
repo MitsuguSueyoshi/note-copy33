@@ -27,4 +27,7 @@ class User < ApplicationRecord
   mount_uploader :header_image, ImageUploader
   mount_uploader :main_image, ImageUploader
 
+  def posts
+    return Post.where(user_id: self.id)
+  end
 end
