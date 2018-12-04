@@ -1,0 +1,78 @@
+/マガジン編集画面
+= render "shared/header"
+.border-box
+.magazines-create
+  = form_for [@user,@magazine] do |f|
+    .magazines-create__header
+      = f.label :header_image, class: "magazines-create__header__mask" do
+        %i.fas.fa-camera
+        %span#selectimage ヘッダー画像を変更
+        = f.file_field :header_image, class: "header_image_file"
+      .header_present_image
+        = image_tag "", id: "header_image_prev",class: "hidden"
+    .magazines-create__title
+      マガジンタイトル
+    = f.text_field :title
+    .magazines-create__description
+      マガジンの説明
+      %p.nini
+        （任意）
+    = f.text_area :description
+    .magazines-create__sales
+      販売設定
+    .magazines-create__sales-free
+      無料
+    .magazines-create__sales-toll
+      有料（単体）
+    .magazines-create__sales-continue
+      有料（継続）
+    .magazines-create__layout
+      レイアウト
+    .magazines-create__layout-list
+      %i.far.fa-list-alt
+      リスト表示
+    .magazines-create__layout-grid
+      %i.fas.fa-th-large
+      グリッド表示
+    .magazines-create__layout-stream
+      %i.fas.fa-bars
+      ストリーム表示
+    .magazines-create__open
+      公開設定
+    .magazines-create__open-btn
+      %i.fas.fa-toggle-on
+    .magazines-create__open-text
+      公開
+    .magazines-create__btn
+      = link_to "マガジン削除" ,user_magazines_path(current_user), class: "magazines-create__btn__cancel", method: :delete
+      = f.submit "更新", class: "magazines-create__btn__submit"
+.footer
+  %ul.footer__list
+    %li.footer__list__item
+      noteプレミアム
+    %li.footer__list__item
+      クリエイターの方へ
+    %li.footer__list__item
+      よくある質問
+    %li.footer__list__item
+      使い方
+    %li.footer__list__item
+      ノート
+    %li.footer__list__item
+      マガジン
+    %li.footer__list__item
+      ユーザー
+    %li.footer__list__item
+      ハッシュタグ
+    %li.footer__list__item
+      プライバシー
+    %li.footer__list__item
+      ご利用規約
+    %li.footer__list__item
+      特商法表記
+    %li.footer__list__item
+      クリエイターへのお問い合わせ
+    %li.footer__list__item.only-bold
+      noteカイゼン目安箱
+    %li.footer__list__item.only-bold
+      クリエイターの推薦
