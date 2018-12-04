@@ -1,4 +1,4 @@
-/マガジン編集画面
+/マガジン編集画面, 編集画面からdestroy出来ます！
 = render "shared/header"
 .border-box
 .magazines-create
@@ -44,7 +44,7 @@
     .magazines-create__open-text
       公開
     .magazines-create__btn
-      = link_to "マガジン削除" ,user_magazines_path(current_user), class: "magazines-create__btn__cancel", method: :delete
+      = link_to "マガジン削除" ,user_magazine_path(@user, @magazine), method: :delete, class: "magazines-create__btn__cancel"
       = f.submit "更新", class: "magazines-create__btn__submit"
 .footer
   %ul.footer__list
