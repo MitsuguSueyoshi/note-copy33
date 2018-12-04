@@ -2,6 +2,7 @@ class MagazinesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
+    @magazines = current_user.magazines
   end
 
   def new
