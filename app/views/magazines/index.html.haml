@@ -33,6 +33,6 @@
                 %img{alt: "イメージ", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
             .magazine-admin-content__magazines__magazine__footer__name
               = magazine.user.nickname
-          = link_to do
+          = link_to edit_user_magazine_path(current_user, magazine) do
             .magazine-admin-content__magazines__magazine__footer__setting
               設定
