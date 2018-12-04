@@ -43,11 +43,11 @@
       %label.tab2_label{for:"tab2"} マガジン
   .products
     #product_note.tab_product
-      %div.home__container
-        %div.home__container__cards
+      .home__container
+        .home__container__cards
           - @user.notes.each do |note|
-            %div.card
-              %div.card__avatar
+            .card
+              .card__avatar
                 %ul
                   %li.icon
                     - if @user.main_image.present?
@@ -59,9 +59,9 @@
                   %li.info
                     = link_to @user.nickname , user_path(@user), class: "name"
                     = link_to "2018/11/22 16:22", note_path(note), class: "date"
-              %div.card__main
+              .card__main
                 =link_to note_path(note) do
-                  %div.card__main--image
+                  .card__main--image
                     - if note.images.present?
                       -note.images.each do |image|
                         = image_tag image.image
@@ -69,7 +69,7 @@
                     = note.title
                   %p.card__main--text
                     = note.text
-              %div.card__foot
+              .card__foot
                 %ul.icon
                   %li.icon__box
                     = link_to "" do
@@ -86,7 +86,7 @@
                       = link_to "/notes/#{note.id}", method: :delete do
                         %p 削除
                       / %i.fas.fa-ellipsis-h 後で使用
-                %div.comment__link
+                .comment__link
 
     #product_magazine.tab_product
       .magazine-content
