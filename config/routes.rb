@@ -6,4 +6,5 @@ Rails.application.routes.draw do
  end
  resources :notes
  resources :relationships, only: [:create, :destroy]
+ resources :images, only: [:index]
 end
