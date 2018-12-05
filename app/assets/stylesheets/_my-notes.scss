@@ -4,6 +4,7 @@
   border-top: solid 1px #F5F5F5;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
   background-color: $whitecolor;
+  display: none;
 
   &__area {
     max-width: 940px;
@@ -48,10 +49,12 @@
         padding: 16px 0;
         border-bottom: 1px solid rgba(0,0,0,0.05);
         font-size: 12px;
-        position: relative;
+        display: flex;
+        align-items: center;
+        // position: relative;
 
         .note__item {
-          display: inline-block;
+          // display: inline-block;
           vertical-align: middle;
         }
 
@@ -61,7 +64,9 @@
         }
 
         .my-note {
-          width: 733px;
+          vertical-align: middle;
+          flex: 1;
+
 
           &__title {
             word-break: break-all;
@@ -81,12 +86,13 @@
         .image {
 
           margin: 0px 8px;
-          position: absolute;
-          right: 80px;
-          top: 50%;
-          -ms-transform: translate(-50%,-50%);
-          -webkit-transform : translate(-50%,-50%);
-          transform : translate(-50%,-50%);
+          vertical-align: middle;
+          // position: absolute;
+          // right: 80px;
+          // top: 50%;
+          // -ms-transform: translate(-50%,-50%);
+          // -webkit-transform : translate(-50%,-50%);
+          // transform : translate(-50%,-50%);
 
 
           img {
@@ -99,12 +105,13 @@
 
         .edit__button {
           margin: 0 8px;
-          position: absolute;
-          right: 10px;
-          top: 50%;
-          -ms-transform: translate(-50%,-50%);
-          -webkit-transform : translate(-50%,-50%);
-          transform : translate(-50%,-50%);
+          box-sizing: border-box !important;
+          // position: absolute;
+          // right: 10px;
+          // top: 50%;
+          // -ms-transform: translate(-50%,-50%);
+          // -webkit-transform : translate(-50%,-50%);
+          // transform : translate(-50%,-50%);
 
 
           a {
@@ -120,12 +127,12 @@
         .delete__button {
           margin-left: 8px;
           color: #787c7b;
-          position: absolute;
-          right: 10px;
-          top: 50%;
-          -ms-transform: translate(-50%,-50%);
-          -webkit-transform : translate(-50%,-50%);
-          transform : translate(-50%,-50%);
+          // position: absolute;
+          // right: 10px;
+          // top: 50%;
+          // -ms-transform: translate(-50%,-50%);
+          // -webkit-transform : translate(-50%,-50%);
+          // transform : translate(-50%,-50%);
         }
       }
     }
