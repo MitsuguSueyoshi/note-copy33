@@ -1,3 +1,39 @@
+%div.my-notes__container
+  %div.my-notes__container__area
+    %div.my-notes__title
+      %p ノート一覧
+    %ul.my-notes__head
+      %li 5ノート
+      %li.my-notes__head__items
+        %ul
+          %li
+            = link_to "公開ステータス", ""
+          %li
+            = link_to "期間", ""
+          %li
+            = link_to "マガジン", ""
+    - @my_notes.each do |note|
+      %ul.my-notes__list
+        %li
+          %div.selection__box.note__item
+            %i.far.fa-circle
+          %div.my-note.note__item
+            %div.my-note__title
+              = note.title
+            %div.my-note__date
+              = note.created_at
+          %div.image.note__item
+            - if note.images.present?
+              -note.images.each do |image|
+                = image_tag image.image
+          %div.edit__button.note__item
+            = link_to "編集", ""
+          %div.delete__button.note__item
+            %i.fas.fa-ellipsis-h
+
+
+= render 'shared/header-nav'
+
 %div.home__container
   %div.home__container__cards
     - @notes.each do |note|
