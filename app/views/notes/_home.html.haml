@@ -32,7 +32,7 @@
             = link_to "" do
               %i.fas.fa-ellipsis-h.balloon__event
             %div.delete__balloon
-              = link_to "削除", ""
+              = link_to "削除",  "/notes/#{note.id}", method: :delete
 
 
 
