@@ -6,3 +6,17 @@
       この画像から「
       %span みんなのフォトギャラリー(β)
       」に出品することができます。
+  .images-list__container
+    .images-list__container__pulldown
+      %select{name: "share"}
+        %option{value: "all"}すべて
+        %option{value: "share"}共有済み
+      %select{name: "year-mounth"}
+        %option{value: ""}日時で絞り込む
+        %option{value: "1"}2019年1月
+        %option{value: "12"}2018年12月
+        %option{value: "11"}2018年11月
+        %option{value: "10"}2018年10月
+        %option{value: "9"}2018年9月
+    .images-list__container__gallery
+      .images-list__container__gallery__layout
