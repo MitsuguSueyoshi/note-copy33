@@ -113,6 +113,45 @@
         .delete__button {
           margin-left: 8px;
           color: #787c7b;
+          position: relative;
+
+          .delete__balloon {
+            width: 90px;
+            position: absolute;
+            bottom: 30px;
+            right: 0;
+            z-index: 10;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
+            display: none;
+
+            &::before {
+              top: auto;
+              bottom: -13px;
+              left: auto;
+              right: 10px;
+              margin-left: 0;
+              -webkit-transform: rotate(45deg) translate(-5px, -5px);
+              transform: rotate(45deg) translate(-5px, -5px);
+              content: "";
+              display: block;
+              position: absolute;
+              top: 19px;
+              width: 14px;
+              height: 14px;
+              background: #fff;
+              box-shadow: -1px -1px 1px -1px rgba(0,0,0,0.8);
+              -webkit-transform: rotate(225deg) translate(-5px, -5px);
+              transform: rotate(225deg) translate(-5px, -5px);
+            }
+
+            a {
+              display: block;
+            }
+          }
         }
       }
     }

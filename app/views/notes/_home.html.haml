@@ -29,7 +29,11 @@
           %div.edit__button.note__item
             = link_to "編集", edit_note_path(note)
           %div.delete__button.note__item
-            %i.fas.fa-ellipsis-h
+            = link_to "" do
+              %i.fas.fa-ellipsis-h.balloon__event
+            %div.delete__balloon
+              = link_to "削除", ""
+
 
 
 = render 'shared/header-nav'
