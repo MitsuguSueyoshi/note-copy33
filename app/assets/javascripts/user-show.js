@@ -9,4 +9,16 @@ $(document).on('turbolinks:load', function(){
     $(".user-container").hide();
     $(".user-profile").show();
   });
+  $(".tab1_label").on("click", function(){
+    $("label.active").removeClass("active");
+    $(this).addClass("active");
+    $("#product_magazine").hide();
+    $("#product_note").show();
+  });
+  $(".tab2_label").on("click", function(){
+    $("label.active").removeClass("active");
+    $(this).addClass("active");
+    $("#product_note").hide();
+    $("#product_magazine").show();
+  });
 });
