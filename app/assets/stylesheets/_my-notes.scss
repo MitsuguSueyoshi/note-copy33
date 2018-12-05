@@ -1,0 +1,134 @@
+.my-notes__container {
+  margin-top: 10px;
+  min-height: 100%;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  background-color: $whitecolor;
+
+  &__area {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    .my-notes__title {
+      padding: 24px 0;
+
+      p {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .my-notes__head {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-color;
+      font-size: 13px;
+      overflow: hidden;
+
+
+      li {
+        display: inline-block;
+        float: left;
+      }
+
+      .my-notes__head__items {
+        margin-left: auto;
+        float: right;
+
+        li {
+          margin-left: 30px;
+        }
+      }
+    }
+
+    .my-notes__list {
+
+      li {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-size: 12px;
+        position: relative;
+
+        .note__item {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .selection__box {
+          margin-right: 15px;
+
+        }
+
+        .my-note {
+          width: 733px;
+
+          &__title {
+            word-break: break-all;
+            margin-bottom: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+
+          }
+
+          &__date {
+            color: #787c7b;
+          }
+
+        }
+
+        .image {
+
+          margin: 0px 8px;
+          position: absolute;
+          right: 80px;
+          top: 50%;
+          -ms-transform: translate(-50%,-50%);
+          -webkit-transform : translate(-50%,-50%);
+          transform : translate(-50%,-50%);
+
+
+          img {
+            width: 48px;
+            height: auto;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 3px;
+          }
+        }
+
+        .edit__button {
+          margin: 0 8px;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          -ms-transform: translate(-50%,-50%);
+          -webkit-transform : translate(-50%,-50%);
+          transform : translate(-50%,-50%);
+
+
+          a {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 10px 16px;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
+          }
+
+        }
+
+        .delete__button {
+          margin-left: 8px;
+          color: #787c7b;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          -ms-transform: translate(-50%,-50%);
+          -webkit-transform : translate(-50%,-50%);
+          transform : translate(-50%,-50%);
+        }
+      }
+    }
+  }
+}
+
