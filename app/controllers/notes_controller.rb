@@ -3,9 +3,6 @@ class NotesController < ApplicationController
 
   def index
     @notes = Note.all.includes(:user).order("created_at DESC")
-    if authenticate_user!
-      @my_notes = current_user.notes.order("created_at DESC")
-    end
   end
 
   def show
