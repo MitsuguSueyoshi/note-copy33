@@ -21,12 +21,14 @@
     .images-list__container__gallery
       - @images.each do |image|
         .images-list__container__gallery__layout
-          = image_tag image.image_url
+          = image_tag image.image_url, class: "layout-image"
+
 
   .image-modal
     .image-modal__box
       .image-modal__box__main
         .image-modal__box__main__content
+          = image_tag "", id: "expantion-image"
       .image-modal__box__middle
         .image-modal__box__middle__title
           %p タイトル
