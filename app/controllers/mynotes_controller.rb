@@ -8,10 +8,14 @@ class MynotesController < ApplicationController
 
   def destroy_all
     checked_data = params[:deletes].keys
-    checked_data.each do |num|
-      Note.find(num).destroy
+    begin
+      checked_data.each do |num|
+        Note.find(num).destroy
+      end
+      redirect_to mynotes_path
+    rescue
+      redirect_to mynotes_path
     end
-    redirect_to mynotes_path
   end
 
 end
