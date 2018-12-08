@@ -19,10 +19,10 @@
         %option{value: "10"}2018年10月
         %option{value: "9"}2018年9月
     .images-list__container__gallery
-      - @images.each do |image|
-        .images-list__container__gallery__layout
-          = image_tag image.image_url, class: "layout-image"
-
+      - @notes.each do |note|
+        - if note.images.present?
+          - note.images.each do |image|
+            = image_tag image.image, class: "layout-image"
 
   .image-modal
     .image-modal__box
