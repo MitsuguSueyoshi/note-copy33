@@ -50,10 +50,8 @@
         font-size: 12px;
         display: flex;
         align-items: center;
-        // position: relative;
 
         .note__item {
-          // display: inline-block;
           vertical-align: middle;
         }
 
@@ -153,6 +151,61 @@
           }
         }
       }
+    }
+  }
+}
+
+
+
+.my-notes__foot {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  padding: 0 15px;
+  background: #fff;
+  border-top: 1px #e8eceb solid;
+  display: none;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+
+    .times {
+       vertical-align: middle;
+
+      span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_delete-65323aabb4e2c8f5ca1d21a02e041d7464f985e986bc89f27eadfe47934c92e6.svg);
+      }
+    }
+
+    .foot__text {
+      vertical-align: middle;
+      font-size: 13px;
+
+      .checked__counts {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 0.1em 0.9em;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        color: #fff;
+        background: #41c9b4;
+        border-radius: 100px;
+      }
+    }
+
+    .destroy_button {
+      vertical-align: middle;
+      margin-left: auto;
+      margin-right: 92px;
+      color: #ED4956;
+      font-size: 13px;
+      border-style: none;
     }
   }
 }
