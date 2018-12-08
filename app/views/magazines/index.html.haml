@@ -28,7 +28,7 @@
           = link_to user_path(current_user) do
             .magazine-admin-content__magazines__magazine__footer__icon
               - if magazine.user.main_image.present?
-                = image_tag magazine.header_image, class: "magazine-header-image"
+                = image_tag magazine.user.main_image, class: "magazine-header-image"
               - else
                 %img{alt: "イメージ", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
             .magazine-admin-content__magazines__magazine__footer__name

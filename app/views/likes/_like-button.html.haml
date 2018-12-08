@@ -11,8 +11,8 @@
         %li.like-modal__content__users__user
           = link_to user_path(id: like.user_id) do
             .like-modal__content__users__user__icon
-              - if like.user.header_image.present?
-                = image_tag like.user.header_image
+              - if like.user.main_image.present?
+                = image_tag like.user.main_image
               - else
                 = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
             .like-modal__content__users__user__name
