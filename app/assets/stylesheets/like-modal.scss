@@ -1,18 +1,17 @@
 .like-modal{
   position: fixed;
   left: 680px;
-  top: 430px;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   display: none;
   width: 100vw;
-  height: 140vh;
+  height: 180vh;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
 
   &__content{
-    margin: 80px auto;
+    margin: 180px auto;
     background-color: white;
     width: 360px;
     min-height: 450px;
