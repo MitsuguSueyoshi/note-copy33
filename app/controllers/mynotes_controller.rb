@@ -1,9 +1,9 @@
 class MynotesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    if authenticate_user!
-      @my_notes = current_user.notes.order("created_at DESC")
-    end
+    @my_notes = current_user.notes.order("created_at DESC")
+    @my_notes_count = @my_notes.count
   end
 
   def destroy_all
@@ -11,7 +11,7 @@ class MynotesController < ApplicationController
     checked_data.each do |num|
       Note.find(num).destroy
     end
-    redirect_to root_path
+    redirect_to mynotes_path
   end
 
 end
