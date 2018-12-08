@@ -26,7 +26,6 @@
       font-size: 13px;
       overflow: hidden;
 
-
       li {
         display: inline-block;
         float: left;
@@ -46,7 +45,7 @@
 
       li {
         padding: 16px 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid $border-color;
         font-size: 12px;
         display: flex;
         align-items: center;
@@ -75,7 +74,7 @@
           }
 
           &__date {
-            color: #787c7b;
+            color: $graycolor;
           }
 
         }
@@ -88,7 +87,7 @@
           img {
             width: 48px;
             height: auto;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid $border-color;
             border-radius: 3px;
           }
         }
@@ -109,7 +108,7 @@
 
         .delete__button {
           margin-left: 8px;
-          color: #787c7b;
+          color: $graycolor;
           position: relative;
 
           .delete__balloon {
@@ -121,7 +120,7 @@
             text-align: center;
             padding: 8px;
             border-radius: 4px;
-            background: #fff;
+            background: $whitecolor;
             box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
             display: none;
 
@@ -139,7 +138,7 @@
               top: 19px;
               width: 14px;
               height: 14px;
-              background: #fff;
+              background: $whitecolor;
               box-shadow: -1px -1px 1px -1px rgba(0,0,0,0.8);
               -webkit-transform: rotate(225deg) translate(-5px, -5px);
               transform: rotate(225deg) translate(-5px, -5px);
@@ -155,15 +154,13 @@
   }
 }
 
-
-
 .my-notes__foot {
   position: fixed;
   z-index: 10;
   bottom: 0;
   width: 100%;
   padding: 0 15px;
-  background: #fff;
+  background: $whitecolor;
   border-top: 1px #e8eceb solid;
   display: none;
 
@@ -193,7 +190,7 @@
         padding: 0.1em 0.9em;
         font-family: "Open Sans", sans-serif;
         font-weight: bold;
-        color: #fff;
+        color: $whitecolor;
         background: #41c9b4;
         border-radius: 100px;
       }
