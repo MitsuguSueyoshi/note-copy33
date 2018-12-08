@@ -19,7 +19,10 @@
               %i.far.fa-bell
           %li
             = link_to "", class: "my-icon" do
-              %img{class: "my-icon__image", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+              - if current_user.main_image.present?
+                = image_tag current_user.main_image, class: "my-icon__image"
+              - else
+                = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
             .my-menu
               %ul
                 %li
