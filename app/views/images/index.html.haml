@@ -19,4 +19,18 @@
         %option{value: "10"}2018年10月
         %option{value: "9"}2018年9月
     .images-list__container__gallery
-      .images-list__container__gallery__layout
+      - @images.each do |image|
+        .images-list__container__gallery__layout
+          = image_tag image.image_url
+
+  .image-modal
+    .image-modal__box
+      .image-modal__box__main
+        .image-modal__box__main__content
+      .image-modal__box__middle
+        .image-modal__box__middle__title
+          %p タイトル
+        .image-modal__box__middle__checkbox
+          %input{type: "checkbox" , class: "check"}みんなのフォトギャラリー(β)に追加
+      .image-modal__box__close
+        = button_tag "閉じる", class: "close-button"

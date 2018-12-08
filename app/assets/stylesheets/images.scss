@@ -3,6 +3,7 @@
   margin-top: 10px;
   border-top: solid 1px #F5F5F5;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  position: relative;
   &__title{
     width: 100%;
     margin-top: 10px;
@@ -52,6 +53,75 @@
         max-width: 250px;
         margin: 10px;
           }
+      }
+    }
+  }
+
+
+  .image-modal{
+    height: 100%;
+    min-width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+    position: absolute;
+    top: 0px;
+    box-sizing: border-box;
+    &__box{
+      height: 500px;
+      width: 570px;
+      border-radius: 5px;
+      background-color: #EEEEEE;
+      margin: 0 auto;
+
+      &__main{
+        width: 570px;
+        height: 300px;
+
+      }
+      &__middle{
+        background-color: #FFF;
+        height: 130px;
+        width: 570px;
+
+        &__title{
+          height: 60px;
+          width: 520px;
+          margin: 0 auto;
+          border-bottom:solid 0.8px #EEEEEE;
+          p{
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 75px;
+          }
+        }
+        &__checkbox{
+          box-sizing: border-box;
+          height: 70px;
+          width: 520px;
+          margin: 0 auto;
+          font-size: 12px;
+          padding-top: 15px;
+        }
+      }
+      &__close{
+        height: 68px;
+        width: 570px;
+        border-top: solid 1px #DDDDDD;
+        position: relative;
+        button{
+          border: solid 1px #DDDDDD;
+          padding: 7px 10px;
+          border-radius: 3px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+          outline: none;
+        }
+        button:hover{
+          border: solid 1px #CCCCCC;
+        }
       }
     }
   }
