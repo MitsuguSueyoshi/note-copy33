@@ -34,11 +34,13 @@
 
     &__users{
       overflow: scroll;
+      max-width: 360px;
       &__user{
+        display: block;
+        position: relative;
         height: 40px;
-        width: 360px;
+        width: 336px;
         border-bottom: 1px solid #d9e0e2;
-        border-top: 1px solid #d9e0e2;
         padding-left: 20px;
         padding-top: 8px;
         padding-bottom: 8px;
@@ -46,25 +48,24 @@
           width: 40px;
           height: 40px;
           border-radius: 20px;
+          float: left;
         }
         &__name{
           font-size: 13px;
-          position: relative;
-          left: 50px;
-          bottom: 36px;
+          float: left;
           color: #222222;
           font-weight: bold;
+          margin-left: 10px;
+          margin-top: 4px;
         }
         &__follow{
           &__follow-now{
-            position: relative;
-            left: 245px;
-            bottom: 62px;
+            float: right;
+            margin-right: 10px;
             background-color: #2cb696;
             border: 1px solid #2cb696;
             vertical-align: top;
             text-align: center;
-            padding: 0 16px;
             height: 35px;
             font-weight: bold;
             width: 80px;
@@ -72,13 +73,11 @@
             color: white;
           }
           &__follows{
-            position: relative;
-            left: 245px;
-            bottom: 62px;
+            float: right;
+            margin-right: 10px;
             border: 1px solid #e6e6e6;
             vertical-align: top;
             text-align: center;
-            padding: 0 16px;
             height: 35px;
             font-weight: bold;
             width: 80px;
