@@ -27,7 +27,7 @@
               = link_to "" do
                 %i.fas.fa-arrow-right
             %li.icon__box
-              = render "articles/article-button"
+              = render "articles/article-button", {note: note}
             - if note.user.id == current_user.id
               %li.icon__box
                 = link_to "/notes/#{note.id}", method: :delete do
