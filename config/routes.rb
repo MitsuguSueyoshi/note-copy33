@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'notes#index'
   resources :images, only: [:index]
   resources :users, only: [:show, :edit, :update] do
-    resources :magazines
- end
+   resources :magazines
+  end
   resources :notes do
     resources :likes, only: [:create, :destroy]
   end
@@ -13,5 +13,5 @@ Rails.application.routes.draw do
    collection do
      delete 'destroy_all'
    end
- end
+  end
 end

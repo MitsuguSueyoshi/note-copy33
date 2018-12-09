@@ -1,17 +1,23 @@
-%div.home__container
-  %div.home__container__cards
+.home__container
+  .home__container__cards
     - @notes.each do |note|
-      %div.card
-        %div.card__avatar
+      .card
+        .card__avatar
           %ul
             %li.icon
-              = link_to image_tag('/assets/icon_image1.jpeg')
+              = link_to user_path(note.user) do
+                - if note.user.main_image.present?
+                  = image_tag note.user.main_image
+                - else
+                  = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png'
             %li.info
-              %a{href: "", class: "name" }野比のび太
-              %a{href: "", class: "date"} 2018/11/22 16:22
-        %div.card__main
+              = link_to user_path(note.user), class: "name" do
+                = note.user.nickname
+              = link_to note_path(note), class: "date" do
+                = note.created_at
+        .card__main
           =link_to note_path(note) do
-            %div.card__main--image
+            .card__main--image
               - if note.images.present?
                 -note.images.each do |image|
                   = image_tag image.image
@@ -19,7 +25,7 @@
               = note.title
             %p.card__main--text
               = note.text
-        %div.card__foot
+        .card__foot
           %ul.icon
             %li.icon__box
               = render "likes/like-button",{note: note, likes: @likes}
@@ -31,7 +37,9 @@
                 %i.fas.fa-plus
             - if note.user.id == current_user.id
               %li.icon__box
-                = link_to "/notes/#{note.id}", method: :delete do
-                  %p 削除
-                / %i.fas.fa-ellipsis-h 後で使用
-          %div.comment__link
+                = link_to "" do
+                  %i.fas.fa-ellipsis-h.balloon__event
+                .delete__balloon
+                  = link_to  "/notes/#{note.id}", method: :delete do
+                    %p 削除
+          .comment__link
