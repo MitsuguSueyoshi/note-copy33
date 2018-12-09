@@ -1,0 +1,89 @@
+.like-modal{
+  position: fixed;
+  left: 680px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+  width: 100vw;
+  height: 180vh;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+
+  &__content{
+    margin: 180px auto;
+    background-color: white;
+    width: 360px;
+    min-height: 450px;
+    &__header{
+      height: 40px;
+      color: #777;
+      font-size: 14px;
+      line-height: 40px;
+      padding-left: 10px;
+      font-weight: bold;
+      background-color: #EEEEEE;
+      &__escape{
+        float: right;
+        margin-right: 20px;
+        font-size: 20px;
+        color:  #BBBBBB;
+      }
+    }
+
+    &__users{
+      overflow: scroll;
+      max-width: 360px;
+      &__user{
+        display: block;
+        position: relative;
+        height: 40px;
+        width: 336px;
+        border-bottom: 1px solid #d9e0e2;
+        padding-left: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        &__icon img{
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          float: left;
+        }
+        &__name{
+          font-size: 13px;
+          float: left;
+          color: #222222;
+          font-weight: bold;
+          margin-left: 10px;
+          margin-top: 4px;
+        }
+        &__follow{
+          &__follow-now{
+            float: right;
+            margin-right: 10px;
+            background-color: #2cb696;
+            border: 1px solid #2cb696;
+            vertical-align: top;
+            text-align: center;
+            height: 35px;
+            font-weight: bold;
+            width: 80px;
+            font-size: 12px;
+            color: white;
+          }
+          &__follows{
+            float: right;
+            margin-right: 10px;
+            border: 1px solid #e6e6e6;
+            vertical-align: top;
+            text-align: center;
+            height: 35px;
+            font-weight: bold;
+            width: 80px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
