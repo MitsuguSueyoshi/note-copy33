@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'notes#index'
   resources :users, only: [:show, :edit, :update] do
    resources :magazines
- 　　end
+ end
+ resources :images, only: [:index]
+  end
   resources :notes do
     resources :likes, only: [:create, :destroy]
   end
