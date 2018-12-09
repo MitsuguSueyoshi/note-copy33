@@ -76,10 +76,13 @@
         color: $graycolor;
 
         .icon {
+          padding-top: 3px;
+          padding-left: 3px;
 
           li {
             margin-right: 35px;
             display: inline-block;
+            position: relative;
 
             .like__count {
               display: inline-block;
@@ -105,6 +108,39 @@
               height: 30px;
             }
 
+            .delete__balloon {
+              width: 90px;
+              position: absolute;
+              bottom: 30px;
+              right: -45px;
+              z-index: 10;
+              text-align: center;
+              padding: 8px;
+              border-radius: 4px;
+              background: $whitecolor;
+              box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
+              display: none;
+
+              &::before {
+                top: auto;
+                bottom: -13px;
+                left: auto;
+                right: 45px;
+                margin-left: 0;
+                -webkit-transform: rotate(45deg) translate(-5px, -5px);
+                transform: rotate(45deg) translate(-5px, -5px);
+                content: "";
+                display: block;
+                position: absolute;
+                top: 25px;
+                width: 14px;
+                height: 14px;
+                background: $whitecolor;
+                box-shadow: -1px -1px 1px -1px rgba(0,0,0,0.8);
+                -webkit-transform: rotate(225deg) translate(-5px, -5px);
+                transform: rotate(225deg) translate(-5px, -5px);
+              }
+            }
           }
         }
       }

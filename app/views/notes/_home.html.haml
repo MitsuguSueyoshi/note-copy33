@@ -32,12 +32,14 @@
             %li.icon__box
               = link_to "" do
                 %i.fas.fa-arrow-right
-            %li.icon__boxO
+            %li.icon__box
               = link_to "" do
                 %i.fas.fa-plus
             - if note.user.id == current_user.id
               %li.icon__box
-                = link_to "/notes/#{note.id}", method: :delete do
-                  %p 削除
-                / %i.fas.fa-ellipsis-h 後で使用
+                = link_to "" do
+                  %i.fas.fa-ellipsis-h.balloon__event
+                .delete__balloon
+                  = link_to  "/notes/#{note.id}", method: :delete do
+                    %p 削除
           .comment__link
