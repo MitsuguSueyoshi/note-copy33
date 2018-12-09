@@ -1,17 +1,17 @@
-%div.home__container
-  %div.home__container__cards
+.home__container
+  .home__container__cards
     - @notes.each do |note|
-      %div.card
-        %div.card__avatar
+      .card
+        .card__avatar
           %ul
             %li.icon
               = link_to image_tag('/assets/icon_image1.jpeg')
             %li.info
               %a{href: "", class: "name" }野比のび太
               %a{href: "", class: "date"} 2018/11/22 16:22
-        %div.card__main
+        .card__main
           =link_to note_path(note) do
-            %div.card__main--image
+            .card__main--image
               - if note.images.present?
                 -note.images.each do |image|
                   = image_tag image.image
@@ -19,7 +19,7 @@
               = note.title
             %p.card__main--text
               = note.text
-        %div.card__foot
+        .card__foot
           %ul.icon
             %li.icon__box
               = render "likes/like-button",{note: note, likes: @likes}
@@ -34,4 +34,4 @@
                 = link_to "/notes/#{note.id}", method: :delete do
                   %p 削除
                 / %i.fas.fa-ellipsis-h 後で使用
-          %div.comment__link
+          .comment__link
