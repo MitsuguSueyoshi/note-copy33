@@ -3,6 +3,7 @@ class NotesController < ApplicationController
 
   def index
     @notes = Note.all.includes(:user).order("created_at DESC")
+    @likes = Like.all.includes(:user)
   end
 
   def show
