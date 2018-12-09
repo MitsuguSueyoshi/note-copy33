@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'notes#index'
   resources :users, only: [:show, :edit, :update] do
    resources :magazines
- 　　end
+  end
   resources :notes do
     resources :likes, only: [:create, :destroy]
   end
@@ -12,5 +12,7 @@ Rails.application.routes.draw do
    collection do
      delete 'destroy_all'
    end
- 　　end
+  end
+
+  resources :articles , only: [:create, :destroy]
 end
