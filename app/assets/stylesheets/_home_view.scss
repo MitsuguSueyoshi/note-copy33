@@ -91,6 +91,10 @@
               height: 30px;
             }
 
+            .heart:hover{
+              color: red
+            }
+
             .fa-arrow-right {
               width: 30px;
               height: 30px;
@@ -108,3 +112,6 @@
   }
 }
 
+.heart-red{
+  color: red;
+}
