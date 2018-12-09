@@ -21,8 +21,12 @@
     .images-list__container__gallery
       - @notes.each do |note|
         - if note.images.present?
-          - note.images.each do |image|
-            = image_tag image.image, class: "layout-image"
+          .images-list__container__gallery__content
+            %p.content-title
+              = note.title
+            - note.images.each do |image|
+              = image_tag image.image, class: "layout-image"
+
 
   .image-modal
     .image-modal__box
@@ -31,7 +35,8 @@
           = image_tag "", id: "expantion-image"
       .image-modal__box__middle
         .image-modal__box__middle__title
-          %p タイトル
+          %p.bold タイトル
+          %p.note-title
         .image-modal__box__middle__checkbox
           %input{type: "checkbox" , class: "check"}みんなのフォトギャラリー(β)に追加
       .image-modal__box__close
