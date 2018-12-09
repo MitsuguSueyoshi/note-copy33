@@ -1,5 +1,6 @@
 class Note < ApplicationRecord
   belongs_to :user
+  has_many :articles
   has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
   def like_user(user_id)
