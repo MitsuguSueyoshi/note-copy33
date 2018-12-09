@@ -1,33 +1,30 @@
 %i.fas.fa-plus
-
-
-
-/ .like-modal
-/   .like-modal__content
-/     .like-modal__content__header
-/       スキをつけたユーザー(
-/       = note.likes_count
-/       )
-/       .like-modal__content__header__escape
-/         &times;
-/     %ul.like-modal__content__users
-/       - note.likes.each do |like|
-/         %li.like-modal__content__users__user
-/           = link_to user_path(id: like.user_id) do
-/             .like-modal__content__users__user__icon
-/               - if like.user.main_image.present?
-/                 = image_tag like.user.main_image
-/               - else
-/                 = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
-/             .like-modal__content__users__user__name
-/               = like.user.nickname
-/           .like-modal__content__users__user__follow
-/             - unless current_user == like.user
-/               - if current_user.following?(like.user)
-/                 = form_for(current_user.relationships.find_by(follow_id: like.user.id), html: { method: :delete }) do |f|
-/                   = f.hidden_field :follow_id, value: like.user.id
-/                   = f.submit 'フォロー中', class: 'like-modal__content__users__user__follow__follow-now'
-/               - else
-/                 = form_for(current_user.relationships.build) do |f|
-/                   = f.hidden_field :follow_id, value: like.user.id
-/                   = f.submit 'フォロー', class: 'like-modal__content__users__user__follow__follows'
+.article-modal
+  .article-modal__content
+    .article-modal__content__header
+      マガジンリスト
+      .article-modal__content__header__escape
+        &times;
+    %ul.article-modal__content__magazines
+      - current_user.magazines.each do |magazine|
+        %li.article-modal__content__magazines__magazine
+          = link_to do
+            .article-modal__content__magazines__magazine__header-image
+              - if magazine.header_image.present?
+                = image_tag magazine.header_image
+              - else
+                = image_tag "https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0524/7923/rsolid_emerald_green_009874_shop_preview.png"
+            .article-modal__content__magazines__magazine__title
+              = magazine.title
+          .article-modal__content__magazines__magazine__add
+            - if user_signed_in?
+              - if magazine.adding?(note)
+                = form_for(magazine.articles.find_by(note_id: note.id), html: { method: :delete }, id: "destroy_article") do |f|
+                  = f.hidden_field :note_id, value: note.id
+                  = f.hidden_field :magazine_id, value: magazine.id
+                  = f.submit '追加済', class: 'article-modal__content__magazines__magazine__add__add-now'
+              - else
+                = form_for(magazine.articles.build, id: "new_article") do |f|
+                  = f.hidden_field :note_id, value: note.id
+                  = f.hidden_field :magazine_id, value: magazine.id
+                  = f.submit '追加', class: 'article-modal__content__magazines__magazine__add__adds'
