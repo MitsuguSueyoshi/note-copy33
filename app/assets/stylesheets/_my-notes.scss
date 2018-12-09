@@ -1,0 +1,209 @@
+.my-notes__container {
+  margin-top: 10px;
+  min-height: 100%;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  background-color: $whitecolor;
+
+  &__area {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    .my-notes__title {
+      padding: 24px 0;
+
+      p {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .my-notes__head {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-color;
+      font-size: 13px;
+      overflow: hidden;
+
+      li {
+        display: inline-block;
+        float: left;
+      }
+
+      .my-notes__head__items {
+        margin-left: auto;
+        float: right;
+
+        li {
+          margin-left: 30px;
+        }
+      }
+    }
+
+    .my-notes__list {
+
+      li {
+        padding: 16px 0;
+        border-bottom: 1px solid $border-color;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+
+        .note__item {
+          vertical-align: middle;
+        }
+
+        .selection__box {
+          margin-right: 15px;
+
+        }
+
+        .my-note {
+          vertical-align: middle;
+          flex: 1;
+
+
+          &__title {
+            word-break: break-all;
+            margin-bottom: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+
+          }
+
+          &__date {
+            color: $graycolor;
+          }
+
+        }
+
+        .image {
+
+          margin: 0px 8px;
+          vertical-align: middle;
+
+          img {
+            width: 48px;
+            height: auto;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+          }
+        }
+
+        .edit__button {
+          margin: 0 8px;
+          box-sizing: border-box !important;
+
+          a {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 10px 16px;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
+          }
+
+        }
+
+        .delete__button {
+          margin-left: 8px;
+          color: $graycolor;
+          position: relative;
+
+          .delete__balloon {
+            width: 90px;
+            position: absolute;
+            bottom: 30px;
+            right: 0;
+            z-index: 10;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+            background: $whitecolor;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
+            display: none;
+
+            &::before {
+              top: auto;
+              bottom: -13px;
+              left: auto;
+              right: 10px;
+              margin-left: 0;
+              -webkit-transform: rotate(45deg) translate(-5px, -5px);
+              transform: rotate(45deg) translate(-5px, -5px);
+              content: "";
+              display: block;
+              position: absolute;
+              top: 19px;
+              width: 14px;
+              height: 14px;
+              background: $whitecolor;
+              box-shadow: -1px -1px 1px -1px rgba(0,0,0,0.8);
+              -webkit-transform: rotate(225deg) translate(-5px, -5px);
+              transform: rotate(225deg) translate(-5px, -5px);
+            }
+
+            a {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.my-notes__foot {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  padding: 0 15px;
+  background: $whitecolor;
+  border-top: 1px #e8eceb solid;
+  display: none;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+
+    .times {
+       vertical-align: middle;
+
+      span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_delete-65323aabb4e2c8f5ca1d21a02e041d7464f985e986bc89f27eadfe47934c92e6.svg);
+      }
+    }
+
+    .foot__text {
+      vertical-align: middle;
+      font-size: 13px;
+
+      .checked__counts {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 0.1em 0.9em;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        color: $whitecolor;
+        background: #41c9b4;
+        border-radius: 100px;
+      }
+    }
+
+    .destroy_button {
+      vertical-align: middle;
+      margin-left: auto;
+      margin-right: 92px;
+      color: #ED4956;
+      font-size: 13px;
+      border-style: none;
+    }
+  }
+}
+

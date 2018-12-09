@@ -1,0 +1,47 @@
+= render 'shared/header'
+= form_tag({ action: :destroy_all }, method: 'delete') do
+  .my-notes__container
+    .my-notes__container__area
+      .my-notes__title
+        %p ノート一覧
+      %ul.my-notes__head
+        %li
+          = @my_notes_count
+          %span ノート
+        %li.my-notes__head__items
+          %ul
+            %li
+              = link_to "公開ステータス", ""
+            %li
+              = link_to "期間", ""
+            %li
+              = link_to "マガジン", ""
+      - @my_notes.each do |note|
+        %ul.my-notes__list
+          %li
+            .selection__box.note__item
+              = check_box_tag "deletes[#{ note.id }]", note.id
+            .my-note.note__item
+              .my-note__title
+                = note.title
+              .my-note__date
+                = note.created_at
+            .image.note__item
+              - if note.images.present?
+                -note.images.each do |image|
+                  = image_tag image.image
+            .edit__button.note__item
+              = link_to "編集", edit_note_path(note)
+            .delete__button.note__item
+              = link_to "" do
+                %i.fas.fa-ellipsis-h.balloon__event
+              .delete__balloon
+                = link_to "削除",  "/notes/#{note.id}", method: :delete
+  .my-notes__foot
+    .my-notes__foot__inner
+      = link_to "", class: "times" do
+        %span
+      %p.foot__text
+        %span.checked__counts
+        ノートを選択中
+      = submit_tag "削除", class: "destroy_button"
