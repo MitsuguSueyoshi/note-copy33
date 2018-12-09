@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'notes#index'
+  resources :images, only: [:index]
   resources :users, only: [:show, :edit, :update] do
    resources :magazines
   end

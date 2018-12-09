@@ -1,0 +1,43 @@
+= render "shared/header"
+.images-list
+  .images-list__title
+    %h3 過去にnoteにアップロードした画像
+    %h5
+      この画像から「
+      %span みんなのフォトギャラリー(β)
+      」に出品することができます。
+  .images-list__container
+    .images-list__container__pulldown
+      %select{name: "share"}
+        %option{value: "all"}すべて
+        %option{value: "share"}共有済み
+      %select{name: "year-mounth"}
+        %option{value: ""}日時で絞り込む
+        %option{value: "1"}2019年1月
+        %option{value: "12"}2018年12月
+        %option{value: "11"}2018年11月
+        %option{value: "10"}2018年10月
+        %option{value: "9"}2018年9月
+    .images-list__container__gallery
+      - @notes.each do |note|
+        - if note.images.present?
+          .images-list__container__gallery__content
+            %p.content-title
+              = note.title
+            - note.images.each do |image|
+              = image_tag image.image, class: "layout-image"
+
+
+  .image-modal
+    .image-modal__box
+      .image-modal__box__main
+        .image-modal__box__main__content
+          = image_tag "", id: "expantion-image"
+      .image-modal__box__middle
+        .image-modal__box__middle__title
+          %p.bold タイトル
+          %p.note-title
+        .image-modal__box__middle__checkbox
+          %input{type: "checkbox" , class: "check"}みんなのフォトギャラリー(β)に追加
+      .image-modal__box__close
+        = button_tag "閉じる", class: "close-button"
