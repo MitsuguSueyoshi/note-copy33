@@ -1,15 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :set_note
+  protect_from_forgery except: :destroy
 
   def create
     note = Note.find(params[:article][:note_id])
     magazine = Magazine.find(params[:article][:magazine_id])
-    adding = magazine.adding(note)
-    if adding.save
-      respond_to do |format|
-        format.html
-        format.json
-      end
+    @adding = magazine.adding(note)
+    if @adding.save
+      redirect_to root_path
     else
       flash[:alert] = "失敗しました"
     end
@@ -18,12 +15,9 @@ class ArticlesController < ApplicationController
   def destroy
     note = Note.find(params[:article][:note_id])
     magazine = Magazine.find(params[:article][:magazine_id])
-    adding = magazine.unadding(note)
-    if adding.destroy
-      respond_to do |format|
-        format.html
-        format.json
-      end
+    @adding = magazine.unadding(note)
+    if @adding.destroy
+      redirect_to root_path
     else
       flash[:alert] = "失敗しました"
     end
