@@ -1,6 +1,6 @@
 class Magazine < ApplicationRecord
   belongs_to :user
-  has_many :articles
+  has_many :articles, dependent: :destroy
   has_many :notes, through: :articles
   mount_uploader :header_image, ImageUploader
 
