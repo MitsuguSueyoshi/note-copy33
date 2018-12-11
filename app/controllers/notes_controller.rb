@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  protect_from_forgery except: :destroy
 
   def index
     @notes = Note.all.includes(:user).order("created_at DESC")
