@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   protect_from_forgery except: :destroy
+  before_action :set_note_and_magazine
 
   def create
     note = Note.find(params[:article][:note_id])
@@ -25,8 +26,9 @@ class ArticlesController < ApplicationController
 
   private
 
-  def set_note
+  def set_note_and_magazine
     note = Note.find(params[:article][:note_id])
+    magazine = Magazine.find(params[:article][:magazine_id])
   end
 
 end
