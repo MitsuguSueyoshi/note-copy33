@@ -119,13 +119,12 @@
           }
 
           .my-icon {
-            width: 32px;
-            height: 32px;
             margin-left: 16px;
             display: inline-block;
 
              &__image {
-              width: 100%;
+              width: 32px;
+              height: 32px;
               border-radius: 32px;
              }
           }
