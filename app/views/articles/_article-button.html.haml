@@ -1,0 +1,30 @@
+%i.fas.fa-plus
+.article-modal
+  .article-modal__content
+    .article-modal__content__header
+      マガジンリスト
+      .article-modal__content__header__escape
+        &times;
+    %ul.article-modal__content__magazines
+      - current_user.magazines.each do |magazine|
+        %li.article-modal__content__magazines__magazine
+          = link_to do
+            .article-modal__content__magazines__magazine__header-image
+              - if magazine.header_image.present?
+                = image_tag magazine.header_image
+              - else
+                = image_tag "https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0524/7923/rsolid_emerald_green_009874_shop_preview.png"
+            .article-modal__content__magazines__magazine__title
+              = magazine.title
+          .article-modal__content__magazines__magazine__add
+            - if user_signed_in?
+              - if magazine.adding?(note)
+                = form_for(magazine.articles.find_by(note_id: note.id), html: { method: :delete }, id: "destroy_article") do |f|
+                  = f.hidden_field :note_id, value: note.id
+                  = f.hidden_field :magazine_id, value: magazine.id
+                  = f.submit '追加済', class: 'article-modal__content__magazines__magazine__add__add-now'
+              - else
+                = form_for(magazine.articles.build, id: "new_article") do |f|
+                  = f.hidden_field :note_id, value: note.id
+                  = f.hidden_field :magazine_id, value: magazine.id
+                  = f.submit '追加', class: 'article-modal__content__magazines__magazine__add__adds'
