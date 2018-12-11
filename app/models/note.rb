@@ -14,5 +14,5 @@ class Note < ApplicationRecord
   validates :text, presence: true
   validates :category, presence: true
 
-  enum category: { マンガ: 0, コラム: 1, 小説: 2, サウンド: 3, ビジネス: 4, ライフスタイル: 5, テクノロジー: 6, エンタメ: 7 }
+  enum category: { マンガ: 0, コラム: 1, 小説: 2, 写真: 3, サウンド: 4, ビジネス: 5, ライフスタイル: 6, テクノロジー: 7, エンタメ: 8 }
 end
