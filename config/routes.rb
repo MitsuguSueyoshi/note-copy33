@@ -14,5 +14,5 @@ Rails.application.routes.draw do
      delete 'destroy_all'
    end
  end
-  resources :helps, only:[:index, :show]
+  resources :helps, only:[:index]
 end
