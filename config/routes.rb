@@ -15,4 +15,5 @@ Rails.application.routes.draw do
    end
   end
   resources :articles , only: [:create, :destroy]
+  resources :categories, only: [:index]
 end
