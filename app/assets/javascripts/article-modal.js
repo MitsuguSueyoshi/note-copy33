@@ -1,14 +1,14 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
-    function buildHTML(article){
-        var html = `<form action="/articles/${article.id}" method="post" id="destroy_article">
-        <input type="hidden" name="note_id" value="${article.noteid}">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="hidden" name="magazine_id" value="${article.magazineid}">
-        <input type="submit" name="submit" value="追加済み" class="article-modal__content__magazines__magazine__add__add-now" />
-               </form>`
-      return html;
-    }
+    // function buildHTML(article){
+    //     var html = `<form action="/articles/${article.id}" method="post" id="destroy_article">
+    //     <input type="hidden" name="note_id" value="${article.noteid}">
+    //     <input type="hidden" name="_method" value="DELETE">
+    //     <input type="hidden" name="magazine_id" value="${article.magazineid}">
+    //     <input type="submit" name="submit" value="追加済み" class="article-modal__content__magazines__magazine__add__add-now" />
+    //            </form>`
+    //   return html;
+    // }
 
     $('.fa-plus').on('click', function(e){
       e.preventDefault();
@@ -19,6 +19,12 @@ $(document).on('turbolinks:load', function(){
       e.preventDefault();
       $('.article-modal').fadeOut();
     });
+
+    // $('.article-modal__content__magazines__magazine__add__adds').on('click', function(e){
+    //   e.preventDefault();
+    //   $('.article-modal__content__magazines__magazine__add__adds').attr('value', '追加済み')
+    //   $('.article-modal__content__magazines__magazine__add__adds').addClass('added')
+    // });
 
     // $('#new_article').on('submit', function(e){
     //   e.preventDefault();
