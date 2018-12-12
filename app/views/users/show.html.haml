@@ -22,10 +22,14 @@
             %p.selfintroduction
               = @user.self_introduction
           .user-container-main__box__right__userinfo__follow
-            .following
-              %strong フォロー
-            .follower
-              %strong フォロワー
+            = link_to followings_user_path(@user) do
+              .following
+                = @followings_count
+                %strong フォロー
+            = link_to followers_user_path(@user) do
+              .follower
+                = @follower_count
+                %strong フォロワー
         .user-container-main__box__right__linkbtn
           %span.fas.fa-ellipsis-h.link-icon
           %ul.select-button
