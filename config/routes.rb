@@ -13,6 +13,7 @@ Rails.application.routes.draw do
    collection do
      delete 'destroy_all'
    end
-  end
+ end
+  resources :helps, only:[:index]
   resources :articles , only: [:create, :destroy]
 end
