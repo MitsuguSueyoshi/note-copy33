@@ -33,7 +33,7 @@
         .user-container-main__box__right__linkbtn
           %span.fas.fa-ellipsis-h.link-icon
           %ul.select-button
-            - if user_signed_in? && @user.id == current_user.id
+            - if user_signed_in? && @user == current_user
               %li.my-profile プロフィールを編集する
               %li Amazonウィジェットを追加
             -else
