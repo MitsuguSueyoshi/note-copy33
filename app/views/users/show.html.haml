@@ -94,10 +94,11 @@
 
     #product_magazine.tab_product
       .magazine-content
-        = link_to new_user_magazine_path(current_user) do
-          .magazine-content__create
-            %i.fas.fa-plus.magazine-content__create__plus
-            %p マガジンを作る
+        - if @user.id == current_user.id
+          = link_to new_user_magazine_path(current_user) do
+            .magazine-content__create
+              %i.fas.fa-plus.magazine-content__create__plus
+              %p マガジンを作る
         - @user.magazines.each do |magazine|
           .magazine-content__posted
             .magazine-content__posted__header
