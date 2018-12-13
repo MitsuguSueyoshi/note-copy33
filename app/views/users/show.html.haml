@@ -102,7 +102,7 @@
         - @user.magazines.each do |magazine|
           .magazine-content__posted
             .magazine-content__posted__header
-              = link_to user_magazine_path(@user, magazine) do
+              = link_to user_magazine_path(current_user, magazine) do
                 - if magazine.header_image.present?
                   = image_tag magazine.header_image
                   %p.title
