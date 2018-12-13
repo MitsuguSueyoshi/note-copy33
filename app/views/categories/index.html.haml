@@ -1,3 +1,53 @@
 = render 'shared/header'
 = render 'shared/header-nav'
-= render 'notes/home'
+.home__container
+  .home__container__header
+    .switch__buttons
+      %ul
+        %li.button-1
+          = link_to "人気"
+        %li.button-2
+          = link_to "新着"
+  .home__container__cards
+    - @notes.each do |note|
+      .card
+        .card__avatar
+          %ul
+            %li.icon
+              = link_to user_path(note.user) do
+                - if note.user.main_image.present?
+                  = image_tag note.user.main_image
+                - else
+                  = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png'
+            %li.info
+              = link_to user_path(note.user), class: "name" do
+                = note.user.nickname
+              = link_to note_path(note), class: "date" do
+                = note.created_at
+        .card__main
+          =link_to note_path(note) do
+            .card__main--image
+              - if note.images.present?
+                -note.images.each do |image|
+                  = image_tag image.image
+            %h3.card__main--title
+              = note.title
+            %p.card__main--text
+              = note.text
+        .card__foot
+          %ul.icon
+            %li.icon__box
+              = render "likes/like-button",{note: note, likes: @likes}
+            %li.icon__box
+              = link_to "" do
+                %i.fas.fa-arrow-right
+            %li.icon__box
+              = render "articles/article-button", {note: note}
+            - if note.user.id == current_user.id
+              %li.icon__box
+                = link_to "" do
+                  %i.fas.fa-ellipsis-h.balloon__event
+                .delete__balloon
+                  = link_to  "/notes/#{note.id}", method: :delete do
+                    %p 削除
+          .comment__link
