@@ -15,7 +15,7 @@
         = @notes_count
         %strong
           ノート
-      - if @user = current_user
+      - if @user == current_user
         = link_to do
           .magazine-details-content__middle__left__edit
             ノートの並び替え・削除
@@ -23,7 +23,7 @@
         .magazine-details-content__middle__left__edit
       =  render partial: "note", collection: @notes
     .magazine-details-content__middle__right
-      - if @user = current_user
+      - if @user == current_user
         = link_to edit_user_magazine_path do
           .magazine-details-content__middle__right__setting
             設定
