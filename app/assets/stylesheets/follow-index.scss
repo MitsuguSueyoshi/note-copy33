@@ -1,0 +1,60 @@
+//フォローファロワー一覧画面
+.user-follows{
+  width: 100%;
+  min-height: 400px;
+  background-color: #F6F7F8;
+  padding-top: 50px;
+  &__content{
+    width: 610px;
+    margin: 0 auto;
+    background-color: white;
+    &__user{
+      height: 70px;
+      border-bottom: 0.5px solid #EEEEEE;
+      &__icon img{
+        float: left;
+        height: 45px;
+        width: 45px;
+        border-radius: 27px;
+        margin-left: 20px;
+        margin-top: 12px;
+      }
+      &__nickname{
+        float: left;
+        margin-left: 15px;
+        margin-top: 12px;
+      }
+      &__follow{
+        &__follows{
+          float: right;
+          margin-right: 15px;
+          margin-top: 17px;
+          border: 1px solid #2cb696;
+          vertical-align: top;
+          text-align: center;
+          height: 35px;
+          font-weight: bold;
+          width: 80px;
+          font-size: 12px;
+          color: #2cb696;
+          border-radius: 4px;
+        }
+        &__follow-now{
+          float: right;
+          margin-right: 15px;
+          margin-top: 17px;
+          border: 1px solid #2cb696;
+          vertical-align: top;
+          text-align: center;
+          height: 35px;
+          font-weight: bold;
+          width: 80px;
+          font-size: 12px;
+          color: white;
+          border-radius: 4px;
+          background-color: #2cb696;
+        }
+      }
+    }
+  }
+}

@@ -24,6 +24,10 @@ class MagazinesController < ApplicationController
   end
 
   def show
+    @magazine = Magazine.find(params[:id])
+    @notes = @magazine.notes
+    @notes_count = @notes.count
+    @user = @magazine.user
   end
 
   def destroy
