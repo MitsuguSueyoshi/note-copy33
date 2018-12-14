@@ -94,14 +94,25 @@
 
     #product_magazine.tab_product
       .magazine-content
-        = link_to do
-          .magazine-content__create
-            %i.fas.fa-plus.magazine-content__create__plus
-            %p マガジンを作る
+        - if @user.id == current_user.id
+          = link_to new_user_magazine_path(current_user) do
+            .magazine-content__create
+              %i.fas.fa-plus.magazine-content__create__plus
+              %p マガジンを作る
+        - @user.magazines.each do |magazine|
           .magazine-content__posted
             .magazine-content__posted__header
-              = image_tag "20140721-P7210083de_TP_V4.jpg"
-              %p.title マガジンタイトル
+              = link_to user_magazine_path(current_user, magazine) do
+                - if magazine.header_image.present?
+                  = image_tag magazine.header_image
+                  %p.title
+                    = magazine.title
+                - else
+                  .magazine-content__posted__header__empty
+                    %p.title-image-empty
+                      = magazine.title
+                  .magazine-content__posted__header__description
+                    = magazine.description
             .magazine-content__posted__footer
               .main-icon
                 - if @user.main_image.present?
@@ -111,39 +122,10 @@
                   = link_to user_path(@user) do
                     = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
                 = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
-              .setting-button
-                =link_to "設定", ""
-          .magazine-content__posted
-            .magazine-content__posted__header
-              = image_tag "20140721-P7210083de_TP_V4.jpg"
-              %p.title マガジンタイトル
-            .magazine-content__posted__footer
-              .main-icon
-                - if @user.main_image.present?
-                  = link_to user_path(@user) do
-                    =image_tag @user.main_image
-                - else
-                  = link_to user_path(@user) do
-                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
-                = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
-              .setting-button
-                =link_to "設定", ""
-          .magazine-content__posted
-            .magazine-content__posted__header
-              = image_tag "20140721-P7210083de_TP_V4.jpg"
-              %p.title マガジンタイトル
-            .magazine-content__posted__footer
-              .main-icon
-                - if @user.main_image.present?
-                  = link_to user_path(@user) do
-                    =image_tag @user.main_image
-                - else
-                  = link_to user_path(@user) do
-                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
-                = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
-              .setting-button
-                =link_to "設定", ""
-
-
+              - if @user == current_user
+                = link_to edit_user_magazine_path(current_user, magazine) do
+                  .setting-button 設定
+              - else
+                .setting-button フォロー
 
 = render partial: "user-profile", locals: { user: @user}
