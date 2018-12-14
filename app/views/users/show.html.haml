@@ -122,7 +122,7 @@
                   = link_to user_path(@user) do
                     = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
                 = link_to @user.nickname, user_path(@user), class: "user_nickname_link"
-              - if @user.id == current_user.id
+              - if @user == current_user
                 = link_to edit_user_magazine_path(current_user, magazine) do
                   .setting-button 設定
               - else
