@@ -9,7 +9,7 @@
         %li.button-2
           %p 新着
   .home__container__cards
-    .hot__notes
+    .hot__notes.each__notes
       = render partial: "hot_note", collection: @hot_notes
-    .new_notes
+    .new__notes.each__notes
       = render partial: "new_note", collection: @new_notes
