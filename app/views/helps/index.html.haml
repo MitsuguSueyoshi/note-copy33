@@ -1,0 +1,62 @@
+= render "shared/header"
+= render "shared/header-nav"
+
+.help-page
+  .help-page__container
+    .help-page__container__title
+      %h1 ヘルプ
+    %ul.help-page__container__contents
+      %li.contents-menu
+        = link_to "noteの使い方" ""
+      %li.contents-menu
+        = link_to "運営へのお問い合わせ" ""
+      %li.contents-menu
+        = link_to "noteカイゼン目安箱" ,"https://docs.google.com/forms/d/e/1FAIpQLSf5Yq290kqfFW93moGblrcQQ07Aa8MUlKt7C12kGDNkW7j_pg/viewform",target: "_blank"
+      %li.contents-menu
+        = link_to "クリエイターの推薦", "https://docs.google.com/forms/d/e/1FAIpQLScqblZ7XeqMFh-FA_C35l_dFhkW4cZYNqCIVWFOdo69wydf2w/viewform",target: "_blank"
+    .help-page__container__site-map
+      %h3 サイトマップ
+      %ul.help-page__container__site-map__content
+        %li.menu
+          =link_to "トップ" ,root_path
+        %li.menu
+          =link_to "おすすめ" ""
+        %li.menu
+          =link_to "ピックアップ" ""
+        %li.menu
+          =link_to "募集中" ""
+        %li.menu
+          =link_to "注目カテゴリ" ""
+        %li.menu
+          =link_to "人気タグ" ""
+        %li.menu
+          =link_to "検索" ,""
+        %li.menu
+          =link_to "ノート一覧" ,""
+        %li.menu
+          =link_to "すべてのマガジン" ,""
+        %li.menu
+          =link_to "ユーザー一覧" ,""
+    .help-page__container__about
+      %h4 noteについて
+      %ul.help-page__container__about__content
+        %li.menu
+          =link_to "クリエイターの方へ" ""
+        %li.menu
+          =link_to "noteプレミアム" ""
+        %li.menu
+          =link_to "定期購読マガジン" ""
+        %li.menu
+          =link_to "プライバシー" ""
+        %li.menu
+          =link_to "ご利用規約" ""
+        %li.menu
+          =link_to "特商法表記" ""
+        %li.menu
+          =link_to "運営会社" ,"https://www.pieceofcake.co.jp/", target: "_blank"
+        %li.menu
+          =link_to "cakes" ,"https://cakes.mu/", target: "_blank"
+        %li.menu
+          =link_to "cakesとnoteのストア" ,"https://store.note.mu/", target: "_blank"
+        %li.menu
+          =link_to "採用情報" ,"https://www.pieceofcake.co.jp/n/nc0fe1a230633?magazine_key=md5d06b2116b5&current_menu_id=8" ,target: "_blank"

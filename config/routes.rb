@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :images, only: [:index]
   resources :users, only: [:show, :edit, :update] do
    resources :magazines
+   member do
+      get :followings
+      get :followers
+   end
   end
   resources :notes do
     resources :likes, only: [:create, :destroy]
@@ -13,7 +17,8 @@ Rails.application.routes.draw do
    collection do
      delete 'destroy_all'
    end
-  end
+ end
+  resources :helps, only:[:index]
   resources :articles , only: [:create, :destroy]
   resources :categories, only: [:index]
 end
