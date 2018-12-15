@@ -3,12 +3,11 @@ class NotesController < ApplicationController
   protect_from_forgery except: :destroy
 
   def index
-    # @follow_users = User.find(current_user.id).followings
-    @notes = Note.where(user_id: @follow_users).includes(:user).order("created_at DESC")
-    @likes = Like.all.includes(:user)
     if user_signed_in?
-      @follow_users = current_user.followings
+      @follow_users = User.find(current_user.id).followings
+      @notes = Note.where(user_id: @follow_users).or(Note.where(user_id: current_user.id)).includes(:user).order("created_at DESC")
     end
+    @likes = Like.all.includes(:user)
   end
 
   def show

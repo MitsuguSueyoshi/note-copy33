@@ -1,3 +1,7 @@
+.new__notes {
+  display: none;
+}
+
 .home__container {
   min-height: 100%;
   border-top: solid 1px #F5F5F5;
@@ -5,9 +9,48 @@
   background-color: #f7f9f9;
   clear: both;
 
+  &__header {
+    width:580px;
+    margin: 24px auto;
+
+    .switch__buttons {
+
+      ul {
+        font-size:0;
+        li {
+          display: inline-block;
+          border: solid 1px #e6e6e6;
+          border-radius: 2px;
+          cursor : pointer;
+
+          p {
+            display: block;
+            height: 30px;
+            padding: 0 16px;
+            line-height: 30px;
+            font-size: 14px;
+          }
+        }
+
+        .button-1 {
+          background-color: #e6e6e6;
+        }
+
+        .button-2 {
+          background-color: $whitecolor;
+        }
+      }
+   }
+  }
+
   &__cards {
     width:580px;
     margin: 16px auto;
+    clear: both;
+
+    .new__notes {
+      display: none;
+    }
 
     .card {
       margin-bottom: 15px;
