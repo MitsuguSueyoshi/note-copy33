@@ -2,16 +2,15 @@
   height: 100vh;
   min-width: 100vw;
   background-color: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   position: fixed;
   top: 0;
+  padding-top: 40px;
   .suport-modal{
     background-color: #FFF;
     height: 600px;
     width: 400px;
-
+    margin: 0 auto;
     position: relative;
     border-radius: 5px;
     &__title{
