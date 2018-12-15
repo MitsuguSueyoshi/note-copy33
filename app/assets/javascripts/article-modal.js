@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function(){
 
     $('.fa-plus').on('click', function(e){
       e.preventDefault();
-      $('.article-modal').fadeIn();
+      $(this).siblings().fadeIn();
     });
 
     $('.article-modal__content__header__escape').on('click', function(e){
