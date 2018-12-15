@@ -48,6 +48,10 @@
     margin: 16px auto;
     clear: both;
 
+    .new__notes {
+      display: none;
+    }
+
     .card {
       margin-bottom: 15px;
       border: 1px solid #e6e6e6;
