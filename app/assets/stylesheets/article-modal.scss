@@ -3,14 +3,14 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   display: none;
-  width: 160vw;
-  height: 180vh;
+  min-width: 2000px;
+  min-height: 2100px;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
 
   &__content{
-    margin: 200px auto;
+    margin: 330px auto;
     background-color: white;
     width: 360px;
     min-height: 450px;

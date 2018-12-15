@@ -1,0 +1,23 @@
+.magazine-details-content__middle__left__note
+= link_to user_path(note.user) do
+  .magazine-details-content__middle__left__note__user
+    .magazine-details-content__middle__left__note__user__icon
+      - if note.user.main_image.present?
+        = image_tag note.user.main_image
+      - else
+        = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+    .magazine-details-content__middle__left__note__user__name
+      = note.user.nickname
+    .magazine-details-content__middle__left__note__user__date
+      = note.created_at
+  .magazine-details-content__middle__left__note__main
+    = link_to note_path(note) do
+      .magazine-details-content__middle__left__note__main__image
+        - if note.images.present?
+          - note.images.each do |image|
+            = image_tag image.image
+        - else
+      %h3.magazine-details-content__middle__left__note__main__title
+        = note.title
+      %p.magazine-details-content__middle__left__note__main__text
+        = note.text

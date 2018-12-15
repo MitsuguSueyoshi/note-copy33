@@ -1,0 +1,71 @@
+= render "shared/header"
+
+.user-container
+  - if @user.header_image.present?
+    .user-container-header
+      =image_tag @user.header_image
+  .user-container-main
+    .user-container-main__box
+      .user-container-main__box__icon
+        - if @user.main_image.present?
+          = link_to user_path(@user) do
+            =image_tag @user.main_image
+        - else
+          = link_to "", class: "my-icon" do
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+      .user-container-main__box__right
+        .user-container-main__box__right__userinfo
+          .user-container-main__box__right__userinfo__nickname
+            %p.nickname
+              = @user.nickname
+          .user-container-main__box__right__userinfo__selfintroduction
+            %p.selfintroduction
+              = @user.self_introduction
+          .user-container-main__box__right__userinfo__follow
+            = link_to followings_user_path(@user) do
+              .following
+                = @followings_count
+                %strong フォロー
+            = link_to followers_user_path(@user) do
+              .follower
+                = @follower_count
+                %strong フォロワー
+        .user-container-main__box__right__linkbtn
+          %span.fas.fa-ellipsis-h.link-icon
+          %ul.select-button
+            - if user_signed_in? && @user == current_user
+              %li.my-profile プロフィールを編集する
+              %li Amazonウィジェットを追加
+            -else
+              %li ブロックする
+              %li 報告する
+          = render "relationships/follow-button", user: @user
+
+  .user-container-nav
+    .user-container-nav__list
+      %label.tab1_label.active{for:"tab1"} ホーム
+      %label.tab2_label{for:"tab2"} マガジン
+.user-follows
+  %ul.user-follows__content
+    - @followers.each do |follower|
+      %li.user-follows__content__user
+        .user-follows__content__user__icon
+          - if follower.main_image.present?
+            = link_to user_path(follower) do
+              =image_tag follower.main_image
+          - else
+            = link_to user_path(follower) do
+              = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+        .user-follows__content__user__nickname
+          = link_to user_path(follower) do
+            = follower.nickname
+        .user-follows__content__user__follow
+          - unless current_user == follower
+            - if current_user.following?(follower)
+              = form_for(current_user.relationships.find_by(follow_id: follower.id), html: { method: :delete }) do |f|
+                = f.hidden_field :follow_id, value: follower.id
+                = f.submit 'フォロー中', class: 'user-follows__content__user__follow__follow-now'
+            - else
+              = form_for(current_user.relationships.build) do |f|
+                = f.hidden_field :follow_id, value: follower.id
+                = f.submit 'フォロー', class: 'user-follows__content__user__follow__follows'

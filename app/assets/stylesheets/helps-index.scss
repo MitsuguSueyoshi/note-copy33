@@ -1,0 +1,57 @@
+.help-page{
+  width: 100vw;
+  height: 100vh;
+  margin-top: 10px;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  &__container{
+    width: 550px;
+    margin: 0 auto;
+    &__title{
+      height:90px;
+      line-height: 90px;
+      border-bottom: solid 1px #EEEEEE;
+      h1{
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+    &__contents{
+      padding: 40px 0px;
+      border-bottom: solid 1px #EEEEEE;
+      li.contents-menu{
+        line-height: 2.0;
+      }
+    }
+    &__site-map{
+      padding: 40px 0px;
+      border-bottom: solid 1px #EEEEEE;
+      font-size: 15px;
+      h3{
+        color: #CCCCCC;
+      }
+      &__content{
+        margin-top: 5px;
+        li.menu{
+          margin: 5px 10px 5px 0px;
+          display: inline-block;
+        }
+      }
+    }
+    &__about{
+      padding: 40px 0px;
+      border-bottom: solid 1px #EEEEEE;
+      font-size: 15px;
+      h4{
+        color: #CCCCCC;
+      }
+        &__content{
+          margin-top: 5px;
+          li.menu{
+            margin: 5px 10px 5px 0px;
+            display: inline-block;
+          }
+        }
+    }
+  }
+}

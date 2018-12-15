@@ -3,58 +3,58 @@
 .magazine-details-content.clearfix
   .magazine-details-content__top
     .magazine-details-content__top__image
-      %img{alt: "イメージ", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"}
+      - if @magazine.header_image.present?
+        = image_tag @magazine.header_image
+      - else
+        = image_tag "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAA1BMVEUzxpDs+IWfAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABODcYhAAEl463hAAAAAElFTkSuQmCC"
       .magazine-details-content__top__image__title
-        マガジンのタイトル
+        = @magazine.title
   .magazine-details-content__middle
     .magazine-details-content__middle__left
       .magazine-details-content__middle__left__count
-        1ノート
-      = link_to do
+        = @notes_count
+        %strong
+          ノート
+      - if @user == current_user
+        = link_to do
+          .magazine-details-content__middle__left__edit
+            ノートの並び替え・削除
+      - else
         .magazine-details-content__middle__left__edit
-          ノートの並び替え・削除
-      .magazine-details-content__middle__left__note
-        .magazine-details-content__middle__left__note__user
-          .magazine-details-content__middle__left__note__user__icon
-            %img{alt: "自分の", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
-          .magazine-details-content__middle__left__note__user__name
-            ノートを作ったユーザの名前
-          .magazine-details-content__middle__left__note__user__date
-            2018/10/27 07:00
-        .magazine-details-content__middle__left__note__main
-          =link_to do
-            .magazine-details-content__middle__left__note__main__image
-              %img{alt: "イメージ", src: "https://www.jalan.net/news/img/2017/09/170915_fuji-670x443.jpg"}
-            %h3.magazine-details-content__middle__left__note__main__title
-              ノートのタイトル
-            %p.magazine-details-content__middle__left__note__main__text
-              あいうえお、かきくけこ、さしすせそ
+      =  render partial: "note", collection: @notes
     .magazine-details-content__middle__right
-      = link_to do
+      - if @user == current_user
+        = link_to edit_user_magazine_path do
+          .magazine-details-content__middle__right__setting
+            設定
+      - else
         .magazine-details-content__middle__right__setting
-          設定
+          フォロー
       .magazine-details-content__middle__right__title-bold
-        マガジンのタイトル
+        = @magazine.title
       .magazine-details-content__middle__right__title
-        マガジンの説明
+        = @magazine.description
       .magazine-details-content__middle__right__profile
         .magazine-details-content__middle__right__profile__icon
-          %img{alt: "自分の", src: "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"}
+          - if @user.main_image.present?
+            = image_tag @user.main_image
+          - else
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
         .magazine-details-content__middle__right__profile__name
-          自分の名前
+          = @user.nickname
       .magazine-details-content__middle__right__title-bold
         ハッシュタグ
       %ul.magazine-details-content__middle__right__hash
         %li.magazine-details-content__middle__right__hash__item
-          仮置き
+          日本(1)
         %li.magazine-details-content__middle__right__hash__item
-          仮置き
+          アメリカ(2)
         %li.magazine-details-content__middle__right__hash__item
-          仮置き
+          中国(3)
       .magazine-details-content__middle__right__title-bold
         アーカイブ
       .magazine-details-content__middle__right__archive
-        2018年(3) [+]
+        2018年(2) [+]
       .magazine-details-content__middle__right__title-bold
         シェア
       %ul.magazine-details-content__middle__right__share
