@@ -1,0 +1,41 @@
+.card
+  .card__avatar
+    %ul
+      %li.icon
+        = link_to user_path(hot_note.user) do
+          - if hot_note.user.main_image.present?
+            = image_tag hot_note.user.main_image
+          - else
+            = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png'
+      %li.info
+        = link_to user_path(hot_note.user), class: "name" do
+          = hot_note.user.nickname
+        = link_to note_path(hot_note), class: "date" do
+          = hot_note.created_at
+  .card__main
+    =link_to note_path(hot_note) do
+      .card__main--image
+        - if hot_note.images.present?
+          -hot_note.images.each do |image|
+            = image_tag image.image
+      %h3.card__main--title
+        = hot_note.title
+      %p.card__main--text
+        = hot_note.text
+  .card__foot
+    %ul.icon
+      %li.icon__box
+        = render "likes/like-button",{note: hot_note, likes: @likes}
+      %li.icon__box
+        = link_to "" do
+          %i.fas.fa-arrow-right
+      %li.icon__box
+        = render "articles/article-button", {note: hot_note}
+      - if hot_note.user.id == current_user.id
+        %li.icon__box
+          = link_to "" do
+            %i.fas.fa-ellipsis-h.balloon__event
+          .delete__balloon
+            = link_to  "/notes/#{hot_note.id}", method: :delete do
+              %p 削除
+    .comment__link
