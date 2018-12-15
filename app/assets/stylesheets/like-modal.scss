@@ -1,18 +1,22 @@
 .like-modal{
   position: fixed;
-  left: 680px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
+  text-align: center;
   display: none;
-  width: 100vw;
-  height: 180vh;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
-
   &__content{
-    margin: 180px auto;
-    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    background-color: $whitecolor;
+    border-radius: 4px;
     width: 360px;
     min-height: 450px;
     &__header{
@@ -20,7 +24,7 @@
       color: #777;
       font-size: 14px;
       line-height: 40px;
-      padding-left: 10px;
+      padding-left: 0px;
       font-weight: bold;
       background-color: #EEEEEE;
       &__escape{
