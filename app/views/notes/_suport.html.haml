@@ -1,0 +1,36 @@
+.suport
+  .suport-modal
+    .suport-modal__title
+      %h3 〇〇さんをサポートしよう！
+      %h5 サポートとは
+    .suport-modal__main-icon
+      = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+    %form
+      .suport-modal__price
+        %p 金額
+        .suport-modal__price__block
+          .suport-modal__price__block__select
+            .suport-modal__price__block__select__image
+              = image_tag "icon_support_100-82d0293b111a338b29642046d9f3213c044d785f853a3a0513417f5ae53f520d"
+            %span 100円
+          .suport-modal__price__block__select
+            .suport-modal__price__block__select__image
+              = image_tag "icon_support_500-901ca3e4788703493e62d1d1918cc8f80185fae6cdfdb178c40978e86fbecd3d"
+            %span 500円
+          .suport-modal__price__block__select
+            .suport-modal__price__block__select__image
+              = image_tag "icon_support_1000-a2719a9effa236c2a417d4ea3e76a31c9c8030b6549410d24d7dd3a7ae649878"
+            %span 1000円
+          .suport-modal__price__block__select
+            .suport-modal__price__block__select__image
+              = image_tag "icon_support_free-469c02a6e02f11badcfc34e5d1258d2169aa4ee7ec7b09a9c682797021c465e3"
+            %input{type: "text", class: "input-price"} 円
+      .suport-modal__message
+        %p メッセージ（任意）
+        .suport-modal__message__text
+          %textarea{name: "massage" ,placeholder: "いつも素敵な作品をありがとうございます！新作も楽しみにしています（140文字まで）", class: "suport-message-area"}
+      .submit-button
+        %input{type: "submit", value: "サポートする", class: "suport-submit"}
+    .suport-modal__footer
+      = button_tag "キャンセル", class: "suport-cancel"
+
