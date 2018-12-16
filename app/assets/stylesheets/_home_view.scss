@@ -28,12 +28,18 @@
           }
         }
 
-        .button-1 {
+        .button-1, .button-3 {
           background-color: #e6e6e6;
         }
 
-        .button-2 {
+        .button-2, .button-4, .button-5 {
           background-color: $whitecolor;
+          margin-left: -1px;
+        }
+
+        .button-3, .button-4, .button-5 {
+          width: 90px;
+          text-align: center;
         }
       }
    }
@@ -181,7 +187,7 @@
         }
       }
 
-    .new__notes {
+    .new__notes, .old__notes {
       display: none;
     }
 
