@@ -1,0 +1,65 @@
+.under-bar {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.05);
+
+  &__inner {
+    width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    .under-bar__actions {
+      height: 60px;
+      color: #A8ABB1;
+
+      &__left {
+        float: left;
+        line-height: 60px;
+
+        ul {
+
+          li {
+            display: inline-block;
+            font-size: 20px;
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+
+            .fa-heart {
+              color: $like-color;
+            }
+
+            span {
+              margin-left: 4px;
+              color: $like-color;
+              font-size: 16px;
+              line-height: 56px;
+            }
+          }
+        }
+      }
+
+      &__right {
+        float: right;
+        line-height: 60px;
+        ul {
+          li {
+            display: inline-block;
+            font-size: 20px;
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
