@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 before_action :user_and_follow, only: [:show, :followings ,:followers]
 
   def show
+    @notes = @user.notes.order("created_at DESC")
   end
 
   def edit
