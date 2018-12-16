@@ -184,6 +184,7 @@
     min-height: 100%;
     #product_magazine{
       max-width: 1440px;
+      min-height: 100vh;
       display: none;
       background-color: #f7f9f9;
       margin-top: 23px;
@@ -221,6 +222,7 @@
             top: 60%;
           }
         }
+
         &__posted{
           width: 450px;
           height: 220px;
