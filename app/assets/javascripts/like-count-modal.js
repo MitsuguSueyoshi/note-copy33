@@ -9,5 +9,11 @@ $(document).on('turbolinks:load', function(){
       e.preventDefault();
       $('.like-modal').fadeOut();
     });
+// ノートのshow画面のlike-modalです！
+    $('.like__counted').on('click', function(e){
+      e.preventDefault();
+      $(this).siblings().fadeIn();
+    });
+
   });
 });
