@@ -61,7 +61,6 @@
             width: 80px;
             margin-bottom: 12px;
             border-radius: 50px;
-            border: solid 1px $greencolor;
             position: relative;
           img{
             height:55px;
@@ -72,8 +71,24 @@
             left: 50%;
             -webkit-transform: translateY(-50%) translateX(-50%);
             transform: translateY(-50%) translateX(-50%);
+            opacity: 0.5;
           }
          }
+          &__image.selected{
+            height: 80px;
+            width: 80px;
+            margin-bottom: 12px;
+            border-radius: 50px;
+            border: solid 1px $greencolor;
+            position: relative;
+           img{
+            opacity: 1;
+           }
+          }
+          span.selected-span{
+            font-weight: bold;
+            color: $greencolor;
+          }
          input.input-price{
           width: 50px;
           border-radius: 5px;
