@@ -1,0 +1,105 @@
+- if user_signed_in?
+  - if note.like_user(current_user.id)
+    = link_to "/notes/#{note.id}/likes/like.id", method: :delete, id: "like-button", remote: true do
+      %i.far.fa-heart.heart-red
+      %span
+    .like__counted.heart-red
+      = note.likes_count
+    .like-modal
+      .like-modal__content
+        .like-modal__content__header
+          スキをつけたユーザー(
+          = note.likes_count
+          )
+          .like-modal__content__header__escape
+            &times;
+        %ul.like-modal__content__users
+          - note.likes.each do |like|
+            %li.like-modal__content__users__user
+              = link_to user_path(id: like.user_id) do
+                .like-modal__content__users__user__icon
+                  - if like.user.main_image.present?
+                    = image_tag like.user.main_image
+                  - else
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+                .like-modal__content__users__user__name
+                  = like.user.nickname
+              .like-modal__content__users__user__follow
+                - unless current_user == like.user
+                  - if current_user.following?(like.user)
+                    = form_for(current_user.relationships.find_by(follow_id: like.user.id), html: { method: :delete }) do |f|
+                      = f.hidden_field :follow_id, value: like.user.id
+                      = f.submit 'フォロー中', class: 'like-modal__content__users__user__follow__follow-now'
+                  - else
+                    = form_for(current_user.relationships.build) do |f|
+                      = f.hidden_field :follow_id, value: like.user.id
+                      = f.submit 'フォロー', class: 'like-modal__content__users__user__follow__follows'
+  - else
+    = link_to note_likes_path(note_id: note.id), method: :post, id: "like-button", remote: true do
+      %i.far.fa-heart.heart
+      %span
+    .like__counted
+      = note.likes_count
+    .like-modal
+      .like-modal__content
+        .like-modal__content__header
+          スキをつけたユーザー(
+          = note.likes_count
+          )
+          .like-modal__content__header__escape
+            &times;
+        %ul.like-modal__content__users
+          - note.likes.each do |like|
+            %li.like-modal__content__users__user
+              = link_to user_path(id: like.user_id) do
+                .like-modal__content__users__user__icon
+                  - if like.user.main_image.present?
+                    = image_tag like.user.main_image
+                  - else
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+                .like-modal__content__users__user__name
+                  = like.user.nickname
+              .like-modal__content__users__user__follow
+                - unless current_user == like.user
+                  - if current_user.following?(like.user)
+                    = form_for(current_user.relationships.find_by(follow_id: like.user.id), html: { method: :delete }) do |f|
+                      = f.hidden_field :follow_id, value: like.user.id
+                      = f.submit 'フォロー中', class: 'like-modal__content__users__user__follow__follow-now'
+                  - else
+                    = form_for(current_user.relationships.build) do |f|
+                      = f.hidden_field :follow_id, value: like.user.id
+                      = f.submit 'フォロー', class: 'like-modal__content__users__user__follow__follows'
+- else
+  %i.far.fa-heart
+  %span
+    .like__counted
+      = note.likes_count
+    .like-modal
+      .like-modal__content
+        .like-modal__content__header
+          スキをつけたユーザー(
+          = note.likes_count
+          )
+          .like-modal__content__header__escape
+            &times;
+        %ul.like-modal__content__users
+          - note.likes.each do |like|
+            %li.like-modal__content__users__user
+              = link_to user_path(id: like.user_id) do
+                .like-modal__content__users__user__icon
+                  - if like.user.main_image.present?
+                    = image_tag like.user.main_image
+                  - else
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+                .like-modal__content__users__user__name
+                  = like.user.nickname
+              .like-modal__content__users__user__follow
+                - unless current_user == like.user
+                  - if current_user.following?(like.user)
+                    = form_for(current_user.relationships.find_by(follow_id: like.user.id), html: { method: :delete }) do |f|
+                      = f.hidden_field :follow_id, value: like.user.id
+                      = f.submit 'フォロー中', class: 'like-modal__content__users__user__follow__follow-now'
+                  - else
+                    = form_for(current_user.relationships.build) do |f|
+                      = f.hidden_field :follow_id, value: like.user.id
+                      = f.submit 'フォロー', class: 'like-modal__content__users__user__follow__follows'
