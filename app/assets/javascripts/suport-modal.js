@@ -8,6 +8,10 @@ $(document).on('turbolinks:load', function(){
   $(".suport-submit").on("click", function(){
     $(".suport").fadeOut();
   });
-
-
+  $(".suport-modal__price__block__select").on("click", function(){
+    $(".suport-modal__price__block__select__image.selected").removeClass("selected");
+    $(this).children(".suport-modal__price__block__select__image").addClass("selected");
+    $(".selected-span").removeClass("selected-span");
+    $(this).children("span").addClass("selected-span");
+  });
 });
