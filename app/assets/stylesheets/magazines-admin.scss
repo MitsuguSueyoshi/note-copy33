@@ -16,8 +16,8 @@ body {
   &__all{
     margin: 0 auto;
     position: relative;
-    right: 6px;
-    width: 560px;
+    right: 8px;
+    width: 550px;
     height: 32px;
     padding-top: 18px;
     border: solid 1px #F5F5F5;
@@ -45,38 +45,36 @@ body {
   &__magazines{
     margin: 0 auto;
     width: 570px;
+    display: flex;
+    flex-wrap: wrap;
     &__create{
-      position: relative;
-      float: left;
       width: 270px;
-      height: 195px;
+      height: 200px;
       border: solid 1px #F5F5F5;
       border-radius: 6px;
       background-color: white;
       margin-bottom: 30px;
       margin-right: 10px;
       &__plus{
-        position: absolute;
+        position: relative;
+        top: 65px;
         left: 120px;
-        top: 70px;
         font-size: 33px;
         font-style: normal;
         color: #BBBBBB;
       }
       &__text{
-        position: absolute;
+        position: relative;
+        top: 70px;
         left: 90px;
-        top: 110px;
         color: #AAAAAA;
         font-size: 13px;
       }
     }
     &__magazine{
-      float: right;
-      position: relative;
       border-radius: 6px;
       width: 270px;
-      height: 195px;
+      height: 200px;
       border: solid 1px #F5F5F5;
       border-radius: 6px;
       background-color: white;
@@ -89,9 +87,9 @@ body {
           width: 270px;
         }
         &__title{
-          position: absolute;
+          position: relative;
           max-width: 270px;
-          top: 72px;
+          bottom: 30px;
           left: 15px;
           font-size: 14px;
           color: white;
@@ -101,12 +99,10 @@ body {
       }
       &__center{
         position: relative;
-        height: 40px;
+        height: 20px;
         width: 240px;
         margin: 0 auto;
         &__title{
-          position: absolute;
-          top: 13px;
           font-size: 13px;
           color: #222222;
         }
