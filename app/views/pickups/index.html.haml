@@ -1,0 +1,20 @@
+= render 'shared/header'
+= render 'shared/header-nav'
+.home__container
+  .home__container__header
+    .switch__buttons
+      %ul
+        %li.button-3
+          %p 人気
+        %li.button-4
+          %p 新しい順
+        %li.button-5
+          %p 古い順
+  .home__container__cards
+    .hot__notes
+      = render partial: "hot_note", collection: @hot_notes
+    .new__notes
+      = render partial: "new_note", collection: @new_notes
+    .old__notes
+      = render partial: "old_note", collection: @old_notes
+
