@@ -36,6 +36,6 @@
           = link_to "" do
             %i.fas.fa-ellipsis-h.balloon__event
           .delete__balloon
-            = link_to "note_path(note)", method: :delete do
+            = link_to note_path(old_note), method: :delete do
               %p 削除
     .comment__link
