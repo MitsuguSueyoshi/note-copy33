@@ -16,7 +16,7 @@
     =link_to note_path(hot_note) do
       .card__main--image
         - if hot_note.images.present?
-          -hot_note.images.each do |image|
+          - hot_note.images.each do |image|
             = image_tag image.image
       %h3.card__main--title
         = hot_note.title
@@ -36,6 +36,6 @@
           = link_to "" do
             %i.fas.fa-ellipsis-h.balloon__event
           .delete__balloon
-            = link_to  "/notes/#{hot_note.id}", method: :delete do
+            = link_to  "note_path(note)", method: :delete do
               %p 削除
     .comment__link
