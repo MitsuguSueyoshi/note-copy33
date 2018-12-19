@@ -5,10 +5,16 @@
     %ul.switch__button
       %li.select{href: '.hot__notes'}
         %p 人気
+      }
       %li{href: '.new__notes'}
-        %p 新着
+        %p 新しい順
+      %li{href: '.old__notes'}
+        %p 古い順
   .home__container__cards
     .hot__notes.tab
       = render partial: "hot_note", collection: @hot_notes
     .new__notes.tab
       = render partial: "new_note", collection: @new_notes
+    .old__notes.tab
+      = render partial: "old_note", collection: @old_notes
+
