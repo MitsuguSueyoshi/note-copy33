@@ -1,6 +1,6 @@
 .border-box{
   margin-top: 10px;
-  border-top: solid 1px #F5F5F5;
+  border-top: solid 1px #EDEDED;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
 }
 
@@ -51,8 +51,8 @@
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: #f7f9f9;
-    height: 250px;
-    width: 600px;
+    height: 105px;
+    width: 510px;
     &__title{
       margin-bottom: 16px;
       font-size: 12px;
@@ -67,67 +67,76 @@
     }
     &__content{
       float: left;
+      border-radius: 7px;
       margin: 16px 16px 8px;
       padding-top: 16px;
       padding-left: 16px;
       padding-right: 16px;
       background-color: #fff;
-      width: 448px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 440px;
+      margin-left: 20px;
       &__text{
         font-size: 14px;
         margin-bottom: 16px;
         line-height: 1.7;
       }
       &__button{
+        border-radius: 5px;
         background-color: #2cb696;
         border-color: #2cb696;
         color: #fff;
         font-weight: bold;
         margin-right: 50px;
         margin-bottom: 20px;
+        margin-left: 40px;
         padding: 0.8em 1.6em;
-        height: 40px;
-        width: 100%;
+        height: 20px;
+        width: 120px;
         text-align: center;
         font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
   &__likes{
     float: left;
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 17px;
     margin-right: 60px;
     color: gray;
   }
   &__add{
     float: left;
-    font-size: 20px;
-    margin-right: 60px;
+    font-size: 17px;
+    margin-right: 50px;
     color: gray;
   }
   &__report{
     float: left;
-    font-size: 20px;
+    font-size: 17px;
     color: gray;
   }
   &__facebook{
     float: right;
-    font-size: 23px;
+    font-size: 17px;
     margin-right: 10px;
     margin-left: 30px;
     color: #4267b2;
   }
   &__tweet{
     float: right;
-    font-size: 23px;
+    font-size: 17px;
     margin-right: 10px;
     margin-left: 30px;
     color: #1b95e0;
   }
   &__bookmark{
     float: right;
-    font-size: 23px;
+    font-size: 17px;
     margin-right: 10px;
     margin-left: 30px;
     color: #00a4de;
@@ -137,7 +146,7 @@
     margin-top: 100px;
     &__title{
       border-bottom: 1px solid;
-      border-color: #D3D3D3;
+      border-color: #EDEDED;
       font-size: 13px;
       font-weight: bold;
       padding-bottom: 10px;
@@ -146,7 +155,7 @@
       height: 70px;
       margin-bottom: 30px;
       border-bottom: 1px solid;
-      border-color: #D3D3D3;
+      border-color: #EDEDED;
       position: relative;
       &__title{
         font-size: 20px;
@@ -166,7 +175,7 @@
         top: 2px;
         height: 55px;
         width: 55px;
-        border: #D3D3D3;
+        border: #EDEDED;
       }
     }
   }
@@ -174,14 +183,14 @@
     clear: both;
     padding-bottom: 40px;
     border-bottom: 1px solid;
-    border-color: #D3D3D3;
+    border-color:   #EDEDED;
     &__before{
       float: left;
       width: 300px;
       max-width: 300px;
       font-size: 16px;
       border-right: 1px solid;
-      border-color: #D3D3D3;
+      border-color: #EDEDED;
     }
     &__after{
       float: right;
@@ -198,10 +207,12 @@
       float: left;
       width: 70px;
       height: 70px;
+      border-radius: 35px;
     }
     &__content{
       margin-left: 100px;
       &__name{
+        font-weight: bold;
       }
       &__self-introduction{
         font-size: 11px;
@@ -223,84 +234,102 @@
 .comments{
   clear: both;
   border-top: 1px solid;
-  border-color: #D3D3D3;
+  border-color: #EDEDED;
   padding: 15px;
   margin: 0 auto;
   &__count{
     font-size: 14px;
     font-weight: bold;
-    width: 600px;
+    width: 580px;
     margin: 0 auto;
   }
   &__comment{
-    width: 600px;
+    width: 580px;
     margin: 0 auto;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     position: relative;
     &__profile{
-      margin-bottom: 10px;
       &__icon img{
         float: left;
         margin-right: 12px;
         width: 35px;
         height: 35px;
+        border-radius: 20px;
       }
       &__name{
+        font-weight: bold;
+        font-size: 14px;
       }
       &__date{
         font-size: 11px;
       }
     }
     &__option{
-      position: absolute;
-      top: 5px;
-      right: 70px;
-      color: gray;
-      font-size: 22px;
+      color: #C5C6C8;
+      font-size: 18.5px;
+      float: right;
+      position: relative;
+      bottom: 35px;
+      right: 60px;
+      // left: 500px;
+      // bottom: 40px;
+      // position: relative;
     }
     &__likes{
-      position: absolute;
-      top: 5px;
-      right: 20px;
-      color: gray;
-      font-size: 22px;
+      float: right;
+      color: #C5C6C8;
+      font-size: 18.5px;
+      position: relative;
+      // left: 550px;
+      bottom: 32px;
+      left: 10px;
     }
     &__body{
-      position: absolute;
-      left: 47px;
+      clear: both;
+      width: 535px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444444;
+      margin-left: 45px;
     }
   }
   &__form{
-    width: 600px;
+    width: 580px;
     margin: 0 auto;
     border-top: 1px solid;
-    border-color: #D3D3D3;
-    padding: 10px;
+    border-color: #EDEDED;
     &__icon img{
       margin-top: 10px;
       float: left;
       width: 35px;
       height: 35px;
+      border-radius: 20px;
     }
     &__content{
       margin-top: 10px;
       &__text{
         float: left;
-        margin-left: 30px;
         height: 39px;
-        width: 500px;
+        width: 510px;
+        border: none;
+        margin-left: 28px;
+        font-size: 13px;
+        border-radius: 10px;
       }
       &__submit{
         float: right;
+        display: none;
         margin-top: 20px;
-        margin-right: 14px;
+        margin-right: 6px;
         width: 90px;
         height: 30px;
         background-color: #2cb696;
         border-color: #2cb696;
         color: #fff;
         font-weight: bold;
+        font-size: 12px;
+        border-radius: 5px;
       }
     }
   }
@@ -309,8 +338,8 @@
   height: 160px;
   position: relative;
   border-top: 1px solid;
-  border-color: #D3D3D3;
-  margin-top: 90px;
+  border-color: #EDEDED;
+  margin-top: 80px;
   padding-top: 40px;
   padding-right: 26px;
   padding-left: 26px;
@@ -328,4 +357,14 @@
   // noteカイゼン箱とクリエイターの推薦だけboldにしてます！
 .only-bold{
   font-weight: bold;
+}
+
+.like__counted{
+  position: relative;
+  left: 28px;
+  bottom: 21px;
+}
+
+.fa-gift{
+  margin-right: 5px;
 }
