@@ -2,32 +2,44 @@
 .border-box
 .note
   .note__image
-    %img{alt: "イメージ", src: "https://www.jalan.net/news/img/2017/09/170915_fuji-670x443.jpg"}
+    - if @note.images.present?
+      - @note.images.each do |image|
+        = image_tag image.image
+    - else
   .note__title
-    富士山に行った話
+    = @note.title
   .note__user
     .note__user__icon
-      %img{alt: "自分の", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      = link_to user_path(@note.user) do
+        - if @note.user.main_image.present?
+          = image_tag @note.user.main_image
+        - else
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     .note__user__name
-      = link_to class: "link" do
-        自分の名前
+      = link_to user_path(@note.user) do
+        = @note.user.nickname
     .note__user__date
-      2018/11/11 11:11 フォローする
+      = @note.created_at
+      フォローする
   .note__text
-    富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。
+    = @note.text
   .note__support
     .note__support__title
       この記事が気に入ったら、サポートをしてみませんか？ 気軽にクリエイターを支援できます。
-    .note__support__icon
-      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+    / .note__support__icon
+    /   = link_to user_path(@note.user) do
+    /     - if @note.user.main_image.present?
+    /       = image_tag @note.user.main_image
+    /     - else
+    /       = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     .note__support__content
-      .note__support__content__text
-        サポートしてください！
+      / .note__support__content__text
+      /   サポートしてください！
       .note__support__content__button
-        %i.fas.fa-gift サポートをする
+        %i.fas.fa-gift
+        サポートをする
   .note__likes
-    %i.far.fa-heart
-      2
+    = render "note-likes-button", note: @note
   .note__add
     %i.fas.fa-plus
   .note__report
@@ -89,19 +101,23 @@
       >
   .note__profile
     .note__profile__icon
-      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      = link_to user_path(@note.user) do
+        - if @note.user.main_image.present?
+          = image_tag @note.user.main_image
+        - else
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     .note__profile__content
       .note__profile__content__name
         = link_to do
-          自分の名前
+          = @note.user.nickname
       .note__profile__content__self-introduction
         よろしくお願いします。
-      -if user_signed_in?
-        .note__profile__content__follow
-          フォロー
+      = render 'relationships/follow-button', user: @note.user
+
 .comments
   .comments__count
-    コメント1件
+    コメント
+    件
   .comments__comment
     .comments__comment__profile
       .comments__comment__profile__icon
@@ -116,13 +132,18 @@
     .comments__comment__likes
       %i.far.fa-heart
     .comments__comment__body
-      面白いです！
+      面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！
   .comments__form
     .comments__form__icon
-      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      = link_to user_path(@note.user) do
+        - if @note.user.main_image.present?
+          = image_tag @note.user.main_image
+        - else
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     %form.comments__form__content
-      %textarea.comments__form__content__text
+      %textarea.comments__form__content__text{placeholder: "コメントする..."}
       %input{type: "submit", class: "comments__form__content__submit"}
+
 = render 'under-bar'
 .footer
   %ul.footer__list
