@@ -1,0 +1,271 @@
+@mixin headline-font(){
+  height: 80px;
+  line-height: 120px;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+@mixin display-flex(){
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@mixin box-style(){
+  width: 290px;
+  height: 150px;
+  background-color: #FFF;
+  border-radius: 5px;
+  border: solid 0.8px #F5F5F5;
+  margin-bottom: 19px;
+}
+
+@mixin image-style(){
+  height: 45px;
+  width: 280px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+@mixin img(){
+  height: 30px;
+  width: 80px;
+  border-radius: 3px;
+  margin-top: 7px;
+  object-fit: cover;
+}
+
+@mixin box-title(){
+  height:45px;
+  width: 100%;
+  margin-left: 10px;
+}
+
+@mixin box-dis(){
+  height: 40px;
+  width: 270px;
+  margin: 0 auto;
+}
+
+@mixin discription(){
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.header-magazine{
+  min-height: 100vh;
+  margin-top: 10px;
+  border-top: solid 1px #F5F5F5;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  background-color: #f7f9f9;
+  .header-magazine-box{
+    width:890px;
+    margin: 0 auto;
+    &__title{
+      width: 100%;
+      height: 80px;
+      border-bottom: solid 1px #DDDDDD;
+     h3{
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 80px;
+     }
+   }
+    &__left{
+      width: 610px;
+      &__pickup{
+       height: 490px;
+       width: 100%;
+       &__headline{
+        height: 80px;
+        h4{
+          @include headline-font();
+        }
+       }
+       &__container{
+        height: 400px;
+        background-color: #FFF;
+        border-radius: 5px;
+        border: solid 0.8px #F5F5F5;
+        &__image{
+          height: 230px;
+          position: relative;
+          img{
+            height: 230px;
+            width: 610px;
+            object-fit: cover;
+          }
+          .pickup-magazine-title{
+            font-size: 22px;
+            color: #FFF;
+            font-weight: bold;
+            position: absolute;
+            bottom: 13px;
+            left: 10px;
+          }
+        }
+        &__description{
+          height: 90px;
+          width: 590px;
+          margin:12px auto;
+          border-bottom: solid 0.8px #DDDDDD;
+          p{
+            font-size: 12px;
+          }
+        }
+        &__footer{
+          height: 35px;
+          padding-top: 5px;
+          .user-icon{
+            height: 27px;
+            width: 100%;
+            position: relative;
+            margin-left: 10px;
+            img{
+              height: 27px;
+              width: 27px;
+              border-radius: 50px;
+            }
+              p{
+                position: absolute;
+                left: 35px;
+                top:5px;
+                font-size: 11px;
+              }
+          }
+        }
+       }
+      }
+      &__free{
+        width: 100%;
+        &__headline{
+          height: 80px;
+          h4{
+            @include headline-font();
+          }
+        }
+        &__container{
+          @include display-flex();
+          &__box{
+            @include box-style();
+            &__image{
+              @include image-style();
+              img{
+                @include img();
+              }
+           }
+           &__title{
+            @include box-title();
+             h5{
+              font-size: 15px;
+              font-weight: bold;
+              line-height: 45px;
+             }
+           }
+           &__discription{
+            @include box-dis();
+              p{
+                @include discription();
+             }
+           }
+         }
+        }
+      }
+      &__toll{
+        width: 100%;
+        &__headline{
+          height: 80px;
+          h4{
+            @include headline-font();
+          }
+        }
+        &__container{
+          @include display-flex();
+          &__box{
+            @include box-style();
+            &__image{
+              @include image-style();
+              img{
+                @include img();
+              }
+            }
+            &__title{
+              @include box-title();
+                h5{
+                  font-size: 15px;
+                  font-weight: bold;
+                  line-height: 45px;
+                }
+              }
+            &__discription{
+              @include box-dis();
+                p{
+                  @include discription();
+                }
+            }
+          }
+        }
+      }
+      &__subscription{
+        width: 100%;
+        &__headline{
+          height: 80px;
+          h4{
+            @include headline-font();
+          }
+        }
+        &__container{
+          @include display-flex();
+          &__box{
+            @include box-style();
+            &__image{
+              @include image-style();
+              img{
+                @include img();
+              }
+              p.price{
+                height: 30px;
+                width: 100px;
+                margin-top: 9px;
+                color: $greencolor;
+                float: right;
+              }
+            }
+            &__title{
+              @include box-title();
+                h5{
+                  font-size: 15px;
+                  font-weight: bold;
+                  line-height: 45px;
+                }
+            }
+            &__discription{
+              @include box-dis();
+                p{
+                  @include discription();
+                }
+            }
+          }
+        }
+      }
+      &__all-button{
+        height: 30px;
+        width: 130px;
+        border: solid 0.8px #DDDDDD;
+        background-color: #FFF;
+        padding-top: 10px;
+        border-radius: 5px;
+        margin-top: 40px;
+        a{
+          font-size: 13px;
+          font-weight: bold;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
