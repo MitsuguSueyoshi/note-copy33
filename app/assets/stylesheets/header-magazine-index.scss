@@ -42,13 +42,13 @@
   margin-left: 10px;
 }
 
-@mixin box-dis(){
+@mixin box-description(){
   height: 40px;
   width: 270px;
   margin: 0 auto;
 }
 
-@mixin discription(){
+@mixin description(){
   font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -168,10 +168,10 @@
               line-height: 45px;
              }
            }
-           &__discription{
-            @include box-dis();
+           &__description{
+            @include box-description();
               p{
-                @include discription();
+                @include description();
              }
            }
          }
@@ -203,10 +203,10 @@
                   line-height: 45px;
                 }
               }
-            &__discription{
-              @include box-dis();
+            &__description{
+              @include box-description();
                 p{
-                  @include discription();
+                  @include description();
                 }
             }
           }
@@ -245,10 +245,10 @@
                   line-height: 45px;
                 }
             }
-            &__discription{
-              @include box-dis();
+            &__description{
+              @include box-description();
                 p{
-                  @include discription();
+                  @include description();
                 }
             }
           }
