@@ -10,15 +10,24 @@
         .header-magazine-box__left__pickup__headline
           %h4 ピックアップ
         .header-magazine-box__left__pickup__container
-          .header-magazine-box__left__pickup__container__image
-            = image_tag "https://www.pakutaso.com/shared/img/thumb/kazuhiro17810002_TP_V1.jpg"
-            %p.pickup-magazine-title マガジンのタイトル
-          .header-magazine-box__left__pickup__container__description
-            %p "お前はニンジャソウル憑依者となった。 お前の牢獄であった灰色のメガロシティは、 いまや、お前のための狩場となったのだ。” --- 重金属酸性雨降りしきる電脳犯罪都市、ネオサイタマへようこそ。君はある日突然ニンジャソウル憑依者となり、ソウカイ・シンジケートと呼ばれる組織に所属することとなったニンジャだ。君は生き残りをかけて、数々のミッションに挑まねばならない。
+          = link_to user_magazine_path(@pickup_magazine.user, @pickup_magazine) do
+            .header-magazine-box__left__pickup__container__image
+              = image_tag @pickup_magazine.header_image
+              %p.pickup-magazine-title
+                = @pickup_magazine.title
+          = link_to user_magazine_path(@pickup_magazine.user, @pickup_magazine) do
+            .header-magazine-box__left__pickup__container__description
+              %p
+                = @pickup_magazine.description
           .header-magazine-box__left__pickup__container__footer
-            .user-icon
-              = image_tag "note-icon-image.jpg"
-              %p ダイハードどど
+            = link_to user_path(@pickup_magazine.user) do
+              .user-icon
+                - if @pickup_magazine.user.main_image.present?
+                  = image_tag "note-icon-image.jpg"
+                - else
+                  = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+                %p
+                  = @pickup_magazine.user.nickname
       .header-magazine-box__left__free
         .header-magazine-box__left__free__headline
           %h4 無料マガジン
