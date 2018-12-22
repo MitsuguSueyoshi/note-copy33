@@ -23,5 +23,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resources :wanted, only: [:index]
   resources :pickups, only: [:index]
-  resources :headermagazines, only: [:index]
+  resources :headermagazines, only: [:index] do
+    collection do
+      get 'magagine_all'
+    end
+  end
 end
