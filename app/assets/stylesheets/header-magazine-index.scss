@@ -39,7 +39,7 @@
 
 @mixin box-title(){
   height:45px;
-  width: 100%;
+  width: 260px;
   margin-left: 10px;
 }
 
@@ -160,9 +160,18 @@
               img{
                 @include img();
               }
+              span{
+                height: 30px;
+                width: 80px;
+                border-radius: 3px;
+                margin-top: 7px;
+                background-color: $greencolor;
+                float: left;
+              }
               .follow-button{
                 height: 28px;
                 margin-top: 8px;
+                margin-right: 10px;
                 float: right;
 
                 a.follow-btn {
