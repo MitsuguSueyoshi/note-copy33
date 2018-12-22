@@ -8,26 +8,28 @@
 
     .all-magazines__box__list
       - @all_magazines.each do |magazine|
-        .all-magazines__box__list__container
-          .all-magazines__box__list__container__upper
-            - if magazine.header_image.present?
-              = image_tag magazine.header_image
-            - else
-              .all-magazines__box__list__container__upper__image-empty
-            .all-magazines__box__list__container__upper__title
-              %p.magazine-title
-                = magazine.title
-          .all-magazines__box__list__container__middle
-            .all-magazines__box__list__container__middle__description
-              %p.magazine-description
-                = magazine.description
-          .all-magazines__box__list__container__footer
-            .all-magazines__box__list__container__footer__user
-              - if magazine.user.main_image.present?
-                = image_tag magazine.user.main_image, class: "user-icon"
+        = link_to user_magazine_path(:use_id ,magazine) do
+          .all-magazines__box__list__container
+            .all-magazines__box__list__container__upper
+              - if magazine.header_image.present?
+                = image_tag magazine.header_image
               - else
-                = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png" ,class: "user-icon"
-              %p.user-nickname
-                = magazine.user.nickname
-            .all-magazines__box__list__container__footer__follow
-              %a.follow-btn フォロー
+                .all-magazines__box__list__container__upper__image-empty
+              .all-magazines__box__list__container__upper__title
+                %p.magazine-title
+                  = magazine.title
+            .all-magazines__box__list__container__middle
+              .all-magazines__box__list__container__middle__description
+                %p.magazine-description
+                  = magazine.description
+            .all-magazines__box__list__container__footer
+              = link_to user_path(magazine.user) do
+                .all-magazines__box__list__container__footer__user
+                  - if magazine.user.main_image.present?
+                    = image_tag magazine.user.main_image, class: "user-icon"
+                  - else
+                    = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png" ,class: "user-icon"
+                  %p.user-nickname
+                    = magazine.user.nickname
+              .all-magazines__box__list__container__footer__follow
+                %a.follow-btn フォロー
