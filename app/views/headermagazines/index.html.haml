@@ -28,26 +28,7 @@
                   = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
                 %p
                   = @pickup_magazine.user.nickname
-      .header-magazine-box__left__free
-        .header-magazine-box__left__free__headline
-          %h4 無料マガジン
-        .header-magazine-box__left__free__container
-          - @free_magazines.each do |free_magazine|
-            = link_to user_magazine_path(:use_id , free_magazine) do
-              .header-magazine-box__left__free__container__box
-                .header-magazine-box__left__free__container__box__image
-                  - if free_magazine.header_image.present?
-                    = image_tag free_magazine.header_image
-                  - else
-                    %span.header-magazine-box__left__free__container__box__image__empty
-                  .follow-button
-                    %a.follow-btn フォロー
-                .header-magazine-box__left__free__container__box__title
-                  %h5
-                    = free_magazine.title
-                .header-magazine-box__left__free__container__box__description
-                  %p
-                    = free_magazine.description
+      = render "free-magazine"
       .header-magazine-box__left__toll
         .header-magazine-box__left__toll__headline
           %h4 有料マガジン
