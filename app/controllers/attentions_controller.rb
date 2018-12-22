@@ -1,0 +1,2 @@
+class AttentionsController < ApplicationController
+end
