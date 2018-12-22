@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   resources :helps, only:[:index]
   resources :articles , only: [:create, :destroy]
   resources :categories, only: [:index]
+  resources :wanted, only: [:index]
+  resources :pickups, only: [:index]
 end
