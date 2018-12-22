@@ -9,7 +9,4 @@ class HeadermagazinesController < ApplicationController
     @all_magazines = Magazine.get_magazine
   end
 
-
-
-
 end
