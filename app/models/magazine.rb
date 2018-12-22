@@ -17,4 +17,7 @@ class Magazine < ApplicationRecord
   def adding?(note)
     self.notes.include?(note)
   end
+
+  scope :get_magazine, -> { all.includes(:user).order("created_at DESC")}
+
 end
