@@ -50,7 +50,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     if @note.user.id == current_user.id
        @note.destroy
-       redirect_to root_path
+       redirect_back(fallback_location: root_path)
     end
   end
 

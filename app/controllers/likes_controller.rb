@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     @like = Like.create(user_id: current_user.id, note_id: params[:note_id])
     @likes = Like.where(note_id: params[:note_id])
     @notes = Note.all
-    redirect_to notes_path
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
@@ -11,6 +11,6 @@ class LikesController < ApplicationController
     @like.destroy
     @likes = Like.where(note_id: params[:note_id])
     @notes = Note.all
-    redirect_to notes_path
+    redirect_back(fallback_location: root_path)
   end
 end
