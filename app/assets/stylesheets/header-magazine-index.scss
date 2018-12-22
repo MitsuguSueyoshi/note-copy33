@@ -24,8 +24,9 @@
 @mixin image-style(){
   height: 45px;
   width: 280px;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 10px 0px;
+  padding: 0px 10px;
+  box-sizing: border-box;
 }
 
 @mixin img(){
@@ -159,7 +160,24 @@
               img{
                 @include img();
               }
+              .follow-button{
+                height: 28px;
+                margin-top: 8px;
+                float: right;
+
+                a.follow-btn {
+                  display: inline-block;
+                  color: #249f80;
+                  font-size: 11px;
+                  padding: 0.7em;
+                  margin-left: 15px;
+                  line-height: 1;
+                  border: 1px solid  $greencolor;
+                  border-radius: 4px;
+                }
+              }
            }
+
            &__title{
             @include box-title();
              h5{

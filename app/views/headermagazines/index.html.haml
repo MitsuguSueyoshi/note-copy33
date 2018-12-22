@@ -38,6 +38,8 @@
                 .header-magazine-box__left__free__container__box__image
                   - if free_magazine.header_image.present?
                     = image_tag free_magazine.header_image
+                  .follow-button
+                    %a.follow-btn フォロー
                 .header-magazine-box__left__free__container__box__title
                   %h5
                     = free_magazine.title
