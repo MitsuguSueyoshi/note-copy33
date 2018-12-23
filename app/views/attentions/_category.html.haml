@@ -4,8 +4,6 @@
       - if note.images.present?
         -note.images.each do |image|
           = image_tag image.image
-      / - else
-      /   = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/note_empty-e0a00f80100a1e1b8e332472de60c2322de2a6157c80f1259a4d63cd132faf5c.svg'
     .card__title
       = note.title
     .card__icon
