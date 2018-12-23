@@ -54,42 +54,22 @@
     %h2.note__recommends__title
       このクリエイターのおすすめノート
     %ul
-      %li.note__recommends__component
-        .note__recommends__component__title
-          = link_to do
-            ノートタイトル1
-        .note__recommends__component__likes
-          %i.far.fa-heart
-            78
-        .note__recommends__component__name
-          = link_to do
-            自分の名前
-        .note__recommends__component__image
-          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
-      %li.note__recommends__component
-        .note__recommends__component__title
-          = link_to do
-            ノートタイトル2
-        .note__recommends__component__likes
-          %i.far.fa-heart
-            4
-        .note__recommends__component__name
-          = link_to do
-            自分の名前
-        .note__recommends__component__image
-          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07XLAwFc9J4l80nJOXncNQwyBcaNCsJvNSGIY7eiHuzR0nrz-hg"}
-      %li.note__recommends__component
-        .note__recommends__component__title
-          = link_to do
-            ノートタイトル3
-        .note__recommends__component__likes
-          %i.far.fa-heart
-            1
-        .note__recommends__component__name
-          = link_to do
-            末吉貢
-        .note__recommends__component__image
-          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
+      - @ranks.each do |note|
+        %li.note__recommends__component
+          .note__recommends__component__title
+            = link_to note_path(note) do
+              = note.title
+          .note__recommends__component__likes
+            = render "note-likes-button", note: note
+          .note__recommends__component__name
+            = link_to user_path(note.user) do
+              = note.user.nickname
+          .note__recommends__component__image
+            = link_to note_path(note) do
+              - if note.images.present?
+                - note.images.each do |image|
+                  = image_tag image.image
+              - else
   .note__index
     .note__index__before
       <
