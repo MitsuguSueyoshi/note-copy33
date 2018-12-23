@@ -1,0 +1,28 @@
+%li.card
+  = link_to note_path(note) do
+    .card__image.card__image__eyecatch
+      - if note.images.present?
+        -note.images.each do |image|
+          = image_tag image.image
+      / - else
+      /   = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/note_empty-e0a00f80100a1e1b8e332472de60c2322de2a6157c80f1259a4d63cd132faf5c.svg'
+    .card__title
+      = note.title
+    .card__icon
+      %ul
+        %li
+          = render "likes/like-button",{note: note, likes: @likes}
+        %li
+        = link_to "" do
+          %i.far.fa-comment
+  = link_to user_path(note.user) do
+    .card__avatar
+      %ul
+        = link_to user_path(note.user) do
+          %li
+            - if note.user.main_image.present?
+              = image_tag note.user.main_image
+            - else
+              = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png'
+          %li.nickname
+            = note.user.nickname
