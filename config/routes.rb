@@ -28,4 +28,5 @@ Rails.application.routes.draw do
       get 'magazine_all'
     end
   end
+  resources :searches, only: [:index]
 end
