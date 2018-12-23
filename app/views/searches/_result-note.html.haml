@@ -1,0 +1,28 @@
+.search__box__result
+  - @result_notes.each do |result_note|
+    .search__box__result__container
+      .search__box__result__container__left
+        .search__box__result__container__left__title
+          %h5.title
+            = result_note.title
+        .search__box__result__container__left__text
+          %p.note-text
+            = result_note.text
+        .search__box__result__container__left__like
+          = render "likes/like-button",{note: result_note, likes: @likes}
+        .search__box__result__container__left__comment
+          %i.far.fa-comment-alt
+      .search__box__result__container__right
+        -if result_note.images.present?
+          -result_note.images.each do |image|
+            = image_tag image.image
+      .search__box__result__container__footer
+        .search__box__result__container__footer__user
+          - if result_note.user.main_image.present?
+            = image_tag result_note.user.main_image , class: "user-icon"
+          - else
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png",class: "user-icon"
+          %p.user-nickname
+            = result_note.user.nickname
+        .search__box__result__container__footer__like
+          %i.far.fa-heart.heart-red
