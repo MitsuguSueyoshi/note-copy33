@@ -60,7 +60,7 @@
             = link_to note_path(note) do
               = note.title
           .note__recommends__component__likes
-            = render "note-likes-button", note: note
+            = render "recommend-likes-button", note: note
           .note__recommends__component__name
             = link_to user_path(note.user) do
               = note.user.nickname
