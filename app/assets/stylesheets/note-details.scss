@@ -165,9 +165,13 @@
       &__likes{
         float: left;
         color: red;
+        font-size: 13.6px;
+        margin-top: 5px;
       }
       &__name{
-        float: left;
+        position: relative;
+        left: 24px;
+        top: 2.6px;
         margin-left: 20px;
         font-size: 14px;
       }
@@ -365,6 +369,13 @@
   position: relative;
   left: 28px;
   bottom: 21px;
+}
+
+.like__counting{
+  position: relative;
+  left: 21px;
+  bottom: 17px;
+  margin-right: 18px;
 }
 
 .fa-gift{
