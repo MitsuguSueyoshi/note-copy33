@@ -2,9 +2,7 @@
 
 .search
   .search__box
-    .search__box__form
-      %form
-        %input{type: "text"}
+    = render "search-note"
     %ul.search__box__kind-tab
       %li.kind.note-tab ノート
       %li.kind.magazine-tab マガジン
@@ -15,23 +13,4 @@
       %li.swich.spike 急上昇
       %li.swich.new 新着
       %li.swich.classic 定番
-    .search__box__result
-      .search__box__result__container
-        .search__box__result__container__left
-          .search__box__result__container__left__title
-            %h5.title CXOの大事なお仕事、ドライフラワー作り。引越し祝いで頂いたお花、シワシワになっても捨てずにドライフラワーにします。
-          .search__box__result__container__left__text
-            %p.note-text こんにちはエイミーです。貴重なお時間を頂戴して、花とんぼのnoteに辿り着いて下さった方々へ.せっかく時間を費やして下さるので、ここで読んだ物がさらっと流れずに心のメモ帳に溜まっていくような実りある内容を目指しています。
-          .search__box__result__container__left__like
-            %i.far.fa-heart.heart-red
-            %span 123
-          .search__box__result__container__left__comment
-            %i.far.fa-comment-alt
-        .search__box__result__container__right
-          = image_tag "https://i0.wp.com/lh3.googleusercontent.com/-eUV76Sryf0o/WsxBx6Y2FYI/AAAAAAAAVK4/GoRRLZ-qzys6ubqezUw9diXFzJSmS6ndgCCoYBhgL/w700-o/IMG_5334.JPG?zoom=2&ssl=1"
-        .search__box__result__container__footer
-          .search__box__result__container__footer__user
-            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png" ,class: "user-icon"
-            %p.user-nickname ニック
-          .search__box__result__container__footer__like
-            %i.far.fa-heart.heart-red
+    = render "result-note"
