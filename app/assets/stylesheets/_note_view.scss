@@ -95,9 +95,24 @@
           }
 
           &--text {
+            max-height: 80px;
             font-size: 14px;
             line-height: 1.8;
             word-wrap:break-word;
+            overflow: hidden;
+
+            p {
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+            }
+          }
+
+          &--details {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #249f80;
           }
         }
 
