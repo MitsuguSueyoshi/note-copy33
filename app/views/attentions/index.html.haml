@@ -28,54 +28,63 @@
       .category
         .category__title
           %h4 マンガ
+          =link_to "さらに表示", categories_path(category: 0)
         %ul.category__cards
           - @manga_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 コラム
+          =link_to "さらに表示", categories_path(category: 1)
         %ul.category__cards
           - @column_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 小説
+          =link_to "さらに表示", categories_path(category: 2)
         %ul.category__cards
           - @novel_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 写真
+          =link_to "さらに表示", categories_path(category: 3)
         %ul.category__cards
           - @photo_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 サウンド
+          =link_to "さらに表示", categories_path(category: 4)
         %ul.category__cards
           - @sound_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 ビジネス
+          =link_to "さらに表示", categories_path(category: 5)
         %ul.category__cards
           - @business_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 ライフスタイル
+          =link_to "さらに表示", categories_path(category: 6)
         %ul.category__cards
           - @lifestyle_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 テクノロジー
+          =link_to "さらに表示", categories_path(category: 7)
         %ul.category__cards
           - @technology_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
       .category
         .category__title
           %h4 エンタメ
+          =link_to "さらに表示", categories_path(category: 8)
         %ul.category__cards
           - @entertainment_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
