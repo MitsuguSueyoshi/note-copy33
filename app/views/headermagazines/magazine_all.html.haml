@@ -1,0 +1,9 @@
+= render "shared/header"
+= render "shared/header-nav"
+.all-magazines
+  .all-magazines__box
+    .all-magazines__box__title
+      %h3 すべてのマガジン
+      = link_to "マガジントップ", headermagazines_path, class: "link-top"
+
+    = render "all-list"
