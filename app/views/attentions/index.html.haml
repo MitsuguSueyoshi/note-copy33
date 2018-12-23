@@ -5,83 +5,83 @@
     .attention__container__title
       %h3 注目カテゴリ
     .attention__container__header
-      %ul
-        %li
+      %ul.page-scroll
+        %li{href: '#manga'}
           =link_to "マンガ" ""
-        %li
+        %li{href: '#column'}
           =link_to "コラム" ""
-        %li
+        %li{href: '#novel'}
           =link_to "小説" ""
-        %li
+        %li{href: '#photo'}
           =link_to "写真" ""
-        %li
+        %li{href: '#sound'}
           =link_to "サウンド" ""
-        %li
+        %li{href: '#business'}
           =link_to "ビジネス" ""
-        %li
+        %li{href: '#lifestyle'}
           =link_to "ライフスタイル" ""
-        %li
+        %li{href: '#technology'}
           =link_to "テクノロジー" ""
-        %li
+        %li{href: '#entertainment'}
           =link_to "エンタメ" ""
     .attention__container__body
-      .category
+      .category#manga
         .category__title
           %h4 マンガ
           =link_to "さらに表示", categories_path(category: 0)
         %ul.category__cards
           - @manga_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#column
         .category__title
           %h4 コラム
           =link_to "さらに表示", categories_path(category: 1)
         %ul.category__cards
           - @column_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#novel
         .category__title
           %h4 小説
           =link_to "さらに表示", categories_path(category: 2)
         %ul.category__cards
           - @novel_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#photo
         .category__title
           %h4 写真
           =link_to "さらに表示", categories_path(category: 3)
         %ul.category__cards
           - @photo_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#sound
         .category__title
           %h4 サウンド
           =link_to "さらに表示", categories_path(category: 4)
         %ul.category__cards
           - @sound_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#business
         .category__title
           %h4 ビジネス
           =link_to "さらに表示", categories_path(category: 5)
         %ul.category__cards
           - @business_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#lifestyle
         .category__title
           %h4 ライフスタイル
           =link_to "さらに表示", categories_path(category: 6)
         %ul.category__cards
           - @lifestyle_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#technology
         .category__title
           %h4 テクノロジー
           =link_to "さらに表示", categories_path(category: 7)
         %ul.category__cards
           - @technology_notes.each do |note|
             = render "attentions/category",{note: note, likes: @likes}
-      .category
+      .category#entertainment
         .category__title
           %h4 エンタメ
           =link_to "さらに表示", categories_path(category: 8)
