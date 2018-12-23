@@ -1,3 +1,4 @@
+/note自体のlikesボタンです
 - if user_signed_in?
   - if note.like_user(current_user.id)
     = link_to "/notes/#{note.id}/likes/like.id", method: :delete, id: "like-button", remote: true do
