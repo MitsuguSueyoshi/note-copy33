@@ -13,4 +13,9 @@ class SearchesController < ApplicationController
     @search_magazines = Magazine.ransack(params[:q])
     @result_magazines = @search_magazines.result
   end
+
+  def search_user
+    @search_users = User.ransack(params[:q])
+    @result_users = @search_users.result
+  end
 end
