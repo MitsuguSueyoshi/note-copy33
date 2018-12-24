@@ -1,0 +1,18 @@
+.search__box__result-user
+  - @result_users.each do |result_user|
+    .search__box__result-user__container
+      = link_to user_path(result_user) do
+        .search__box__result-user__container__icon
+          - if result_user.main_image.present?
+            = image_tag result_user.main_image
+          - else
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+      .search__box__result-user__container__middle
+        .search__box__result-user__container__middle__nickname
+          %h3.user-nickname
+            = result_user.nickname
+        .search__box__result-user__container__middle__self-introduction
+          %p.self-introduction
+            = result_user.self_introduction
+        .search__box__result-user__container__right
+          .follow-btn
