@@ -3,14 +3,6 @@
 .search
   .search__box
     = render "search-note"
-    %ul.search__box__kind-tab
-      %li.kind.note-tab ノート
-      %li.kind.magazine-tab マガジン
-      %li.kind.user-tab ユーザー
-      %li.kind.hash-tab ハッシュタグ
-    %ul.search__box__note-swich
-      %li.swich.popular 人気
-      %li.swich.spike 急上昇
-      %li.swich.new 新着
-      %li.swich.classic 定番
+    = render "kind-tab"
+
     = render "result-note"
