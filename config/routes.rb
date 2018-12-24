@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :searches, only: [:index] do
     collection do
       get 'search_magazine'
+      get 'search_user'
     end
   end
 end
