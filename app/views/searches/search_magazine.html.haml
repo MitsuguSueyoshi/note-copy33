@@ -1,0 +1,9 @@
+= render "shared/header"
+.search
+  .search__box
+    .search__box__form.magazine
+      = search_form_for(@search_magazines, url: search_magazine_searches_path) do |f|
+        = f.search_field :title_or_description_cont
+        = f.submit type: "hidden"
+    = render "kind-tab"
+    = render "result-magazine"
