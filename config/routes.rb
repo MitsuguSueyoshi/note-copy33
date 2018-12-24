@@ -28,5 +28,9 @@ Rails.application.routes.draw do
       get 'magazine_all'
     end
   end
-  resources :searches, only: [:index]
+  resources :searches, only: [:index] do
+    collection do
+      get 'search_magazine'
+    end
+  end
 end
