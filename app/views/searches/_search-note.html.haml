@@ -1,4 +1,4 @@
-.search__box__form
+.search__box__form.note
   = search_form_for(@search_notes, url:searches_path) do |f|
     = f.search_field :title_or_text_cont
     = f.submit type: "hidden"
