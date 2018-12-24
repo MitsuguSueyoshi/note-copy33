@@ -54,7 +54,7 @@
     %h2.note__recommends__title
       このクリエイターのおすすめノート
     %ul
-      - @ranks.each do |note|
+      - @my_ranks.each do |note|
         %li.note__recommends__component
           .note__recommends__component__title
             = link_to note_path(note) do
@@ -72,13 +72,15 @@
               - else
   .note__index
     .note__index__before
-      <
-      = link_to do
-        前のノート
+      - if @note.previous.present?
+        <
+        = link_to note_path(@note.previous) do
+          = @note.previous.title
     .note__index__after
-      = link_to do
-        次のノート
-      >
+      - if @note.next.present?
+        = link_to note_path(@note.next) do
+          = @note.next.title
+        >
   .note__profile
     .note__profile__icon
       = link_to user_path(@note.user) do
