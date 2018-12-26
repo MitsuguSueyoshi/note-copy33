@@ -96,35 +96,7 @@
         よろしくお願いします。
       = render 'relationships/follow-button', user: @note.user
 
-.comments
-  .comments__count
-    コメント
-    件
-  .comments__comment
-    .comments__comment__profile
-      .comments__comment__profile__icon
-        %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-waddledee.png"}
-      .comments__comment__profile__name
-        = link_to do
-          他のユーザー名
-      .comments__comment__profile__date
-        2018/11/11 11:11
-    .comments__comment__option
-      %i.fa.fa-ellipsis-h
-    .comments__comment__likes
-      %i.far.fa-heart
-    .comments__comment__body
-      面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！面白いです！
-  .comments__form
-    .comments__form__icon
-      = link_to user_path(@note.user) do
-        - if @note.user.main_image.present?
-          = image_tag @note.user.main_image
-        - else
-          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
-    = form_for [@note, @comment], html: {class: 'comments__form__content'} do |f|
-      = f.text_area :body, class: "comments__form__content__text", placeholder: "コメントする..."
-      = f.submit "送信" ,class: "comments__form__content__submit"
+= render 'comments/note-comments', note: @note
 
 = render 'under-bar'
 .footer
