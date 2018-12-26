@@ -14,6 +14,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     all_ranks = Note.find(Like.group(:note_id).order('count(note_id) desc').limit(3).pluck(:note_id))
     @my_ranks = all_ranks.select{ |note| note.user_id == @note.user.id }
+    @comment = Comment.new
   end
 
   def new
