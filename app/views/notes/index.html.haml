@@ -1,6 +1,8 @@
 = render 'shared/header'
 = render 'shared/header-nav'
 -if user_signed_in?
-  = render 'home'
+  .home__container
+    .home__container__cards
+      = render @notes
 -else
   = render 'recommend'

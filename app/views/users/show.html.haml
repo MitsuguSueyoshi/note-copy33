@@ -49,7 +49,7 @@
     #product_note.tab_product
       .home__container
         .home__container__cards
-          - @user.notes.each do |note|
+          - @notes.each do |note|
             .card
               .card__avatar
                 %ul
@@ -62,7 +62,7 @@
                         = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
                   %li.info
                     = link_to @user.nickname , user_path(@user), class: "name"
-                    = link_to "2018/11/22 16:22", note_path(note), class: "date"
+                    = link_to note.created_at, note_path(note), class: "date"
               .card__main
                 =link_to note_path(note) do
                   .card__main--image
@@ -76,20 +76,19 @@
               .card__foot
                 %ul.icon
                   %li.icon__box
-                    = link_to "" do
-                      %i.far.fa-heart
-                      %div.like__count 21
+                    = render "likes/like-button",{note: note, likes: @likes}
                   %li.icon__box
                     = link_to "" do
                       %i.fas.fa-arrow-right
                   %li.icon__box
-                    = link_to "" do
-                      %i.fas.fa-plus
+                    = render "articles/article-button", {note: note}
                   - if note.user.id == current_user.id
                     %li.icon__box
-                      = link_to "/notes/#{note.id}", method: :delete do
-                        %p 削除
-                      / %i.fas.fa-ellipsis-h 後で使用
+                      = link_to "" do
+                        %i.fas.fa-ellipsis-h.balloon__event
+                      .delete__balloon
+                        = link_to  "/notes/#{note.id}", method: :delete do
+                          %p 削除
                 .comment__link
 
     #product_magazine.tab_product

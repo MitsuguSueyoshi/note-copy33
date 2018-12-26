@@ -11,6 +11,9 @@ class NotesController < ApplicationController
   end
 
   def show
+    @note = Note.find(params[:id])
+    all_ranks = Note.find(Like.group(:note_id).order('count(note_id) desc').limit(3).pluck(:note_id))
+    @my_ranks = all_ranks.select{ |note| note.user_id == @note.user.id }
   end
 
   def new
@@ -50,7 +53,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     if @note.user.id == current_user.id
        @note.destroy
-       redirect_to root_path
+       redirect_back(fallback_location: root_path)
     end
   end
 

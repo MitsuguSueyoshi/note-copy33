@@ -21,4 +21,12 @@ Rails.application.routes.draw do
   resources :helps, only:[:index]
   resources :articles , only: [:create, :destroy]
   resources :categories, only: [:index]
+  resources :wanted, only: [:index]
+  resources :pickups, only: [:index]
+  resources :attentions, only: [:index]
+  resources :headermagazines, only: [:index] do
+    collection do
+      get 'magazine_all'
+    end
+  end
 end

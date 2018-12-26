@@ -9,34 +9,31 @@
     width:580px;
     margin: 24px auto;
 
-    .switch__buttons {
+    .switch__button {
+      font-size:0;
+      li {
+        display: inline-block;
+        border: solid 1px #e6e6e6;
+        border-radius: 2px;
+        cursor : pointer;
+        background-color: $whitecolor;
+        margin-left: -1px;
+        width: 90px;
+        text-align: center;
 
-      ul {
-        font-size:0;
-        li {
-          display: inline-block;
-          border: solid 1px #e6e6e6;
-          border-radius: 2px;
-          cursor : pointer;
-
-          p {
-            display: block;
-            height: 30px;
-            padding: 0 16px;
-            line-height: 30px;
-            font-size: 14px;
-          }
-        }
-
-        .button-1 {
-          background-color: #e6e6e6;
-        }
-
-        .button-2 {
-          background-color: $whitecolor;
+        p {
+          display: block;
+          height: 30px;
+          padding: 0 16px;
+          line-height: 30px;
+          font-size: 14px;
         }
       }
-   }
+
+      .select {
+        background-color: #e6e6e6;
+      }
+    }
   }
 
   &__cards {
@@ -98,9 +95,24 @@
           }
 
           &--text {
+            max-height: 80px;
             font-size: 14px;
             line-height: 1.8;
             word-wrap:break-word;
+            overflow: hidden;
+
+            p {
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+            }
+          }
+
+          &--details {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #249f80;
           }
         }
 
@@ -181,7 +193,7 @@
         }
       }
 
-    .new__notes {
+    .new__notes, .old__notes {
       display: none;
     }
 
