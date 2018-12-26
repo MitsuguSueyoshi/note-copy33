@@ -1,6 +1,15 @@
 class CommentsController < ApplicationController
   before_action :set_note
 
+  # def index
+  #   @comment = Comment.new
+  #   @comments = @note.comments.includes(:user)
+  #   respond_to do |format|
+  #     format.html
+  #     format.json
+  #   end
+  # end
+
   def create
     @comment = @note.comments.new(comment_params)
     if @comment.save
