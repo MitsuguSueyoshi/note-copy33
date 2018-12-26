@@ -5,4 +5,5 @@
       = search_form_for(@search_users, url: search_user_searches_path) do |f|
         = f.search_field :nickname_or_self_introduction_cont
         = f.submit type: "hidden"
+    = render "kind-tab"
     = render "result-user"
