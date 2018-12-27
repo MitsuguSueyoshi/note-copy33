@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:comment_id])
     if @comment.destroy
       respond_to do |format|
-        format.html{ redirect_to note_path(@note), notice: 'コメントが送信されました' }
+        format.html{ redirect_to note_path(@note), notice: 'コメントが削除されました' }
         format.json
       end
     else
