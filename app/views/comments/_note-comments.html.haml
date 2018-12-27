@@ -2,26 +2,27 @@
   .comments__count
     コメント
     件
-  - @comments.each do |comment|
-    .comments__comment
-      .comments__comment__profile
-        .comments__comment__profile__icon
-          = link_to user_path(comment.user) do
-            - if comment.user.main_image.present?
-              = image_tag comment.user.main_image
-            - else
-              = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
-        .comments__comment__profile__name
-          = link_to user_path(comment.user) do
-            = comment.user.nickname
-        .comments__comment__profile__date
-          = comment.user.created_at
-      .comments__comment__option
-        %i.fa.fa-ellipsis-h
-      .comments__comment__likes
-        %i.far.fa-heart
-      .comments__comment__body
-        = comment.body
+  .comments__lists
+    - @comments.each do |comment|
+      .comments__comment
+        .comments__comment__profile
+          .comments__comment__profile__icon
+            = link_to user_path(comment.user) do
+              - if comment.user.main_image.present?
+                = image_tag comment.user.main_image
+              - else
+                = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
+          .comments__comment__profile__name
+            = link_to user_path(comment.user) do
+              = comment.user.nickname
+          .comments__comment__profile__date
+            = comment.user.created_at
+        .comments__comment__option
+          %i.fa.fa-ellipsis-h
+        .comments__comment__likes
+          %i.far.fa-heart
+        .comments__comment__body
+          = comment.body
   .comments__form
     .comments__form__icon
       = link_to user_path(current_user) do
