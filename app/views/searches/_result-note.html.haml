@@ -1,10 +1,10 @@
 %ul.search__box__note-swich
-  %li.swich.popular 人気
+  %li.swich.popular.active 人気
   %li.swich.spike 急上昇
   %li.swich.new 新着
   %li.swich.classic 定番
 
-.search__box__result-note
+.search__box__result-note#default
   - @result_notes.each do |result_note|
     = link_to note_path(result_note) do
       .search__box__result-note__container
@@ -31,3 +31,59 @@
               = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png",class: "user-icon"
             %p.user-nickname
               = result_note.user.nickname
+
+.search__box__result-note#new
+  - @new_notes.each do |new_note|
+    = link_to note_path(new_note) do
+      .search__box__result-note__container
+        .search__box__result-note__container__left
+          .search__box__result-note__container__left__title
+            %h5.title
+              = new_note.title
+          .search__box__result-note__container__left__text
+            %p.note-text
+              = new_note.text
+          .search__box__result-note__container__left__like
+            = render "likes/like-button",{note: new_note, likes: @likes}
+          .search__box__result-note__container__left__comment
+            %i.far.fa-comment-alt
+        .search__box__result-note__container__right
+          -if new_note.images.present?
+            -new_note.images.each do |image|
+              = image_tag image.image
+        .search__box__result-note__container__footer
+          .search__box__result-note__container__footer__user
+            - if new_note.user.main_image.present?
+              = image_tag new_note.user.main_image , class: "user-icon"
+            - else
+              = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png",class: "user-icon"
+            %p.user-nickname
+              = new_note.user.nickname
+
+.search__box__result-note#spike
+  - @spike_notes.each do |spike_note|
+    = link_to note_path(spike_note) do
+      .search__box__result-note__container
+        .search__box__result-note__container__left
+          .search__box__result-note__container__left__title
+            %h5.title
+              = spike_note.title
+          .search__box__result-note__container__left__text
+            %p.note-text
+              = spike_note.text
+          .search__box__result-note__container__left__like
+            = render "likes/like-button",{note: spike_note, likes: @likes}
+          .search__box__result-note__container__left__comment
+            %i.far.fa-comment-alt
+        .search__box__result-note__container__right
+          -if spike_note.images.present?
+            -spike_note.images.each do |image|
+              = image_tag image.image
+        .search__box__result-note__container__footer
+          .search__box__result-note__container__footer__user
+            - if spike_note.user.main_image.present?
+              = image_tag spike_note.user.main_image , class: "user-icon"
+            - else
+              = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png",class: "user-icon"
+            %p.user-nickname
+              = spike_note.user.nickname
