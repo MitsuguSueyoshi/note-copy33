@@ -14,17 +14,28 @@ class CommentsController < ApplicationController
     @comment = @note.comments.new(comment_params)
     if @comment.save
       respond_to do |format|
-        format.html{ redirect_to note_comments_path(@comment), notice: 'メッセージが送信されました' }
+        format.html{ redirect_to note_comments_path(@comment), notice: 'コメントが送信されました' }
         format.json
       end
     else
       @comments = @note.comments.includes(:user)
-      flash.now[:alert] = 'メッセージを入力してください'
+      flash.now[:alert] = 'コメントを入力してください'
       redirect_to note_path(@note)
     end
   end
 
   def destroy
+    @comment = Comment.find(params[:comment_id])
+    if @comment.destroy
+      respond_to do |format|
+        format.html{ redirect_to note_path(@note), notice: 'コメントが送信されました' }
+        format.json
+      end
+    else
+      @comments = @note.comments.includes(:user)
+      flash.now[:alert] = 'コメントの削除に失敗しました'
+      redirect_to note_path(@note)
+    end
   end
 
   private
