@@ -6,4 +6,4 @@
         = f.search_field :nickname_or_self_introduction_cont, placeholder: "ユーザーを検索"
         = f.submit type: "hidden"
     = render "kind-tab"
-    = render "result-user"
+    = render partial: "result-user", collection: @result_users, as: "result_user"
