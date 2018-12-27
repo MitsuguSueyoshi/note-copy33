@@ -16,6 +16,7 @@ class NotesController < ApplicationController
     @my_ranks = all_ranks.select{ |note| note.user_id == @note.user.id }
     @comment = Comment.new
     @comments = @note.comments.includes(:user)
+    @comments_count = @comments.count
   end
 
   def new
