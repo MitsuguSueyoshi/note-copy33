@@ -94,7 +94,7 @@
           = @note.user.nickname
       .note__profile__content__self-introduction
         よろしくお願いします。
-      = render 'relationships/follow-button', user: @note.user
+      = render 'note-follow-button', user: @note.user
 
 = render 'comments/note-comments', note: @note
 
