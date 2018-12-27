@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
       $('.comments__form__content__submit').fadeOut();
     })
 
-
+//commentのcreateを動かします
     $(".comments__form__content").on("submit", function(e){
       e.preventDefault();
       var content = new FormData(this);
@@ -59,6 +59,30 @@ $(document).on('turbolinks:load', function(){
       })
       .fail(function(XMLHttpRequest, textStatus, errorThrown){
         alert('メッセージの送信に失敗しました');
+        console.log(XMLHttpRequest.status);
+        console.log(textStatus);
+        console.log(errorThrown);
+      })
+    });
+
+//commentのdestroyを動かします
+    $(".note_delete_btn").on("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var url = $(this).attr('href');
+      var comment_id = $(this).find(".fa-ellipsis-h").data("comment-id")
+      $.ajax({
+        url: url,
+        type: "POST",
+        dataType: "json",
+        data: {'comment_id': comment_id, '_method': 'DELETE'}
+      })
+      .done(function(){
+        console.log("成功");
+        $(".note_delete_btn").parents(".comments__comment").remove();
+      })
+      .fail(function(XMLHttpRequest, textStatus, errorThrown){
+        alert('コメントの削除に失敗しました');
         console.log(XMLHttpRequest.status);
         console.log(textStatus);
         console.log(errorThrown);
