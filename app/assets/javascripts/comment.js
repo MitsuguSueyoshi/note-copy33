@@ -16,7 +16,9 @@ $(document).on('turbolinks:load', function(){
           </div>
         </div>
         <div class="comments__comment__option">
-          <i class="fa fa-ellipsis-h"></i>
+          <a href="/notes/${comment.note_id}/comments/${comment.id}" class="note_delete_btn" data-method="delete">
+          <i class="fa fa-ellipsis-h" data-comment-id="${comment.id}"></i>
+          </a>
         </div>
         <div class="comments__comment__likes">
           <i class="far fa-heart"></i>
@@ -24,7 +26,8 @@ $(document).on('turbolinks:load', function(){
         <div class="comments__comment__body">
           ${comment.body}
         </div>
-      </div>`
+      </div>
+      `
 
       return html;
     }
@@ -69,6 +72,7 @@ $(document).on('turbolinks:load', function(){
     $(".note_delete_btn").on("click", function(e){
       e.preventDefault();
       e.stopPropagation();
+      $(this).parents(".comments__comment").remove();
       var url = $(this).attr('href');
       var comment_id = $(this).find(".fa-ellipsis-h").data("comment-id")
       $.ajax({
@@ -78,7 +82,7 @@ $(document).on('turbolinks:load', function(){
         data: {'comment_id': comment_id, '_method': 'DELETE'}
       })
       .done(function(){
-        $(".note_delete_btn").parents(".comments__comment").remove();
+        console.log("成功");
       })
       .fail(function(XMLHttpRequest, textStatus, errorThrown){
         alert('コメントの削除に失敗しました');
