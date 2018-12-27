@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:comment_id])
+    @comment = Comment.find(params[:id])
     if @comment.destroy
       respond_to do |format|
         format.html{ redirect_to note_path(@note), notice: 'コメントが削除されました' }
