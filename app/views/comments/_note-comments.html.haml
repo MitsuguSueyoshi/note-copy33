@@ -20,8 +20,9 @@
           .comments__comment__profile__date
             = comment.user.created_at
         .comments__comment__option
-          = link_to note_comment_path(note,comment), method: "delete",class: "note_delete_btn" do
-            %i.fa.fa-ellipsis-h{ "data-comment-id": "#{comment.id}"}
+          - if comment.user == current_user
+            = link_to note_comment_path(note,comment), method: "delete",class: "note_delete_btn" do
+              %i.fa.fa-ellipsis-h{ "data-comment-id": "#{comment.id}"}
         .comments__comment__likes
           %i.far.fa-heart
         .comments__comment__body
