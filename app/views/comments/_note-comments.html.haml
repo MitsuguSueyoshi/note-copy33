@@ -1,7 +1,9 @@
 .comments
-  .comments__count
-    コメント
-    件
+  - if @comments.present?
+    .comments__count
+      コメント
+      = @comments_count
+      件
   .comments__lists
     - @comments.each do |comment|
       .comments__comment
@@ -18,7 +20,8 @@
           .comments__comment__profile__date
             = comment.user.created_at
         .comments__comment__option
-          %i.fa.fa-ellipsis-h
+          = link_to note_comment_path(note,comment), method: "delete",class: "note_delete_btn" do
+            %i.fa.fa-ellipsis-h{ "data-comment-id": "#{comment.id}"}
         .comments__comment__likes
           %i.far.fa-heart
         .comments__comment__body
