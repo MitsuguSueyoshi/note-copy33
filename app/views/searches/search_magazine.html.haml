@@ -6,4 +6,6 @@
         = f.search_field :title_or_description_cont, placeholder: ",マガジンを検索"
         = f.submit type: "hidden"
     = render "kind-tab"
-    = render "result-magazine"
+    .search__box__result-magazine
+      .search__box__result-magazine__container
+        = render partial: "result-magazine", collection: @result_magazines, as: "result_magazine"
