@@ -1,9 +1,9 @@
 .comments
-  - if @comments.present?
-    .comments__count
-      コメント
-      = @comments_count
-      件
+  / - if @comments.present?
+  /   .comments__count
+  /     コメント
+  /     = @comments_count
+  /     件
   .comments__lists
     - @comments.each do |comment|
       .comments__comment
