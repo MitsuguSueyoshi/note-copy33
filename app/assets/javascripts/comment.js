@@ -52,8 +52,8 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(comment){
         var html = buildHTML(comment);
-        $(".comments").append(html);
-        $('.comments').animate({scrollTop: $(".comments")[0].scrollHeight},'slow');
+        $(".comments__lists").append(html);
+        $('.comments__lists').animate({scrollTop: $(".comments")[0].scrollHeight},'slow');
         $(".comments__form__content__text").val("");
         $('.comments__form__content__submit').prop('disabled', false);
       })
