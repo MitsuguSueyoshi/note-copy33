@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :notes do
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
   resources :mynotes, only: [:index] do
