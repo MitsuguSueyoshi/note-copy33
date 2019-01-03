@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :mylikes, only: [:index]
   resources :mynotes, only: [:index] do
    collection do
      delete 'destroy_all'
