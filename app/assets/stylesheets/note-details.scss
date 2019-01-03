@@ -28,6 +28,7 @@
       height: 30px;
       border-radius: 30px;
       margin-right: 10px;
+      object-fit: cover;
     }
     &__name{
       cursor: pointer;
@@ -214,6 +215,7 @@
       width: 70px;
       height: 70px;
       border-radius: 35px;
+      object-fit: cover;
     }
     &__content{
       margin-left: 100px;
@@ -262,6 +264,7 @@
         width: 35px;
         height: 35px;
         border-radius: 20px;
+        object-fit: cover;
       }
       &__name{
         font-weight: bold;
@@ -311,6 +314,7 @@
       width: 35px;
       height: 35px;
       border-radius: 20px;
+      object-fit: cover;
     }
     &__content{
       margin-top: 10px;
