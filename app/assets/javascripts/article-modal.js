@@ -1,21 +1,22 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
+//これはホーム画面のarticleモーダル表示です
     $('.fa-plus').on('click', function(e){
       e.preventDefault();
       $(this).siblings().fadeIn();
     });
-
+//モーダルのxボタンを押すと消えます
     $('.article-modal__content__header__escape').on('click', function(e){
       e.preventDefault();
       $('.article-modal').fadeOut();
     });
-
+//これはmagazineの詳細画面のarticleモーダル表示です
     $('.magazine-details-content__middle__left__edit').on('click', function(e){
       e.preventDefault();
       $('.article-modal').fadeIn();
     });
 
-
+//この下は非同期通信しようとした時に失敗してしまったコードです。もしかした役にたつかもしれないので残しています。
     // function buildHTML(article){
     //     var html = `<form action="/articles/${article.id}" method="post" id="destroy_article">
     //     <input type="hidden" name="note_id" value="${article.noteid}">
