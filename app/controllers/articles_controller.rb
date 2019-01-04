@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     magazine = Magazine.find(params[:article][:magazine_id])
     @adding = magazine.adding(note)
     if @adding.save
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "失敗しました"
     end
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     magazine = Magazine.find(params[:article][:magazine_id])
     @adding = magazine.unadding(note)
     if @adding.destroy
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "失敗しました"
     end
