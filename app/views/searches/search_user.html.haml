@@ -1,0 +1,9 @@
+= render "shared/header"
+.search
+  .search__box
+    .search__box__form.user
+      = search_form_for(@search_users, url: search_user_searches_path) do |f|
+        = f.search_field :nickname_or_self_introduction_cont, placeholder: "ユーザーを検索"
+        = f.submit type: "hidden"
+    = render "kind-tab"
+    = render partial: "result-user", collection: @result_users, as: "result_user"

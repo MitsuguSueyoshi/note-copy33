@@ -2,32 +2,44 @@
 .border-box
 .note
   .note__image
-    %img{alt: "イメージ", src: "https://www.jalan.net/news/img/2017/09/170915_fuji-670x443.jpg"}
+    - if @note.images.present?
+      - @note.images.each do |image|
+        = image_tag image.image
+    - else
   .note__title
-    富士山に行った話
+    = @note.title
   .note__user
     .note__user__icon
-      %img{alt: "自分の", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      = link_to user_path(@note.user) do
+        - if @note.user.main_image.present?
+          = image_tag @note.user.main_image
+        - else
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     .note__user__name
-      = link_to class: "link" do
-        自分の名前
+      = link_to user_path(@note.user) do
+        = @note.user.nickname
     .note__user__date
-      2018/11/11 11:11 フォローする
+      = @note.created_at
+      フォローする
   .note__text
-    富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。富士山が綺麗です。
+    = @note.text
   .note__support
     .note__support__title
       この記事が気に入ったら、サポートをしてみませんか？ 気軽にクリエイターを支援できます。
-    .note__support__icon
-      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+    / .note__support__icon
+    /   = link_to user_path(@note.user) do
+    /     - if @note.user.main_image.present?
+    /       = image_tag @note.user.main_image
+    /     - else
+    /       = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     .note__support__content
-      .note__support__content__text
-        サポートしてください！
+      / .note__support__content__text
+      /   サポートしてください！
       .note__support__content__button
-        %i.fas.fa-gift サポートをする
+        %i.fas.fa-gift
+        サポートをする
   .note__likes
-    %i.far.fa-heart
-      2
+    = render "note-likes-button", note: @note
   .note__add
     %i.fas.fa-plus
   .note__report
@@ -42,87 +54,50 @@
     %h2.note__recommends__title
       このクリエイターのおすすめノート
     %ul
-      %li.note__recommends__component
-        .note__recommends__component__title
-          = link_to do
-            ノートタイトル1
-        .note__recommends__component__likes
-          %i.far.fa-heart
-            78
-        .note__recommends__component__name
-          = link_to do
-            自分の名前
-        .note__recommends__component__image
-          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
-      %li.note__recommends__component
-        .note__recommends__component__title
-          = link_to do
-            ノートタイトル2
-        .note__recommends__component__likes
-          %i.far.fa-heart
-            4
-        .note__recommends__component__name
-          = link_to do
-            自分の名前
-        .note__recommends__component__image
-          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07XLAwFc9J4l80nJOXncNQwyBcaNCsJvNSGIY7eiHuzR0nrz-hg"}
-      %li.note__recommends__component
-        .note__recommends__component__title
-          = link_to do
-            ノートタイトル3
-        .note__recommends__component__likes
-          %i.far.fa-heart
-            1
-        .note__recommends__component__name
-          = link_to do
-            末吉貢
-        .note__recommends__component__image
-          %img{alt: "イメージ", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7h3-ZzkwbxN9NHUSQqobG1nzCRAzUGe7I5Nba0gMADjkpMIg4Q"}
+      - @my_ranks.each do |note|
+        %li.note__recommends__component
+          .note__recommends__component__title
+            = link_to note_path(note) do
+              = note.title
+          .note__recommends__component__likes
+            = render "recommend-likes-button", note: note
+          .note__recommends__component__name
+            = link_to user_path(note.user) do
+              = note.user.nickname
+          .note__recommends__component__image
+            = link_to note_path(note) do
+              - if note.images.present?
+                - note.images.each do |image|
+                  = image_tag image.image
+              - else
   .note__index
     .note__index__before
-      <
-      = link_to do
-        前のノート
+      - if @note.previous.present?
+        <
+        = link_to note_path(@note.previous) do
+          = @note.previous.title
     .note__index__after
-      = link_to do
-        次のノート
-      >
+      - if @note.next.present?
+        = link_to note_path(@note.next) do
+          = @note.next.title
+        >
   .note__profile
     .note__profile__icon
-      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
+      = link_to user_path(@note.user) do
+        - if @note.user.main_image.present?
+          = image_tag @note.user.main_image
+        - else
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png"
     .note__profile__content
       .note__profile__content__name
         = link_to do
-          自分の名前
+          = @note.user.nickname
       .note__profile__content__self-introduction
         よろしくお願いします。
-      -if user_signed_in?
-        .note__profile__content__follow
-          フォロー
-.comments
-  .comments__count
-    コメント1件
-  .comments__comment
-    .comments__comment__profile
-      .comments__comment__profile__icon
-        %img{alt: "イメージ", src: "https://www.kirby.jp/images/character/chara-waddledee.png"}
-      .comments__comment__profile__name
-        = link_to do
-          他のユーザー名
-      .comments__comment__profile__date
-        2018/11/11 11:11
-    .comments__comment__option
-      %i.fa.fa-ellipsis-h
-    .comments__comment__likes
-      %i.far.fa-heart
-    .comments__comment__body
-      面白いです！
-  .comments__form
-    .comments__form__icon
-      %img{alt: "自分のアイコン", src: "https://www.kirby.jp/images/character/chara-kirby.png"}
-    %form.comments__form__content
-      %textarea.comments__form__content__text
-      %input{type: "submit", class: "comments__form__content__submit"}
+      = render 'note-follow-button', user: @note.user
+
+= render 'comments/note-comments', note: @note
+
 = render 'under-bar'
 .footer
   %ul.footer__list

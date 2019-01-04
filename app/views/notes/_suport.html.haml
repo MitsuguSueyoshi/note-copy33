@@ -1,10 +1,15 @@
 .suport
   .suport-modal
     .suport-modal__title
-      %h3 〇〇さんをサポートしよう！
+      %h3
+        = @note.user.nickname
+        %span さんをサポートしよう！
       %h5 サポートとは
     .suport-modal__main-icon
-      = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
+      - if @note.user.main_image.present?
+        = image_tag @note.user.main_image, class: "my-icon__image"
+      - else
+        = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png", class: "my-icon__image"
     %form
       .suport-modal__price
         %p 金額

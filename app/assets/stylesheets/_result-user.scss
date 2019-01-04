@@ -1,0 +1,36 @@
+.search__box__result-user{
+  margin-top: 20px;
+  &__container{
+    width: 100%;
+    min-height: 80px;
+    border-bottom: solid 1px #EEEEEE;
+    padding: 15px 0px;
+    box-sizing: border-box;
+    display: flex;
+    &__icon{
+      margin-right: 15px;
+      min-height: 80px;
+      img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        object-fit: cover;
+      }
+    }
+    &__middle{
+      width: 550px;
+      &__nickname{
+        .user-nickname{
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+      &__self-introduction{
+        .self-introduction{
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

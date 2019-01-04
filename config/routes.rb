@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   end
   resources :notes do
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :mylikes, only: [:index]
   resources :mynotes, only: [:index] do
    collection do
      delete 'destroy_all'
@@ -27,6 +29,12 @@ Rails.application.routes.draw do
   resources :headermagazines, only: [:index] do
     collection do
       get 'magazine_all'
+    end
+  end
+  resources :searches, only: [:index] do
+    collection do
+      get 'search_magazine'
+      get 'search_user'
     end
   end
 end

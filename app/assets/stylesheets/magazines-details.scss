@@ -9,6 +9,7 @@
       img{
         height: 450px;
         width: 100%;
+        object-fit: cover;
       }
       &__title{
         position: absolute;
@@ -105,6 +106,7 @@
           border-radius: 20px;
           float: left;
           margin-right: 12px;
+          object-fit: cover;
         }
         &__name{
           color: #787c7b;

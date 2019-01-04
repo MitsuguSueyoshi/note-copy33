@@ -1,9 +1,10 @@
+/note詳細画面のlikesボタンです
 - if user_signed_in?
   - if note.like_user(current_user.id)
     = link_to "/notes/#{note.id}/likes/like.id", method: :delete, id: "like-button", remote: true do
       %i.far.fa-heart.heart-red
       %span
-    %div.like__count.heart-red
+    .like__counted.heart-red
       = note.likes_count
     .like-modal
       .like-modal__content
@@ -38,7 +39,7 @@
     = link_to note_likes_path(note_id: note.id), method: :post, id: "like-button", remote: true do
       %i.far.fa-heart.heart
       %span
-    %div.like__count
+    .like__counted
       = note.likes_count
     .like-modal
       .like-modal__content
@@ -72,7 +73,7 @@
 - else
   %i.far.fa-heart
   %span
-    %div.like__count
+    .like__counted
       = note.likes_count
     .like-modal
       .like-modal__content
