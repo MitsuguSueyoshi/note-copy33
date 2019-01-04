@@ -15,6 +15,11 @@ $(document).on('turbolinks:load', function(){
       $(this).siblings().fadeIn();
     });
 
+    $('.magazine-details-content__middle__left__edit').on('click', function(e){
+      e.preventDefault();
+      $('.article-modal').fadeIn();
+    });
+
     $('.article-modal__content__header__escape').on('click', function(e){
       e.preventDefault();
       $('.article-modal').fadeOut();
