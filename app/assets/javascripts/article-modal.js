@@ -1,5 +1,21 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
+    $('.fa-plus').on('click', function(e){
+      e.preventDefault();
+      $(this).siblings().fadeIn();
+    });
+
+    $('.article-modal__content__header__escape').on('click', function(e){
+      e.preventDefault();
+      $('.article-modal').fadeOut();
+    });
+
+    $('.magazine-details-content__middle__left__edit').on('click', function(e){
+      e.preventDefault();
+      $('.article-modal').fadeIn();
+    });
+
+
     // function buildHTML(article){
     //     var html = `<form action="/articles/${article.id}" method="post" id="destroy_article">
     //     <input type="hidden" name="note_id" value="${article.noteid}">
@@ -9,21 +25,6 @@ $(document).on('turbolinks:load', function(){
     //            </form>`
     //   return html;
     // }
-
-    $('.fa-plus').on('click', function(e){
-      e.preventDefault();
-      $(this).siblings().fadeIn();
-    });
-
-    $('.magazine-details-content__middle__left__edit').on('click', function(e){
-      e.preventDefault();
-      $('.article-modal').fadeIn();
-    });
-
-    $('.article-modal__content__header__escape').on('click', function(e){
-      e.preventDefault();
-      $('.article-modal').fadeOut();
-    });
 
     // $('.article-modal__content__magazines__magazine__add__adds').on('click', function(e){
     //   e.preventDefault();
