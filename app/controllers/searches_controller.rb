@@ -8,7 +8,7 @@ class SearchesController < ApplicationController
 
     @likes = Like.all.includes(:user)
     if user_signed_in?
-      @follow_users = User.find(current_user.id).followings
+      @follow_users = current_user.followings
     end
   end
 
