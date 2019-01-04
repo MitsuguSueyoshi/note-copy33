@@ -1,0 +1,22 @@
+= link_to user_magazine_path(:user_id, result_magazine) do
+  .search__box__result-magazine__container__magazine
+    .search__box__result-magazine__container__magazine__upper
+      - if result_magazine.header_image.present?
+        = image_tag result_magazine.header_image, class: "magazine-header-image"
+      - else
+        .search__box__result-magazine__container__magazine__upper__empty
+      .search__box__result-magazine__container__magazine__upper__title
+        %h5.title
+          = result_magazine.title
+    .search__box__result-magazine__container__magazine__middle
+      %p.description
+        = result_magazine.description
+    .search__box__result-magazine__container__magazine__footer
+      - if result_magazine.user.main_image.present?
+        = image_tag result_magazine.user.main_image , class: "user-icon"
+      - else
+        = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png",class: "user-icon"
+      %p.user-nickname
+        = result_magazine.user.nickname
+      .search__box__result-magazine__container__magazine__footer__follow
+

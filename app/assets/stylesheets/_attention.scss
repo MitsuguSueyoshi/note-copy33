@@ -130,6 +130,7 @@
                     height: 24px;
                     border-radius: 24px;
                     margin-right: 8px;
+                    object-fit: cover;
                   }
                 }
 
@@ -163,6 +164,7 @@
               img {
                 width: 56px;
                 height: 56px;
+                object-fit: cover;
               }
             }
           }

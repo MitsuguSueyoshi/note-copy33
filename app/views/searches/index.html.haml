@@ -1,0 +1,14 @@
+= render "shared/header"
+
+.search
+  .search__box
+    = render "search-note"
+    = render "kind-tab"
+    %ul.search__box__note-swich
+      %li.swich.popular.active 人気
+      %li.swich.spike 急上昇
+      %li.swich.new 新着
+      %li.swich.classic 定番
+    = render partial: "result-note", collection: @result_notes, as: "result_note"
+    = render partial: "result-note-new", collection: @new_notes, as: "new_note"
+    = render partial: "result-note-spike", collection: @spike_notes, as: "spike_note"
