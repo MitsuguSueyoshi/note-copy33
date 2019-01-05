@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   protect_from_forgery except: :destroy
+  impressionist :actions=> [:show]
 
   def index
     if user_signed_in?
@@ -17,6 +18,7 @@ class NotesController < ApplicationController
     @comment = Comment.new
     @comments = @note.comments.includes(:user)
     @comments_count = @comments.count
+    impressionist(@note, nil, unique: [:session_hash])
   end
 
   def new

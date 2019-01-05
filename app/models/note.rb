@@ -3,6 +3,7 @@ class Note < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
+  is_impressionable
   def like_user(user_id)
    likes.find_by(user_id: user_id)
   end
