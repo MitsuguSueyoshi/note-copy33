@@ -1,0 +1,80 @@
+= render 'shared/header'
+.dashboard__container
+  .dashboard__container__header
+    %h1 ダッシュボード
+    %ul
+      %li.selected
+        = link_to "アクセス状況" ""
+      %li
+        = link_to "売上管理" ""
+      %li
+        = link_to "振込履歴" ""
+      %li
+        = link_to "購入者一覧" ""
+  .dashboard__container__main
+    .dashboard__container__main__inner
+      .period-nav.clearfix
+        %ul
+          %li
+            = link_to "週" ""
+          %li
+            = link_to "月" ""
+          %li
+            = link_to "年" ""
+          %li
+            = link_to "全期間" ""
+        .period-nav__date
+          %p < 2018/12/01 - 2019/01/01 >
+      .stats-count
+        .stats-count__box.fl-l.green
+          .icon
+            %i.fas.fa-eye
+          .number
+            %p 36
+          .title
+            %p 全体ビュー
+        .spacer.fl-l
+        .stats-count__box.fl-l.blue
+          .icon
+            %i.fas.fa-comment
+          .number
+            %p 0
+          .title
+            %p コメント
+        .spacer.fl-l
+        .stats-count__box.fl-l.red
+          .icon
+            %i.fas.fa-heart
+          .number
+            %p 4
+          .title
+            %p スキ
+      .more-read
+        = link_to "" do
+          %i.fas.fa-question-circle
+          %p もっと読まれるためには?
+      .current-date
+        %p 最新集計時刻 2019/1/4 16:16
+      %table
+        %tr.thead
+          %th ノート
+          %th.count.green
+            %i.fas.fa-eye
+          %th.count.blue
+            %i.fas.fa-comment
+          %th.count.red
+            %i.fas.fa-heart
+        %tr
+          %td xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          %td.count.green 15
+          %td.count.blue 0
+          %td.count.red 1
+        %tr
+          %td ssssssssssssssssss
+          %td.count.green 21
+          %td.count.blue 0
+          %td.count.red 3
+
+
+
+
