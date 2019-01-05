@@ -118,6 +118,8 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -281,6 +283,7 @@ DEPENDENCIES
   erb2haml
   font-awesome-rails
   haml-rails
+  impressionist
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
