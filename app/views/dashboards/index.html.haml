@@ -31,6 +31,7 @@
             %i.fas.fa-eye
           .number
             %p
+              = @views_count
           .title
             %p 全体ビュー
         .spacer.fl-l
@@ -69,8 +70,10 @@
         - @notes.each do |note|
           %tr
             %td
-              = note.text
-            %td.count.green 15
+              = link_to note_path(note) do
+                = note.text
+            %td.count.green
+              = note.impressionist_count
             %td.count.blue
               = note.comments.count
             %td.count.red
