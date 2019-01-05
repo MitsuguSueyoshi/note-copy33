@@ -70,17 +70,7 @@
             %i.fas.fa-comment
           %th.count.red
             %i.fas.fa-heart
-        - @notes.each do |note|
-          %tr
-            %td
-              = link_to note_path(note) do
-                = note.text
-            %td.count.green
-              = note.impressionist_count
-            %td.count.blue
-              = note.comments.count
-            %td.count.red
-              = note.likes.count
+        = render partial: "note", collection: @notes
     .dashboard__container__main__sales.tab
       %h2
         今月の売上

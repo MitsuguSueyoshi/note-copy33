@@ -1,0 +1,10 @@
+%tr
+  %td
+    = link_to note_path(note) do
+      = note.text
+  %td.count.green
+    = note.impressionist_count
+  %td.count.blue
+    = note.comments.count
+  %td.count.red
+    = note.likes.count
