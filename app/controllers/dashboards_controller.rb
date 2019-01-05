@@ -1,8 +1,9 @@
+require "note.rb"
 class DashboardsController < ApplicationController
 
   def index
     @current_date = Time.now
-    @notes = Note.where(user_id: current_user.id).order("created_at DESC")
+    @notes =  Note.my_notes(current_user.id)
     @views_count = 0
     @comments_count = 0
     @likes_count = 0

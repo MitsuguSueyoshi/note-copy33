@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   protect_from_forgery except: :destroy
-  impressionist :actions=> [:show]
+  impressionist actions: [:show]
 
   def index
     if user_signed_in?

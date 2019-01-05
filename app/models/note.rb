@@ -27,4 +27,9 @@ class Note < ApplicationRecord
   def next
     user.notes.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
   end
+
+  def self.my_notes(user_id)
+    Note.where(user_id: user_id).order("created_at DESC")
+  end
+
 end
