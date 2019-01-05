@@ -6,14 +6,15 @@
           = image_tag("note_logo.jpg" ,class: "note_logo")
       .header__container__upper__right
         -if user_signed_in?
+          / %li
+          /   .search-form
+          /     %form.search-form__box
+          /       %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
+          /       %button{type: "submit", class: "search-form__box__button"}
+          /         %i{class: "fa fa-search fa-2x search-icon"}
           %li
-            .search-form
-              %form.search-form__box
-                %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
-                %button{type: "submit", class: "search-form__box__button"}
-                  %i{class: "fa fa-search fa-2x search-icon"}
-          %li
-            %i{class: "fa fa-search fa-2x search-icon1"}
+            = link_to searches_path do
+              %i{class: "fa fa-search fa-2x search-icon1"}
           %li
             = link_to "", class: "notification" do
               %i.far.fa-bell
@@ -63,10 +64,11 @@
               = link_to new_user_registration_path do
                 %p 新規登録
           %li
-            %i{class: "fa fa-search fa-2x search-icon1"}
-          %li
-            .search-form
-              %form.search-form__box
-                %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
-                %button{type: "submit", class: "search-form__box__button"}
-                  %i{class: "fa fa-search fa-2x search-icon"}
+            = link_to searches_path do
+              %i{class: "fa fa-search fa-2x search-icon1"}
+          / %li
+          /   .search-form
+          /     %form.search-form__box
+          /       %input{name:"keyword", placeholder:"キーワードを入力", type:"text", class: "search-form__box__field"}
+          /       %button{type: "submit", class: "search-form__box__button"}
+          /         %i{class: "fa fa-search fa-2x search-icon"}

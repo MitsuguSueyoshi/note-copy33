@@ -16,9 +16,8 @@
         %strong
           ノート
       - if @user == current_user
-        = link_to do
-          .magazine-details-content__middle__left__edit
-            ノートの並び替え・削除
+        .magazine-details-content__middle__left__edit
+          ノートの並び替え・削除
       - else
         .magazine-details-content__middle__left__edit
       =  render partial: "note", collection: @notes
@@ -94,3 +93,29 @@
       noteカイゼン目安箱
     %li.footer__list__item.only-bold
       クリエイターの推薦
+
+.article-modal
+  .article-modal__content
+    .article-modal__content__header
+      並び替え・削除
+      .article-modal__content__header__escape
+        &times;
+    %ul.article-modal__content__magazines
+      - @notes.each do |note|
+        %li.article-modal__content__magazines__magazine
+          = link_to do
+            .article-modal__content__magazines__magazine__header-image
+              - if note.images.present?
+                - note.images.each do |image|
+                  = image_tag image.image
+              - else
+                = image_tag "https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0524/7923/rsolid_emerald_green_009874_shop_preview.png"
+            .article-modal__content__magazines__magazine__title
+              = note.title
+          .article-modal__content__magazines__magazine__add
+            - if user_signed_in?
+              = form_for(@magazine.articles.find_by(note_id: note.id), html: { method: :delete }, id: "destroy_article") do |f|
+                = f.hidden_field :note_id, value: note.id
+                = f.hidden_field :magazine_id, value: @magazine.id
+                = f.submit '削除する', class: 'article-modal__content__magazines__magazine__add__adds'
+
