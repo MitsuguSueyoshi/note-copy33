@@ -30,7 +30,7 @@
           .icon
             %i.fas.fa-eye
           .number
-            %p 36
+            %p
           .title
             %p 全体ビュー
         .spacer.fl-l
@@ -38,7 +38,8 @@
           .icon
             %i.fas.fa-comment
           .number
-            %p 0
+            %p
+              = @comments_count
           .title
             %p コメント
         .spacer.fl-l
@@ -46,7 +47,8 @@
           .icon
             %i.fas.fa-heart
           .number
-            %p 4
+            %p
+              = @likes_count
           .title
             %p スキ
       .more-read
@@ -64,16 +66,16 @@
             %i.fas.fa-comment
           %th.count.red
             %i.fas.fa-heart
-        %tr
-          %td xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-          %td.count.green 15
-          %td.count.blue 0
-          %td.count.red 1
-        %tr
-          %td ssssssssssssssssss
-          %td.count.green 21
-          %td.count.blue 0
-          %td.count.red 3
+        - @notes.each do |note|
+          %tr
+            %td
+              = note.text
+            %td.count.green 15
+            %td.count.blue
+              = note.comments.count
+            %td.count.red
+              = note.likes.count
+
 
 
 
