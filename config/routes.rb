@@ -37,4 +37,5 @@ Rails.application.routes.draw do
       get 'search_user'
     end
   end
+  resources :dashboards, only: [:index]
 end
