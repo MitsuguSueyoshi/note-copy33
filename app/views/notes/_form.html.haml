@@ -30,12 +30,13 @@
         %li
           = link_to "キャンセル", root_path
         %li
-          = f.submit 'note投稿', class: 'submit'
+          = f.submit 'note投稿', class: 'submit', id: "submit__button"
     %div.new__form
       = f.fields_for :images do |i|
         = i.label :image, class: 'upload-image' do
           %i.fas.fa-image
           = i.file_field :image, class: "hidden"
+      = image_tag "", id: "preview__image"
       = f.text_area :title, class: 'note-title__box', placeholder: 'ノートタイトル', autocomplete: "off"
       = f.text_area :text, class: 'note-text__box' , placeholder: 'ノート本文', autocomplete: "off"
       = f.select :category, Note.categories.keys, {prompt: '選択してください'}, class: 'note-category__box'
