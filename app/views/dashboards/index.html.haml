@@ -1,0 +1,107 @@
+= render 'shared/header'
+.dashboard__container
+  .dashboard__container__header
+    %h1 ダッシュボード
+    %ul.switch__button
+      %li.select{href: '.dashboard__container__main__access'}
+        = link_to "アクセス状況" ""
+      %li{href: '.dashboard__container__main__sales'}
+        = link_to "売上管理" ""
+      %li{href: '.dashboard__container__main__transfer'}
+        = link_to "振込履歴" ""
+      %li{href: '.dashboard__container__main__buyer'}
+        = link_to "購入者一覧" ""
+  .dashboard__container__main
+    .dashboard__container__main__access.tab
+      .period-nav.clearfix
+        %ul
+          %li
+            = link_to "週" ""
+          %li
+            = link_to "月" ""
+          %li
+            = link_to "年" ""
+          %li.selected
+            = link_to "全期間" ""
+        .period-nav__date
+          %p < 2018/12/01 - 2019/01/01 >
+      .stats-count
+        .stats-count__box.fl-l.green
+          .icon
+            %i.fas.fa-eye
+          .number
+            %p
+              = @views_count
+          .title
+            %p 全体ビュー
+        .spacer.fl-l
+        .stats-count__box.fl-l.blue
+          .icon
+            %i.fas.fa-comment
+          .number
+            %p
+              = @comments_count
+          .title
+            %p コメント
+        .spacer.fl-l
+        .stats-count__box.fl-l.red
+          .icon
+            %i.fas.fa-heart
+          .number
+            %p
+              = @likes_count
+          .title
+            %p スキ
+      .more-read
+        = link_to "" do
+          %i.fas.fa-question-circle
+          %p もっと読まれるためには?
+      .current-date
+        %p
+          最終集計時刻
+          %span
+            = @current_date
+      %table
+        %tr.thead
+          %th ノート
+          %th.count.green
+            %i.fas.fa-eye
+          %th.count.blue
+            %i.fas.fa-comment
+          %th.count.red
+            %i.fas.fa-heart
+        = render partial: "note", collection: @notes
+    .dashboard__container__main__sales.tab
+      %h2
+        今月の売上
+        %span 2019/01/01 - 2019/02/01
+      .total-amount
+        %p.title 総額
+        %p.amount ¥0
+        %p.detail 詳細
+      %h2 未振込の売上
+      .unpaid__total-amount
+        .text-top
+          %p.title 総額
+          %p.amount ¥0
+        %p.text-bottom 前月末までの未振込の売上総額が1,000円以上の場合に振込依頼が可能です。
+    .dashboard__container__main__transfer.tab
+      %h2 振込履歴
+      %table
+        %tr
+          %th 振込依頼日
+          %th 振込日
+          %th 売上期間
+          %th 振込額
+          %th 状況
+    .dashboard__container__main__buyer.tab
+      .period
+        %p 期間
+        %select{name: "year-mounth"}
+          %option{value: ""}日時で絞り込む
+          %option{value: "1"}2019年1月
+          %option{value: "12"}2018年12月
+          %option{value: "11"}2018年11月
+          %option{value: "10"}2018年10月
+          %option{value: "9"}2018年9月
+      %p.buyer__list 購入者がいません
