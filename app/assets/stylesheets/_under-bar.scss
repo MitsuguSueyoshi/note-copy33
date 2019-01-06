@@ -27,10 +27,15 @@
           li {
             display: inline-block;
             font-size: 20px;
-            width: 56px;
-            height: 56px;
+            // width: 56px;
+            // height: 56px;
             line-height: 56px;
-            text-align: center;
+            margin-right: 45px;
+            // text-align: center;
+
+            .article-modal__content__magazines__magazine__title {
+              margin-top: -8px;
+            }
 
             .like__count {
               display: inline-block;

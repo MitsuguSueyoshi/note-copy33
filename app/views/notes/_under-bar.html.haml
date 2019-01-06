@@ -6,8 +6,7 @@
           %li
             = render "likes/like-button",{note: @note, likes: @likes}
           %li
-            = link_to "" do
-              %i.far.fa-plus-square
+            = render "articles/article-button", {note: @note}
       .under-bar__actions__right
         %ul
           %li
