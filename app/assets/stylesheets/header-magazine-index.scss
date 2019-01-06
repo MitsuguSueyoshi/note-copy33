@@ -102,6 +102,11 @@
             width: 610px;
             object-fit: cover;
           }
+          &__empty{
+            height: 230px;
+            background-color: $greencolor;
+            border-radius: 5px 5px 0px 0px;
+          }
           .pickup-magazine-title{
             font-size: 22px;
             color: #FFF;
