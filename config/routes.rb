@@ -38,4 +38,5 @@ Rails.application.routes.draw do
     end
   end
   resources :dashboards, only: [:index]
+  resources :recommends, only: [:index]
 end
