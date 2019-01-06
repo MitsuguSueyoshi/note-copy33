@@ -4,8 +4,7 @@
       .under-bar__actions__left
         %ul
           %li
-            %i.far.fa-heart
-            %span 5
+            = render "likes/like-button",{note: @note, likes: @likes}
           %li
             = link_to "" do
               %i.far.fa-plus-square
