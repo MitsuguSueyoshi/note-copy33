@@ -35,7 +35,6 @@ $(document).on('turbolinks:load', function(){
     $('.comments__form__content__text').on("click", function(e){
       $('.comments__form__content__submit').fadeIn();
       $(".comments__form__content__text").css('outline', '1.6px #2cb696 solid')
-
     })
 
     $('.footer').on("click", function(e){
