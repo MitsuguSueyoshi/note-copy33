@@ -73,3 +73,6 @@ gem 'mini_magick'
 gem 'jquery-turbolinks'
 gem 'ransack'
 gem 'impressionist'
+gem 'dotenv-rails'
+gem "recaptcha", require: "recaptcha/rails"
+
