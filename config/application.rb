@@ -6,6 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
+RECAPTCHA_SITE_KEY = ENV['RECAPTCHA_SITE_KEY']
+RECAPTCHA_SECRET_KEY = ENV['RECAPTCHA_SECRET_KEY']
+
 module NoteCopy
   class Application < Rails::Application
     config.generators do |g|
