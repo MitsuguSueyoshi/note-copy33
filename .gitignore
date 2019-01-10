@@ -23,4 +23,5 @@ config/secrets.yml
 
 vendor/bundle
 
-.env
+.env.production.local
+
