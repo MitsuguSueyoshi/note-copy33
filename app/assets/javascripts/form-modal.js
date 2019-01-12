@@ -18,7 +18,7 @@ $(document).on("turbolinks:load", function(){
       })
       .fail(function(){
         alert('タイトル、本文、カテゴリは必ず入力して下さい');
-        $('.submit').removeAttr('data-disable-with')
+        $('#submit__button').removeAttr('data-disable-with');
       });
     });
   });

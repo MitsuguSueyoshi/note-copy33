@@ -12,7 +12,10 @@
         .header-magazine-box__left__pickup__container
           = link_to user_magazine_path(@pickup_magazine.user, @pickup_magazine) do
             .header-magazine-box__left__pickup__container__image
-              = image_tag @pickup_magazine.header_image
+              - if @pickup_magazine.header_image.present?
+                = image_tag @pickup_magazine.header_image
+              - else
+                .header-magazine-box__left__pickup__container__image__empty
               %p.pickup-magazine-title
                 = @pickup_magazine.title
           = link_to user_magazine_path(@pickup_magazine.user, @pickup_magazine) do
