@@ -59,5 +59,7 @@ ja:
         one: "エラーが発生したため %{resource} は登録されませんでした:"
         other: "%{count} 件のエラーが発生したため %{resource} は登録されませんでした:"
       blank: "が入力されていません。"
-
+  recaptcha:
+    errors:
+      verification_failed: 'reCAPTCHA認証に失敗しました。'
 
