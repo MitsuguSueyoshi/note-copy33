@@ -8,7 +8,7 @@
     %ul.article-modal__content__magazines
       - current_user.magazines.each do |magazine|
         %li.article-modal__content__magazines__magazine
-          = link_to do
+          = link_to user_magazine_path(magazine.user,magazine) do
             .article-modal__content__magazines__magazine__header-image
               - if magazine.header_image.present?
                 = image_tag magazine.header_image

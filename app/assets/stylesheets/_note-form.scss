@@ -159,14 +159,11 @@
       }
     }
   }
-
 }
-
-
 
 .new__form {
   margin: 0 auto;
-  width: 60%;
+  width: 620px;
   outline: 0;
 
   ::-webkit-input-placeholder {
@@ -181,7 +178,7 @@
   }
 
   .upload-image {
-
+    // z-index: 2;
     .hidden {
       display: none;
     }
@@ -199,12 +196,18 @@
     }
   }
 
+  #preview__image {
+    display: block;
+    width: 100%;
+    margin-top: -60px;
+  }
+
   .note-title__box {
     font-size: 32px;
     font-weight: bold;
     letter-spacing: 0.04em;
     height: 40px;
-    margin-top: 60px;
+    margin-top: 100px;
     display: block;
   }
 
