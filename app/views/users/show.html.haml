@@ -45,6 +45,7 @@
     .user-container-nav__list
       %label.tab1_label.active{for:"tab1"} ホーム
       %label.tab2_label{for:"tab2"} マガジン
+      %label.tab3_label{for:"tab3"} スキ
   .products
     #product_note.tab_product
       .home__container
@@ -126,5 +127,8 @@
                   .setting-button 設定
               - else
                 .setting-button フォロー
+    #product_like.tab_product
+      .home__container
+      = render partial: "likes-note", collection: @likes, as: "like"
 
 = render partial: "user-profile", locals: { user: @user}
