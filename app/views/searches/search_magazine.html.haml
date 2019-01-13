@@ -3,7 +3,7 @@
   .search__box
     .search__box__form.magazine
       = search_form_for(@search_magazines, url: search_magazine_searches_path) do |f|
-        = f.search_field :title_or_description_cont, placeholder: ",マガジンを検索"
+        = f.search_field :title_or_description_cont, placeholder: "マガジンを検索"
         = f.submit type: "hidden"
     = render "kind-tab"
     .search__box__result-magazine
