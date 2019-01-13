@@ -3,6 +3,7 @@ before_action :user_and_follow, only: [:show, :followings ,:followers]
 
   def show
     @notes = @user.notes.order("created_at DESC")
+    @likes = current_user.likes.order("created_at DESC") if user_signed_in?
   end
 
   def edit
