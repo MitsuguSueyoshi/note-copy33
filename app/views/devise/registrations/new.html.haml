@@ -6,6 +6,7 @@
   %h5.registration-container__title noteに登録する
   .registration-container__form
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
       .field
         = f.label :ニックネーム（登録後に変更可能）
         %br/
@@ -22,6 +23,7 @@
         = f.label :パスワード確認
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
+      = recaptcha_tags
       .actions#registration-btn
         = f.submit "登録する（無料）", id: "submit-btn"
   .registration-container__sns

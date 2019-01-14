@@ -74,3 +74,5 @@ gem 'jquery-turbolinks'
 gem 'ransack'
 gem 'impressionist'
 gem 'kaminari'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem "recaptcha", require: "recaptcha/rails"
