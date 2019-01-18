@@ -23,7 +23,7 @@
         = f.label :パスワード確認
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
-      = recaptcha_tags
+      / = recaptcha_tags
       .actions#registration-btn
         = f.submit "登録する（無料）", id: "submit-btn"
   .registration-container__sns
