@@ -1,6 +1,7 @@
 .home__container {
   min-height: 100%;
   border-top: solid 1px #F5F5F5;
+  padding-bottom: 40px;
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
   background-color: #f7f9f9;
   clear: both;
@@ -198,6 +199,11 @@
       display: none;
     }
 
+  }
+
+  .page-load-status {
+    text-align: center;
+    padding-top: 20px;
   }
 }
 

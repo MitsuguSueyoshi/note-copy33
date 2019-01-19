@@ -2,7 +2,10 @@
 = render 'shared/header-nav'
 -if user_signed_in?
   .home__container
-    .home__container__cards
+    .home__container__cards#page
       = render @notes
+    = paginate(@notes)
+    .page-load-status
+      = image_tag('icon_loader_a_bb_01_s1.gif')
 -else
   = render 'recommend'

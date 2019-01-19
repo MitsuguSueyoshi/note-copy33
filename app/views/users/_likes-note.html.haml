@@ -1,0 +1,45 @@
+/ スキしたnote
+.home__container__cards
+  .card
+    .card__avatar
+      %ul
+        %li.icon
+          = link_to user_path(like.note.user) do
+            - if like.note.user.main_image.present?
+              = image_tag like.note.user.main_image
+            - else
+              = image_tag 'https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png'
+        %li.info
+          = link_to user_path(like.note.user), class: "name" do
+            = like.note.user.nickname
+          = link_to note_path(like.note), class: "date" do
+            = like.note.created_at
+    .card__main
+      =link_to note_path(like.note) do
+        .card__main--image
+          - if like.note.images.present?
+            - like.note.images.each do |image|
+              = image_tag image.image
+        %h3.card__main--title
+          = like.note.title
+      .card__main--text
+        %p
+          = like.note.text
+      = link_to "もっとみる", note_path(like.note), class: "card__main--details"
+    .card__foot
+      %ul.icon
+        %li.icon__box
+          = render "likes/like-button",{note: like.note, likes: @likes}
+        %li.icon__box
+          = link_to "" do
+            %i.fas.fa-arrow-right
+        %li.icon__box
+          = render "articles/article-button", {note: like.note}
+        - if like.note.user.id == current_user.id
+          %li.icon__box
+            = link_to "" do
+              %i.fas.fa-ellipsis-h.balloon__event
+            .delete__balloon
+              = link_to  "/notes/#{like.note.id}", method: :delete do
+                %p 削除
+      .comment__link

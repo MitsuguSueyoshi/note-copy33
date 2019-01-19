@@ -182,6 +182,9 @@
   .products{
     width: 100%;
     min-height: 100%;
+    #product_like{
+      display: none;
+    }
     #product_magazine{
       max-width: 1440px;
       min-height: 100vh;
@@ -267,7 +270,9 @@
               box-sizing: border-box;
               margin: 0 auto;
               border-bottom: solid 1px #e6e6e6;
-
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
           }
           &__footer{
