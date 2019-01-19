@@ -129,6 +129,6 @@
                 .setting-button フォロー
     #product_like.tab_product
       .home__container
-      = render partial: "likes-note", collection: @likes, as: "like"
+        = render partial: "likes-note", collection: @likes, as: "like"
 
 = render partial: "user-profile", locals: { user: @user}
