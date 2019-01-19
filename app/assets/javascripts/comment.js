@@ -2,11 +2,12 @@ $(document).on('turbolinks:load', function(){
   $(function(){
 
     function buildHTML(comment){
+     var image = comment.user_image ? `<img src="${comment.user_image}">` : `<img src="https://d2l930y2yx77uc.cloudfront.net/assets/default/default_profile-2f533b6a0048b61b8d761198d14cbb4c603f89edb03577f061efc7393b85d811.png">`;
       var html = `
       <div class="comments__comment">
         <div class="comments__comment__profile">
           <div class="comments__comment__profile__icon">
-            <img src="${comment.user_image}">
+            ${image}
           </div>
           <div class="comments__comment__profile__name">
             ${comment.user_name}
