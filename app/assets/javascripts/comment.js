@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
       <div class="comments__comment">
         <div class="comments__comment__profile">
           <div class="comments__comment__profile__icon">
-            <img src="${comment.user_image}">
+            ${image}
           </div>
           <div class="comments__comment__profile__name">
             ${comment.user_name}
