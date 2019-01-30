@@ -41,7 +41,6 @@ class NotesController < ApplicationController
   end
 
   def edit
-    # @note.images.new
   end
 
   def update
