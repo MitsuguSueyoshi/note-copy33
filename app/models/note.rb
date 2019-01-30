@@ -40,4 +40,8 @@ class Note < ApplicationRecord
     Note.where(user_id: follow_users).or(Note.where(user_id: current_user.id)).includes(:user).order("created_at DESC").page(page).per(10)
   end
 
+  def self.create_hot_notes
+    Note.includes(:user).find(Like.group(:note_id).order('count(note_id) desc').pluck(:note_id))
+  end
+
 end
