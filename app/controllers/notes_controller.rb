@@ -6,8 +6,8 @@ class NotesController < ApplicationController
 
   def index
     if user_signed_in?
-      @follow_users = User.find(current_user.id).followings
       page = params[:page]
+      @follow_users = User.find(current_user.id).followings
       @notes = Note.get_followings_note(@follow_users,current_user,page)
     end
     @likes = Like.all.includes(:user)
