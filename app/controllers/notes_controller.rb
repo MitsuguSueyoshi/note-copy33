@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show]
   protect_from_forgery except: :destroy
   impressionist actions: [:show]
 
@@ -16,9 +17,6 @@ class NotesController < ApplicationController
   def show
     all_ranks = Note.create_all_ranks
     @my_ranks = all_ranks.select{ |note| note.user_id == @note.user.id }
-    @comment = Comment.new
-    @comments = @note.comments.includes(:user)
-    @comments_count = @comments.count
     impressionist(@note, nil, unique: [:session_hash])
   end
 
@@ -66,5 +64,11 @@ class NotesController < ApplicationController
 
   def set_note
     @note = Note.find(params[:id])
+  end
+
+  def set_comment
+    @comment = Comment.new
+    @comments = @note.comments.includes(:user)
+    @comments_count = @comments.count
   end
 end
