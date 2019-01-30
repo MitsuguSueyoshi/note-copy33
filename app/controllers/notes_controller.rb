@@ -73,4 +73,5 @@ class NotesController < ApplicationController
     @comments = @note.comments.includes(:user)
     @comments_count = @comments.count
   end
+
 end
