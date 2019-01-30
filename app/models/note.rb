@@ -39,4 +39,5 @@ class Note < ApplicationRecord
   def self.get_followings_note(follow_users,current_user,page)
     Note.where(user_id: follow_users).or(Note.where(user_id: current_user.id)).includes(:user).order("created_at DESC").page(page).per(10)
   end
+
 end
