@@ -1,29 +1,28 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show]
   protect_from_forgery except: :destroy
   impressionist actions: [:show]
 
   def index
     if user_signed_in?
+      page = params[:page]
       @follow_users = User.find(current_user.id).followings
-      @notes = Note.where(user_id: @follow_users).or(Note.where(user_id: current_user.id)).includes(:user).order("created_at DESC").page(params[:page]).per(10)
+      @notes = Note.get_followings_note(@follow_users,current_user,page)
     end
     @likes = Like.all.includes(:user)
   end
 
   def show
-    @note = Note.find(params[:id])
-    all_ranks = Note.find(Like.group(:note_id).order('count(note_id) desc').limit(3).pluck(:note_id))
+    all_ranks = Note.create_all_ranks
     @my_ranks = all_ranks.select{ |note| note.user_id == @note.user.id }
-    @comment = Comment.new
-    @comments = @note.comments.includes(:user)
-    @comments_count = @comments.count
     impressionist(@note, nil, unique: [:session_hash])
   end
 
   def new
-      @note = Note.new
-      @note.images.new
+    @note = Note.new
+    @note.images.new
   end
 
   def create
@@ -40,12 +39,9 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find(params[:id])
-    # @note.images.new
   end
 
   def update
-    @note = Note.find(params[:id])
     if @note.update(notes_params)
       redirect_to root_path
     else
@@ -55,15 +51,27 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note = Note.find(params[:id])
     if @note.user.id == current_user.id
        @note.destroy
        redirect_back(fallback_location: root_path)
     end
   end
 
+
   private
+
   def notes_params
     params.require(:note).permit(:title, :text, :category, images_attributes: [:image]).merge(user_id: current_user.id)
   end
+
+  def set_note
+    @note = Note.find(params[:id])
+  end
+
+  def set_comment
+    @comment = Comment.new
+    @comments = @note.comments.includes(:user)
+    @comments_count = @comments.count
+  end
+
 end

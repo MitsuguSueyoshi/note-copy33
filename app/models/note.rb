@@ -32,4 +32,16 @@ class Note < ApplicationRecord
     Note.where(user_id: user_id).order("created_at DESC")
   end
 
+  def self.create_all_ranks
+    Note.find(Like.group(:note_id).order('count(note_id) desc').limit(3).pluck(:note_id))
+  end
+
+  def self.get_followings_note(follow_users,current_user,page)
+    Note.where(user_id: follow_users).or(Note.where(user_id: current_user.id)).includes(:user).order("created_at DESC").page(page).per(10)
+  end
+
+  def self.create_hot_notes
+    Note.includes(:user).find(Like.group(:note_id).order('count(note_id) desc').pluck(:note_id))
+  end
+
 end
